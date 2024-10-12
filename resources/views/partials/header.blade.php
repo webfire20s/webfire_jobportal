@@ -4,7 +4,7 @@
 
         <div class="container ">
 
-            <a class="navbar-brand" href="{{ asset('/') }}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlVNC8FPt1pbTWLwjrUQNWlGGtTx4bjo5DSg&s" height="80px"
+            <a class="navbar-brand" href="{{ asset('/') }}"><img src="{{ asset('public/logo1.png') }}" height="80px"
                     alt="image"></a>
 
 

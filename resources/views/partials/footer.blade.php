@@ -4,7 +4,7 @@
         <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5  ">
 
             <div class=" col-md-4">
-                <h3><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlVNC8FPt1pbTWLwjrUQNWlGGtTx4bjo5DSg&s" alt="image"></h3>
+                <h3><img src="{{ asset('public/logo.png') }}" alt="image" height="150px"></h3>
                 <p>प्रतिभेला संधीशी जोडणे. नोकरीच्या सूची एक्सप्लोर करा, नियोक्त्यांसोबत कनेक्ट करा आणि JobLinker सह तुमचे करिअर तयार करा - तुमचे व्यावसायिक यशाचे प्रवेशद्वार.</p>
                 <i class="bi-facebook pe-4"></i>
                 <i class="bi-instagram pe-4"></i>
