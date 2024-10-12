@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PosterController;
+use App\Http\Controllers\TransactionController;
 
 
 /*
@@ -22,6 +24,9 @@ Route::get('/', [HomeController::class,'index'])->name('home.index');
 // Admin routes - Only accessible by users with role 'admin'
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::resource('/admin/posters', 'PosterController');
+    Route::get('/admin/transactions', 'TransactionController@index');
+    Route::post('/admin/transactions/{transaction}/approve', 'TransactionController@approve');
 });
 
 // User routes - Only accessible by users with role 'user'

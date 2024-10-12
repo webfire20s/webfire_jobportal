@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -11,6 +12,12 @@ class AdminController extends Controller
         // Return the admin dashboard view
         return view('admin.dashboard');  // Ensure you have a view at resources/views/admin/dashboard.blade.php
     }
+
+    public function users() {
+        $users = User::where('role', 'customer')->with('transaction')->get();
+        return view('admin.users.index', compact('users'));
+    }
+    
 
     // You can add more admin-specific methods here
 }
