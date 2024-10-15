@@ -33,3 +33,4 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user', [UserController::class, 'index'])->name('user.dashboard');
 });
+Route::post('/login', [HomeController::class,'login'])->name('home.login');

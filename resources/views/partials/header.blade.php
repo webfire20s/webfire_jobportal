@@ -67,7 +67,7 @@
                                             <div class="tab-content" id="nav-tabContent">
                                                 <div class="tab-pane fade active show" id="nav-sign-in" role="tabpanel"
                                                     aria-labelledby="nav-sign-in-tab">
-                                                    <form id="form1" class="form-group flex-wrap p-3 ">
+                                                    <form id="form1" class="form-group flex-wrap p-3 " method="POST" action="{{ url('login') }}">
                                                         <div class="form-input col-lg-12 my-4">
                                                             <label for="exampleInputEmail1"
                                                                 class="form-label fs-6 text-uppercase fw-bold text-black">Email
