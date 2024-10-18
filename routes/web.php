@@ -36,3 +36,12 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 Route::get('/login', [HomeController::class,'login'])->name('home.login');
 // Admin Routes
 Route::get('/admin/login', [AdminController::class,'login'])->name('admin.login');
+
+
+
+Route::prefix('admin')->group(function () {
+
+
+    Route::get('/home',[AdminController::class,'index'])->name('admin.index');
+    // More admin routes can go here...
+});

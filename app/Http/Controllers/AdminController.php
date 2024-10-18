@@ -10,7 +10,7 @@ class AdminController extends Controller
     public function index()
     {
         // Return the admin dashboard view
-        return view('admin.dashboard');  // Ensure you have a view at resources/views/admin/dashboard.blade.php
+        return view('admin.home');  // Ensure you have a view at resources/views/admin/dashboard.blade.php
     }
 
     public function users() {
@@ -21,5 +21,8 @@ class AdminController extends Controller
     public function login(){
         return view('admin.login');
     }
+
+
+   
     // You can add more admin-specific methods here
 }
