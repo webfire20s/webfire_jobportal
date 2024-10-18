@@ -18,6 +18,8 @@ class AdminController extends Controller
         return view('admin.users.index', compact('users'));
     }
     
-
+    public function login(){
+        return view('admin.login');
+    }
     // You can add more admin-specific methods here
 }
