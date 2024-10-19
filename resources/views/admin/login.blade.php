@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>AdminLTE 4 | Login Page</title><!--begin::Primary Meta Tags-->
+    <title>Admin Login</title><!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="AdminLTE 4 | Login Page">
     <meta name="author" content="ColorlibHQ">
@@ -13,24 +13,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css" integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous"><!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Third Party Plugin(Bootstrap Icons)-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous"><!--end::Third Party Plugin(Bootstrap Icons)--><!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{asset('public/theme/admin/dist/css/adminlte.css')}}"><!--end::Required Plugin(AdminLTE)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head> <!--end::Head--> <!--begin::Body-->
 
 <body class="login-page bg-body-secondary">
     <div class="login-box">
-        <div class="login-logo"> <a href="../index2.html"><b>Admin</b>LTE</a> </div> <!-- /.login-logo -->
+        <div class="login-logo"> <a href="{{ url('/') }}"><b>Admin</b> Panel</a> </div> <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
-                <form action="../index3.html" method="post">
-                    <div class="input-group mb-3"> <input type="email" class="form-control" placeholder="Email">
+                <form action="#" class="ajaxSubmit" method="post">
+                    <div class="input-group mb-3"> <input type="email" name="email" class="form-control" placeholder="Email">
                         <div class="input-group-text"> <span class="bi bi-envelope"></span> </div>
                     </div>
-                    <div class="input-group mb-3"> <input type="password" class="form-control" placeholder="Password">
+                    <div class="input-group mb-3"> <input type="password" name="password" class="form-control" placeholder="Password">
                         <div class="input-group-text"> <span class="bi bi-lock-fill"></span> </div>
                     </div> <!--begin::Row-->
                     <div class="row">
                         <div class="col-8">
-                            <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault">
+                            <div class="form-check"> <input class="form-check-input"  type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault">
                                     Remember Me
                                 </label> </div>
                         </div> <!-- /.col -->
@@ -39,16 +41,7 @@
                         </div> <!-- /.col -->
                     </div> <!--end::Row-->
                 </form>
-                <div class="social-auth-links text-center mb-3 d-grid gap-2">
-                    <p>- OR -</p> <a href="#" class="btn btn-primary"> <i class="bi bi-facebook me-2"></i> Sign in using Facebook
-                    </a> <a href="#" class="btn btn-danger"> <i class="bi bi-google me-2"></i> Sign in using Google+
-                    </a>
-                </div> <!-- /.social-auth-links -->
-                <p class="mb-1"> <a href="forgot-password.html">I forgot my password</a> </p>
-                <p class="mb-0"> <a href="register.html" class="text-center">
-                        Register a new membership
-                    </a> </p>
-            </div> <!-- /.login-card-body -->
+                </div> <!-- /.login-card-body -->
         </div>
     </div> <!-- /.login-box --> <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script> <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
@@ -78,6 +71,44 @@
             }
         });
     </script> <!--end::OverlayScrollbars Configure--> <!--end::Script-->
+    <script>
+    $('.ajaxSubmit').submit(function(e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        var formData = new FormData(this);
+
+        $.ajax({
+            url: "{{ url('/api/admin/login') }}", // API route for admin login
+            type: "POST",
+            dataType: "json", // Expect a JSON response
+            data: formData,
+            processData: false, // Tell jQuery not to process the FormData object
+            contentType: false, // Set the content type to false (allows multipart/form-data)
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // For CSRF token (if required)
+            },
+            beforeSend: function() {
+                // You can add any loading indicator here before the request is sent
+                console.log("Logging in...");
+            },
+            success: function(response) {
+                // Handle success response
+                if (response.success) {
+                    window.location.href = "{{ url('/admin') }}";
+                } else {
+                    alert(response.message); // Show the error message
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle any errors that occur during the request
+                var errorMessage = xhr.status + ': ' + xhr.statusText;
+                console.error('Error - ' + errorMessage);
+                alert('Login failed: ' + errorMessage);
+            }
+        });
+    });
+</script>
+
 </body><!--end::Body-->
 
 </html>
