@@ -7,7 +7,7 @@
       <div class="sidebar-wrapper">
         <nav class="mt-2"> <!--begin::Sidebar Menu-->
           <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
-            <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i
+            <!-- <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i
                   class="nav-icon bi bi-speedometer"></i>
                 <p>
                   Dashboard
@@ -26,12 +26,12 @@
                     <p>Dashboard v3</p>
                   </a> </li>
               </ul>
-            </li>
-            <li class="nav-item"> <a href="./generate/theme.html" class="nav-link"> <i
-                  class="nav-icon bi bi-palette"></i>
-                <p>Theme Generate</p>
+            </li> -->
+            <li class="nav-item"> <a href="{{asset('admin/home')}}" class="nav-link"> <i
+                  class="nav-icon bi bi-speedometer"></i>
+                <p>Dashboard</p>
               </a> </li>
-            <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
+            <!-- <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
                 <p>
                   Widgets
                   <i class="nav-arrow bi bi-chevron-right"></i>
@@ -135,9 +135,9 @@
                     <p>Simple Tables</p>
                   </a> </li>
               </ul>
-            </li>
-            <li class="nav-header">EXAMPLES</li>
-            <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-arrow-in-right"></i>
+            </li> -->
+            <!-- <li class="nav-header">EXAMPLES</li> -->
+            <!-- <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-arrow-in-right"></i>
                 <p>
                   Auth
                   <i class="nav-arrow bi bi-chevron-right"></i>
@@ -183,7 +183,7 @@
                     <p>Lockscreen</p>
                   </a> </li>
               </ul>
-            </li>
+            </li> -->
             <li class="nav-header">DOCUMENTATIONS</li>
             <li class="nav-item"> <a href="./docs/introduction.html" class="nav-link"> <i
                   class="nav-icon bi bi-download"></i>
@@ -197,7 +197,7 @@
                   class="nav-icon bi bi-star-half"></i>
                 <p>Color Mode</p>
               </a> </li>
-            <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-ui-checks-grid"></i>
+            <!-- <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-ui-checks-grid"></i>
                 <p>
                   Components
                   <i class="nav-arrow bi bi-chevron-right"></i>
@@ -226,7 +226,7 @@
                     <p>Treeview</p>
                   </a> </li>
               </ul>
-            </li>
+            </li> -->
             <li class="nav-item"> <a href="./docs/browser-support.html" class="nav-link"> <i
                   class="nav-icon bi bi-browser-edge"></i>
                 <p>Browser Support</p>
@@ -243,60 +243,9 @@
                   class="nav-icon bi bi-patch-check-fill"></i>
                 <p>License</p>
               </a> </li>
-            <li class="nav-header">MULTI LEVEL EXAMPLE</li>
-            <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle-fill"></i>
-                <p>Level 1</p>
-              </a> </li>
-            <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle-fill"></i>
-                <p>
-                  Level 1
-                  <i class="nav-arrow bi bi-chevron-right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
-                    <p>Level 2</p>
-                  </a> </li>
-                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
-                    <p>
-                      Level 2
-                      <i class="nav-arrow bi bi-chevron-right"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item"> <a href="#" class="nav-link"> <i
-                          class="nav-icon bi bi-record-circle-fill"></i>
-                        <p>Level 3</p>
-                      </a> </li>
-                    <li class="nav-item"> <a href="#" class="nav-link"> <i
-                          class="nav-icon bi bi-record-circle-fill"></i>
-                        <p>Level 3</p>
-                      </a> </li>
-                    <li class="nav-item"> <a href="#" class="nav-link"> <i
-                          class="nav-icon bi bi-record-circle-fill"></i>
-                        <p>Level 3</p>
-                      </a> </li>
-                  </ul>
-                </li>
-                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
-                    <p>Level 2</p>
-                  </a> </li>
-              </ul>
-            </li>
-            <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle-fill"></i>
-                <p>Level 1</p>
-              </a> </li>
-            <li class="nav-header">LABELS</li>
-            <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle text-danger"></i>
-                <p class="text">Important</p>
-              </a> </li>
-            <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle text-warning"></i>
-                <p>Warning</p>
-              </a> </li>
-            <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle text-info"></i>
-                <p>Informational</p>
-              </a> </li>
-          </ul> <!--end::Sidebar Menu-->
+            
+         
+                     </ul> <!--end::Sidebar Menu-->
         </nav>
       </div> <!--end::Sidebar Wrapper-->
     </aside>
