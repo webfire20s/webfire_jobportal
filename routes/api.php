@@ -17,4 +17,5 @@ use App\Http\Controllers\Admin\AdminController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('admin/login', [AdminController::class, 'do_login']);
+
+Route::post('/admin/login', [AdminController::class, 'do_login'])->name('admin.do_login');

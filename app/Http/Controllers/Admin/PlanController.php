@@ -14,7 +14,7 @@ class PlanController extends Controller
     public function index()
     {
         $plans = Plan::all();
-        return view('plans.index', compact('plans'));
+        return view('admin.plan.index', compact('plans'));
     }
 
     // Handle plan selection and receipt upload

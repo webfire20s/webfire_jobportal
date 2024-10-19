@@ -12,7 +12,7 @@ class PosterController extends Controller
     public function index()
     {
         $posters = Poster::all();
-        return view('posters.index', compact('posters'));
+        return view('admin.poster.index', compact('posters'));
     }
 
     // Admin: Store a new poster
@@ -48,6 +48,6 @@ class PosterController extends Controller
         }
 
         $posters = Poster::all();
-        return view('posters.customer_index', compact('posters'));
+        return view('poster.customer_index', compact('posters'));
     }
 }

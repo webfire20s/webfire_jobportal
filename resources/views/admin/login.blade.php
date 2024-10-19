@@ -78,7 +78,7 @@
         var formData = new FormData(this);
 
         $.ajax({
-            url: "{{ url('/api/admin/login') }}", // API route for admin login
+            url: "{{ url('api/admin/login') }}", // API route for admin login
             type: "POST",
             dataType: "json", // Expect a JSON response
             data: formData,

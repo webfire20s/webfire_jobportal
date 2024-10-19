@@ -11,7 +11,7 @@ class TransactionController extends Controller
     public function index()
     {
         $transactions = Transaction::with('user', 'plan')->get();
-        return view('admin.transactions.index', compact('transactions'));
+        return view('admin.transaction.index', compact('transactions'));
     }
 
     // Admin: Approve a customer’s transaction

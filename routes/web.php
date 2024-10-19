@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PlanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\UserController;
@@ -7,7 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\PosterController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\PosterCategoryController;
+use App\Http\Controllers\Admin\PosterCategoryController;
 
 
 
@@ -41,14 +42,21 @@ Route::get('/login', [HomeController::class, 'login'])->name('home.login');
 // Route::get('/admin/login', [AdminController::class,'login'])->name('admin.login');
 
 
-
-Route::middleware(['admin'])->prefix('admin')->group(function () {
-
+// middleware(['web','admin'])
+Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-
     Route::get('/category', [PosterCategoryController::class, 'index']);
-
-    // More admin routes can go here...
+    Route::get('/category/add', [PosterCategoryController::class, 'add']);
+    Route::get('/poster', [PosterController::class, 'index']);
+    Route::get('/poster/add', [PosterController::class, 'add']);
+    Route::get('/plan', [PlanController::class, 'index']);
+    Route::get('/plan/add', [PlanController::class, 'add']);
+    Route::get('/user', [UserController::class, 'index']);
+    Route::get('/user/add', [UserController::class, 'add']);
+    Route::get('/transaction', [TransactionController::class, 'index']);
+    Route::get('/transaction/add', [TransactionController::class, 'add']);
 });
 
-Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
+Route::middleware(['web'])->group(function () {
+    Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
+});

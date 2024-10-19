@@ -18,7 +18,7 @@ class AdminController extends Controller
 
     public function users() {
         $users = User::where('role', 'customer')->with('transaction')->get();
-        return view('admin.users.index', compact('users'));
+        return view('admin.user.index', compact('users'));
     }
     
     public function login(){
@@ -34,7 +34,7 @@ class AdminController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Regenerate session on successful login
-            $request->session()->regenerate();
+            // $request->session()->regenerate();
 
             Log::info('Login successful', ['user' => Auth::user()]);
 
@@ -43,6 +43,7 @@ class AdminController extends Controller
                 return response()->json([
                     'message' => 'Admin login successful',
                     'user' => Auth::user(),
+                    'success'=>1
                 ], 200);
             } else {
                 Auth::logout();
