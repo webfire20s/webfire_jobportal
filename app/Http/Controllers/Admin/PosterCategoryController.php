@@ -10,7 +10,7 @@ class PosterCategoryController extends Controller
 {
     public function index()
     {
-      return 'hi';
+      
         return view('admin.poster_categary.index');  
     }
 

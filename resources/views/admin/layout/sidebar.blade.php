@@ -20,6 +20,7 @@
                   class="nav-icon bi bi-image"></i>
                 <p>Poster</p>
               </a> </li>
+
             <li class="nav-item"> <a href="{{ url('admin/plan') }}" class="nav-link"> <i
                   class="nav-icon bi bi-star-half"></i>
                 <p>Plans</p>
