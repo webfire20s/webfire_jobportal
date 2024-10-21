@@ -14,7 +14,11 @@
             <table class="table table-stripped table-bordered">
                 <thead>
                     <th>#</th>
-                    <th>User Id</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                    
                     <th>User Name</th>
                 </thead>
                 <tbody>

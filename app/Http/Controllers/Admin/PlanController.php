@@ -17,6 +17,11 @@ class PlanController extends Controller
         return view('admin.plan.index', compact('plans'));
     }
 
+
+    public function add()
+    {
+        return view('admin.plan.add');
+    }
     // Handle plan selection and receipt upload
     public function store(Request $request)
     {

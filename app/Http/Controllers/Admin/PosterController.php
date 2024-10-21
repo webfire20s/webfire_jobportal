@@ -15,6 +15,10 @@ class PosterController extends Controller
         return view('admin.poster.index', compact('posters'));
     }
 
+    public function add()
+    {
+        return view('admin.poster.add');
+    }
     // Admin: Store a new poster
     public function store(Request $request)
     {

@@ -16,13 +16,27 @@
                     <th>#</th>
                     <th>Transaction</th>
                     <th>User Id</th>
+                    <th>Plan Id</th>
+                    <th>Receipt URL</th>
+                    <th>Month</th>
+                    <th>Price</th>
+                    <th>Purchase Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </thead>
                 <tbody>
                 
                     <tr>
                         <td>1</td>
                         <td></td>
-                        <td><img src="" alt="" width="100"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
