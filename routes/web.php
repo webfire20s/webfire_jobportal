@@ -47,8 +47,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/category', [PosterCategoryController::class, 'index']);
     Route::get('/category/add', [PosterCategoryController::class, 'add']);
+
+    // manage poster
     Route::get('/poster', [PosterController::class, 'index']);
     Route::get('/poster/add', [PosterController::class, 'add']);
+    Route::post('/poster/store', [PosterController::class, 'store']);
+    // manage poster
+    
     Route::get('/plan', [PlanController::class, 'index']);
     Route::get('/plan/add', [PlanController::class, 'add']);
     Route::get('/user', [UserController::class, 'index']);
