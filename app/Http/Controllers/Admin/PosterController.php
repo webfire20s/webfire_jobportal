@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Poster;
+use App\Models\PostersCategory;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log; // Add this import at the top
@@ -19,7 +20,8 @@ class PosterController extends Controller
 
     public function add()
     {
-        return view('admin.poster.add');
+        $categories = PostersCategory::all();
+        return view('admin.poster.add',compact('categories'));
     }
     public function store(Request $request)
 {
