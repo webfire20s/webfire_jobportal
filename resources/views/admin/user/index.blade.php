@@ -8,7 +8,7 @@
 <div class="container">
     <div class="card card-primary">
         <div class="card-header">
-            <i class="fa fa-list"></i>
+        <a href="{{ asset('admin/user/add') }}" class="btn btn-success" style="float:right">Create</a>
         </div>
         <div class="card-body">
             <table class="table table-stripped table-bordered">

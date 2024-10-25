@@ -41,7 +41,9 @@ Route::get('/login', [HomeController::class, 'login'])->name('home.login');
 // Admin Routes
 // Route::get('/admin/login', [AdminController::class,'login'])->name('admin.login');
 
-
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/user/add', [UserController::class, 'add']);
+Route::post('/user/store',[UserController::class,'store']);
 // middleware(['web','admin'])
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
@@ -54,10 +56,19 @@ Route::prefix('admin')->group(function () {
     Route::post('/poster/store', [PosterController::class, 'store']);
     // manage poster
     
+
+    // manage plan
+
     Route::get('/plan', [PlanController::class, 'index']);
     Route::get('/plan/add', [PlanController::class, 'add']);
-    Route::get('/user', [UserController::class, 'index']);
-    Route::get('/user/add', [UserController::class, 'add']);
+    Route::post('/plan/store', [PlanController::class, 'store']);
+
+    // manage plan
+
+    // manage user
+
+    // manager user
+
     Route::get('/transaction', [TransactionController::class, 'index']);
     Route::get('/transaction/add', [TransactionController::class, 'add']);
 });

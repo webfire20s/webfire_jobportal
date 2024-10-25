@@ -25,20 +25,22 @@ class PlanController extends Controller
     // Handle plan selection and receipt upload
     public function store(Request $request)
     {
+        // Validate the request data
         $request->validate([
-            'plan_id' => 'required|exists:plans,id',
-            'receipt' => 'required|file|mimes:jpeg,png,pdf',
+            'name' => 'required|string|max:255',    // Validate name as required, string, and max length of 255 characters
+            'price' => 'required|numeric',          // Ensure price is required and numeric
+            'description' => 'required|string|max:1000', // Ensure description is required, string, and max 1000 characters
         ]);
-
-        $receiptPath = $request->file('receipt')->store('receipts');
-
-        Transaction::create([
-            'user_id' => auth()->id(),
-            'plan_id' => $request->plan_id,
-            'receipt_url' => $receiptPath,
-            'approved' => false,  // Awaiting admin approval
+    
+        // Create a new plan record
+        Plan::create([
+            'name' => $request->name,               // Store the plan name
+            'price' => $request->price,             // Store the plan price
+            'description' => $request->description, // Store the plan description
         ]);
-
-        return redirect()->back()->with('success', 'Payment receipt uploaded. Waiting for admin approval.');
+    
+        // Redirect back with success message
+        return redirect()->back()->with('success', 'Plan created successfully.');
     }
+    
 }
