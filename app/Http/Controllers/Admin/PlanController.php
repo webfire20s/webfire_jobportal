@@ -22,6 +22,23 @@ class PlanController extends Controller
     {
         return view('admin.plan.add');
     }
+
+
+    public function destroy($id)
+    {
+        // Find the plan by ID
+        $plan = Plan::findOrFail($id);
+
+        // Delete the plan
+        $plan->delete();
+
+        // Redirect back with success message
+        return redirect()->route('plan/')->with('success', 'Plan deleted successfully!');
+    }
+
+
+
+
     // Handle plan selection and receipt upload
     public function store(Request $request)
     {

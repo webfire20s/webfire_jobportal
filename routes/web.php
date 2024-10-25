@@ -41,10 +41,10 @@ Route::get('/login', [HomeController::class, 'login'])->name('home.login');
 // Admin Routes
 // Route::get('/admin/login', [AdminController::class,'login'])->name('admin.login');
 
-Route::get('/user', [UserController::class, 'index']);
-Route::get('/user/add', [UserController::class, 'add']);
-Route::post('/user/store',[UserController::class,'store']);
+
 // middleware(['web','admin'])
+
+
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/category', [PosterCategoryController::class, 'index']);
@@ -54,6 +54,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/poster', [PosterController::class, 'index']);
     Route::get('/poster/add', [PosterController::class, 'add']);
     Route::post('/poster/store', [PosterController::class, 'store']);
+    Route::delete('poster/delete/{id}',[PosterController::class, 'destroy']);
     // manage poster
     
 
@@ -61,12 +62,16 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/plan', [PlanController::class, 'index']);
     Route::get('/plan/add', [PlanController::class, 'add']);
+    Route::delete('plan/destroy/{id}', [PlanController::class, 'destroy'])->name('plans.destroy');
+
     Route::post('/plan/store', [PlanController::class, 'store']);
 
     // manage plan
 
     // manage user
-
+    Route::get('/user', [UserController::class, 'index']);
+    Route::get('/user/add', [UserController::class, 'add']);
+    Route::post('/user/store',[UserController::class,'store']);
     // manager user
 
     Route::get('/transaction', [TransactionController::class, 'index']);

@@ -23,6 +23,21 @@ class PosterController extends Controller
         $categories = PostersCategory::all();
         return view('admin.poster.add',compact('categories'));
     }
+
+
+    public function destroy($id)
+    {
+        // Find the plan by ID
+        $plan = Poster::findOrFail($id);
+
+        // Delete the plan
+        $plan->delete();
+
+        // Redirect back with success message
+        return redirect()->route('admin.poster')->with('success', 'Poster deleted successfully!');
+    }
+
+
     public function store(Request $request)
 {
     // Log the incoming request data
