@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\PosterController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\PosterCategoryController;
-use App\Http\Controllers\User\UserDashboard;
+use App\Http\Controllers\User\UserDashboardController;
 
 
 
@@ -81,7 +81,7 @@ Route::prefix('admin')->group(function () {
 
 
 Route::prefix('user')->group(function (){
-    Route::get('/home', [UserController1::class, 'index'])->name('user.home');
+    Route::get('/', [UserDashboardController::class, 'index'])->name('user.home');
 });
 
 
