@@ -49,3 +49,21 @@
 </body>
 
 </html>
+<script>
+    function previewImage(event, previewId) {
+        const imagePreview = document.getElementById(previewId);
+        const file = event.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                imagePreview.src = e.target.result;
+                imagePreview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        } else {
+            imagePreview.style.display = 'none';
+            imagePreview.src = '';
+        }
+    }
+</script>
