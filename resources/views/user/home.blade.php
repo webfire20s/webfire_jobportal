@@ -3,6 +3,15 @@
 @section('title', 'Home Page')
 
 @section('content')
+<style>
+    .carousel-vertical .carousel-inner {
+        display: flex;
+        flex-direction: column;
+    }
+    .carousel-vertical .carousel-item {
+        transition: transform 1s ease-in-out;
+    }
+</style>
     <!-- billboard start  -->
     <section id="billboard">
         <div class="container ">
@@ -114,7 +123,36 @@
             </div>
           </div>
           <div class="col-md-3">
+              <div class="row">
+              <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header">
+                      <h6>Latest News</h6>
+                  </div>
+                  <div class="card-body">
+                      <!-- Vertical Carousel Start -->
+                      <div id="verticalNewsCarousel" class="carousel slide carousel-vertical" data-bs-ride="carousel" data-bs-interval="3000">
+                          <div class="carousel-inner">
+                              <!-- News Slide 1 -->
+                              <div class="carousel-item active">
+                                  <img src="{{ asset('public/theme/user/1.jpeg') }}" class="d-block w-100" alt="News Image 1" style="width: 60%; margin: auto;">
+                              </div>
+                              <!-- News Slide 2 -->
+                              <div class="carousel-item">
+                                  <img src="{{ asset('public/theme/user/2.jpeg') }}" class="d-block w-100" alt="News Image 2" style="width: 60%; margin: auto;">
+                              </div>
+                              <!-- News Slide 3 -->
+                              <div class="carousel-item">
+                                  <img src="{{ asset('public/theme/user/3.jpeg') }}" class="d-block w-100" alt="News Image 3" style="width: 60%; margin: auto;">
+                              </div>
+                          </div>
+                      </div>
+                      <!-- Vertical Carousel End -->
+                  </div>
+              </div>
+          </div>
 
+              </div>
           </div>
         </div>
       </div>
