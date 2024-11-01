@@ -14,4 +14,10 @@ class UserDashboardController extends Controller
 
         return view('user/home',compact('posters')); 
     }
+
+    public function show($id)
+    {
+        $poster = Poster::findOrFail($id);
+        return view('user.poster_detail', compact('poster'));
+    }
 }

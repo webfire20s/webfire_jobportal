@@ -99,19 +99,22 @@
               @foreach ($posters as $poster)
                   <div class="col-md-3">
                       <div class="panel panel-primary" style="width:80%;background-color:white">
-                          <a href="{{ asset('poster_detail/', $poster->id) }}" target="_blank">
-                              <div class="panel-body">
-                                  <img class="card-img-top" src="{{ asset('storage/app/public/' . $poster->image) }}" alt="{{ $poster->title }}">
-                              </div>
-                              <div class="panel-footer">
-                                  <p class="panel-text text-center" style="color:black">{{ $poster->title }}</p>
-                              </div>
-                          </a>
+                      <a href="{{ $poster->poster_url }}" target="_blank">
+                          <div class="panel-body">
+                            
+                              <img class="card-img-top" src="{{ asset('storage/app/public/' . $poster->image) }}" alt="{{ $poster->title }}">
+                              
+                            
+                              <!-- <p class="card-text">{{ $poster->description }}</p> -->
+                          </div>
+                          <div class="panel-footer">
+                            <p class="panel-text text-center" style="color:black">{{ $poster->title }}</p>
+                          </div>
+                      </a>
                       </div>
                   </div>
               @endforeach
           </div>
-
 
           </div>
           <div class="col-md-3">

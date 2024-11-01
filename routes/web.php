@@ -82,6 +82,8 @@ Route::prefix('admin')->group(function () {
 
 Route::prefix('user')->group(function (){
     Route::get('/', [UserDashboardController::class, 'index'])->name('user.home');
+    Route::get('/poster_detail/{id}', [UserDashboardController::class, 'show'])->name('poster.detail');
+    
 });
 
 
