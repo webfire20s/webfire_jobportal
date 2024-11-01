@@ -95,26 +95,20 @@
               </div>
           </div>
           <div class="col-md-6">
-          <div class="row">
-              @foreach ($posters as $poster)
-                  <div class="col-md-3">
-                      <div class="panel panel-primary" style="width:80%;background-color:white">
-                      <a href="{{ $poster->poster_url }}" target="_blank">
-                          <div class="panel-body">
-                            
-                              <img class="card-img-top" src="{{ asset('storage/app/public/' . $poster->image) }}" alt="{{ $poster->title }}">
-                              
-                            
-                              <!-- <p class="card-text">{{ $poster->description }}</p> -->
-                          </div>
-                          <div class="panel-footer">
-                            <p class="panel-text text-center" style="color:black">{{ $poster->title }}</p>
-                          </div>
-                      </a>
-                      </div>
-                  </div>
-              @endforeach
-          </div>
+            <div class="row">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h2>{{ $poster->title }}</h2> <!-- Display the title of the poster -->
+                    </div>
+                    <div class="card-body">
+                        <img src="{{ asset('storage/app/public/' . $poster->image) }}" alt="{{ $poster->title }}" class="img-fluid mb-3" style="height:40%;width:100%">
+                        <p>{{ $poster->description }}</p> <!-- Display the description -->
+                        <a href="{{ asset('storage/app/public/' . $poster->pdf)}}" class="btn btn-primary">Download JOB PDF </a>
+                        <a href="{{ $poster->poster_url }}" class="btn btn-primary">Job Link</a>
+                        <a href="{{ route('user.home') }}" class="btn btn-primary">Back to Home</a>
+                    </div>
+                </div>
+            </div>
 
           </div>
           <div class="col-md-3">

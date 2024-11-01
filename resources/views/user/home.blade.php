@@ -41,11 +41,11 @@
         <div class="row">
           <div class="col-md-3">
               <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark mt-4" style="width: 280px;">
-              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+              <!-- <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
                 <span class="fs-4">Sidebar</span>
-              </a>
-              <hr>
+              </a> -->
+              <!-- <hr> -->
               <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
                   <a href="#" class="nav-link active" aria-current="page">
@@ -99,7 +99,7 @@
               @foreach ($posters as $poster)
                   <div class="col-md-3">
                       <div class="panel panel-primary" style="width:80%;background-color:white">
-                          <a href="{{ asset('poster_detail/', $poster->id) }}" target="_blank">
+                          <a href="{{ url('user/poster_detail', $poster->id) }}" target="_blank">
                               <div class="panel-body">
                                   <img class="card-img-top" src="{{ asset('storage/app/public/' . $poster->image) }}" alt="{{ $poster->title }}">
                               </div>
