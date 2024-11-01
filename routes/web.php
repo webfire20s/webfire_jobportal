@@ -25,7 +25,7 @@ use App\Http\Controllers\User\UserDashboardController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
-
+Route::get('/sign_up',[HomeController::class,'signUpForm']);
 // Admin routes - Only accessible by users with role 'admin'
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
@@ -82,6 +82,7 @@ Route::prefix('admin')->group(function () {
 
 Route::prefix('user')->group(function () {
     Route::get('/', [UserDashboardController::class, 'index'])->name('user.home');
+
     Route::get('/poster_detail/{id}', [UserDashboardController::class, 'show'])->name('poster.detail');
 });
 

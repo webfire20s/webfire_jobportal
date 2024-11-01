@@ -18,7 +18,10 @@ class HomeController extends Controller
     {
         return view('auth.login');  // Create a view for the login form
     }
-
+    public function signUpForm()
+    {
+        return view('sign_up');
+    }
     // Handle login logic
     public function login(Request $request)
     {

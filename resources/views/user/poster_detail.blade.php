@@ -101,11 +101,13 @@
                         <h2>{{ $poster->title }}</h2> <!-- Display the title of the poster -->
                     </div>
                     <div class="card-body">
+                   
                         <img src="{{ asset('storage/app/public/' . $poster->image) }}" alt="{{ $poster->title }}" class="img-fluid mb-3" style="height:40%;width:100%">
-                        <p>{{ $poster->description }}</p> <!-- Display the description -->
+               
                         <a href="{{ asset('storage/app/public/' . $poster->pdf)}}" class="btn btn-primary">Download JOB PDF </a>
                         <a href="{{ $poster->poster_url }}" class="btn btn-primary">Job Link</a>
                         <a href="{{ route('user.home') }}" class="btn btn-primary">Back to Home</a>
+                        <p class="mt-3">{{ $poster->description }}</p> <!-- Display the description -->
                     </div>
                 </div>
             </div>

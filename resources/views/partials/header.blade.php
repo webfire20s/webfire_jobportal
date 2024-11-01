@@ -138,7 +138,7 @@
 
 
                         <li class="nav-item">
-                            <a class="btn-medium btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Sign up</a>
+                            <a class="btn-medium btn btn-primary" href="{{ url('sign_up') }}" >Sign up</a>
                         </li>
 
                         <!-- Modal -->
