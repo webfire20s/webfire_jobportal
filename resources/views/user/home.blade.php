@@ -95,32 +95,22 @@
               </div>
           </div>
           <div class="col-md-6">
-            <div class="row">
-              <div class="col-md-3">
-                <div class="card" style="width:80%;">
-                    <img class="card-img-top" src="https://img.freepik.com/free-vector/gradient-background-vasant-panchami-festival_23-2149906730.jpg" alt="Card image cap">
-                    
-                </div>
-              </div>
-              <div class="col-md-3">
-              <div class="card" style="width:80%;">
-                    <img class="card-img-top" src="https://img.freepik.com/free-vector/gradient-background-vasant-panchami-festival_23-2149906730.jpg" alt="Card image cap">
-                    
-                </div>
-              </div>
-              <div class="col-md-3">
-              <div class="card" style="width:80%;">
-                    <img class="card-img-top" src="https://img.freepik.com/free-vector/gradient-background-vasant-panchami-festival_23-2149906730.jpg" alt="Card image cap">
-                    
-                </div>
-              </div>
-              <div class="col-md-3">
-              <div class="card" style="width:80%;">
-                    <img class="card-img-top" src="https://img.freepik.com/free-vector/gradient-background-vasant-panchami-festival_23-2149906730.jpg" alt="Card image cap">
-                    
-                </div>
-              </div>
-            </div>
+          <div class="row">
+              @foreach ($posters as $poster)
+                  <div class="col-md-3">
+                      <div class="card" style="width:80%;">
+                          <div class="card-body">
+                            <a href="{{ $poster->poster_url }}" target="_blank">
+                              <img class="card-img-top" src="{{ asset('storage/app/public/' . $poster->image) }}" alt="{{ $poster->title }}">
+                              <p class="card-text">{{ $poster->title }}</p>
+                             </a>
+                              <!-- <p class="card-text">{{ $poster->description }}</p> -->
+                          </div>
+                      </div>
+                  </div>
+              @endforeach
+          </div>
+
           </div>
           <div class="col-md-3">
               <div class="row">
