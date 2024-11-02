@@ -25,6 +25,54 @@ class AdminController extends Controller
         return view('admin.login');
     }
 
+    public function userstore(Request $request)
+    {
+        // Validate the form inputs
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:6|confirmed',
+            'role' => 'nullable|string',
+            'mobile' => 'nullable|string|max:15',
+            'aadhar' => 'nullable|string|max:12',
+            'address' => 'nullable|string|max:255',
+            'state' => 'nullable|string|max:100',
+            'pincode' => 'nullable|string|max:6',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'aadhar_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'pan_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Handle file uploads
+        $photoPath = $request->file('photo') ? $request->file('photo')->store('photos') : null;
+        $aadharPhotoPath = $request->file('aadhar_photo') ? $request->file('aadhar_photo')->store('aadhar_photos') : null;
+        $panPhotoPath = $request->file('pan_photo') ? $request->file('pan_photo')->store('pan_photos') : null;
+
+        // Create the user
+        $user = new User();
+        $user->name = $validatedData['name'];
+        $user->email = $validatedData['email'];
+        $user->password = Hash::make($validatedData['password']);
+        $user->role = $request->input('role');
+        $user->mobile = $request->input('mobile');
+        $user->aadhar = $request->input('aadhar');
+        $user->address = $request->input('address');
+        $user->state = $request->input('state');
+        $user->pincode = $request->input('pincode');
+        $user->status = 'deactive'; // Default status
+
+        // Set file paths for uploaded files
+        $user->photo = $photoPath;
+        $user->aadhar_photo = $aadharPhotoPath;
+        $user->pan_photo = $panPhotoPath;
+
+        // Save the user to the database
+        $user->save();
+
+        // Redirect back with a success message
+        return redirect()->back()->with('success', 'User created successfully!');
+    }
+
     public function do_login(Request $request)
     {
         

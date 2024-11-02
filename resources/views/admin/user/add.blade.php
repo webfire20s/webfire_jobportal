@@ -5,7 +5,7 @@
 @section('title', 'Home Page')
 
 @section('content')
-<form method="POST" action="{{ url('user/store') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ url('admin/user/store') }}" enctype="multipart/form-data">
     @csrf <!-- Always include CSRF token in Laravel forms -->
 
     <div class="container">
@@ -53,10 +53,7 @@
                 </div>
 
                 <!-- Password Field -->
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                </div>
+
 
                 <!-- Mobile Field -->
                 <div class="form-group">
@@ -105,7 +102,18 @@
                     <label for="pan_photo">PAN Photo (optional):</label>
                     <input type="file" class="form-control" id="pan_photo" name="pan_photo" accept="image/*">
                 </div>
+
+                <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
+
+            <div class="form-group">
+                <label for="password_confirmation">Confirm Password:</label>
+                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+            </div>
+            </div>
+            
 
             <!-- Save Button -->
             <div class="card-footer">

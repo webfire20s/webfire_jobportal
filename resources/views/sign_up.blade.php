@@ -9,11 +9,25 @@
             <div class="row flex-lg-row-reverse align-items-center ">
                 <div class="panel mt-7" style="background-color:white">
                     <div class="panel-heading mt-3" >
+                        @if(session('success'))
+                            <div class="alert alert-success">{{ session('success') }}</div>
+                        @endif
+
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
                         <h2 style="color:black;" class="text-center">Registration</h2>
                     </div>
                     <div class="panel-body">
-                    <form id="form4" class="form-group flex-wrap p-3">
+                    <form id="form4" class="form-group flex-wrap p-3" action="{{ route('sign_up.submit') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-input col-lg-12 my-4">
                             <div class="row">
                             <div class="col-lg-3">
@@ -61,6 +75,16 @@
                                 </div>
                                 <div class="col-lg-9">
                                     <input type="text" id="exampleAddress" name="Address" placeholder="Enter Address" class="form-control ps-3"> 
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="form-input col-lg-12 my-4">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label for="exampleOfficeAddress" class="form-label fs-6 text-uppercase fw-bold text-black">Office Address </label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <input type="text" id="exampleOfficeAddress" name="OfficeAddress" placeholder="Enter Office Address" class="form-control ps-3"> 
                                 </div>    
                             </div>
                         </div>

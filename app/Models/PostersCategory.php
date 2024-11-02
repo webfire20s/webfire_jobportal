@@ -10,7 +10,7 @@ class PostersCategory extends Model
     use HasFactory;
 
     // Specify the table name if it doesn't follow the naming convention
-    protected $table = 'posters_category'; // Set the table name
+    protected $table = 'posters_category';
 
     // Specify the primary key if it's not 'id'
     protected $primaryKey = 'id'; // Default is 'id', so this can be omitted if using the default
@@ -22,11 +22,13 @@ class PostersCategory extends Model
     ];
 
     // Timestamps are enabled by default, if you don't want them, add:
-    // public $timestamps = true;
+    // public $timestamps = false; // Use false if your table doesn't have created_at and updated_at
 
+    /**
+     * Get the posters for the category.
+     */
     public function posters()
     {
-        return $this->hasMany(Poster::class, 'category_id'); // Adjust foreign key if necessary
+        return $this->hasMany(Poster::class, 'category_id');
     }
-    
 }

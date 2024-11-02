@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
     {
-        // Return the user dashboard view
-        return view('admin.user.index');  // Ensure you have a view at resources/views/user/dashboard.blade.php
+        $users = User::all(); // Fetch all users from the 'users' table
+        return view('admin/user/index', compact('users')); 
     }
 
     public function add()

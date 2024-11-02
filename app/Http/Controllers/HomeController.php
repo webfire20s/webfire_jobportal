@@ -22,6 +22,29 @@ class HomeController extends Controller
     {
         return view('sign_up');
     }
+
+    public function signUpSubmit(Request $request)
+    {
+        // Validate the form data
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'aadhar' => 'required|numeric|digits:12',
+            'email' => 'required|email|unique:users,email',
+            'mobile' => 'required|numeric|digits:10',
+            'Address' => 'required|string|max:255',
+            'state' => 'required|string',
+            'pincode' => 'required|numeric|digits:6',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048', // photo validation
+            'aadharImage' => 'required|image|mimes:jpeg,png,jpg|max:2048', // Aadhar image validation
+            'panImage' => 'required|image|mimes:jpeg,png,jpg|max:2048', // Pan image validation
+        ]);
+    
+        // Process the data and save to the database if needed
+    
+        // Redirect with a success message
+        return redirect()->back()->with('success', 'Registration successful!');
+    }
+    
     // Handle login logic
     public function login(Request $request)
     {
