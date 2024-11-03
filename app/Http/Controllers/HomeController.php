@@ -25,24 +25,45 @@ class HomeController extends Controller
 
     public function signUpSubmit(Request $request)
     {
-        // Validate the form data
+        // Validate the request
         $request->validate([
             'name' => 'required|string|max:255',
-            'aadhar' => 'required|numeric|digits:12',
             'email' => 'required|email|unique:users,email',
-            'mobile' => 'required|numeric|digits:10',
-            'Address' => 'required|string|max:255',
-            'state' => 'required|string',
-            'pincode' => 'required|numeric|digits:6',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048', // photo validation
-            'aadharImage' => 'required|image|mimes:jpeg,png,jpg|max:2048', // Aadhar image validation
-            'panImage' => 'required|image|mimes:jpeg,png,jpg|max:2048', // Pan image validation
+            'password' => 'required|min:8|confirmed',
+            'aadhar' => 'required|string|max:20',
+            'mobile' => 'required|string|max:15',
+            'address' => 'required|string|max:255',
+            'state' => 'required|string|max:255',
+            'pincode' => 'required|string|max:10',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'aadharImage' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'panImage' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
-    
-        // Process the data and save to the database if needed
-    
-        // Redirect with a success message
-        return redirect()->back()->with('success', 'Registration successful!');
+
+        // Handle file uploads and store them in the `storage/app/public` directory
+        $photoPath = $request->file('image') ? $request->file('image')->store('photos', 'public') : null;
+        $aadharPath = $request->file('aadharImage') ? $request->file('aadharImage')->store('aadhar', 'public') : null;
+        $panPath = $request->file('panImage') ? $request->file('panImage')->store('pan', 'public') : null;
+
+        // Create a new user with the form data
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'aadhar' => $request->aadhar,
+            'mobile' => $request->mobile,
+            'address' => $request->address,
+            'state' => $request->state,
+            'pincode' => $request->pincode,
+            'photo' => $photoPath,
+            'aadhar_photo' => $aadharPath,
+            'pan_photo' => $panPath,
+            'role' => 'user',  // or set any default role
+            'status' => 'active',  // default status
+        ]);
+
+        // Redirect with success message
+        return redirect()->route('sign_up')->with('success', 'Registration successful!');
     }
     
     // Handle login logic

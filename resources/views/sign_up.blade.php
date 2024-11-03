@@ -9,19 +9,20 @@
             <div class="row flex-lg-row-reverse align-items-center ">
                 <div class="panel mt-7" style="background-color:white">
                     <div class="panel-heading mt-3" >
-                        @if(session('success'))
-                            <div class="alert alert-success">{{ session('success') }}</div>
-                        @endif
+                    @if(session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                    @endif
 
-                        @if($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
 
                         <h2 style="color:black;" class="text-center">Registration</h2>
                     </div>
@@ -78,7 +79,7 @@
                                 </div>    
                             </div>
                         </div>
-                        <div class="form-input col-lg-12 my-4">
+                        <!-- <div class="form-input col-lg-12 my-4">
                             <div class="row">
                                 <div class="col-lg-3">
                                     <label for="exampleOfficeAddress" class="form-label fs-6 text-uppercase fw-bold text-black">Office Address </label>
@@ -87,7 +88,7 @@
                                     <input type="text" id="exampleOfficeAddress" name="OfficeAddress" placeholder="Enter Office Address" class="form-control ps-3"> 
                                 </div>    
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-input col-lg-12 my-4">
                             <div class="row">
                                 <div class="col-lg-3">
