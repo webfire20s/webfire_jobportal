@@ -11,10 +11,31 @@
     .carousel-vertical .carousel-item {
         transition: transform 1s ease-in-out;
     }
+    .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.marquee p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
 </style>
 
 <section id="billboard">
     <div class="container">
+    <div class="marquee">
+    <p>Important Notice</p>
+</div>
+
         <div class="row flex-lg-row-reverse align-items-center">
             <div class="col-lg-12">
                 <div class="row">
@@ -85,6 +106,9 @@
 
             <div class="col-md-3">
                 <div class="row">
+                <div class="marquee">
+    <p>Updated News</p>
+</div>
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
