@@ -92,4 +92,5 @@ Route::prefix('user')->group(function () {
 
 Route::middleware(['web'])->group(function () {
     Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
+    Route::post('/api/admin/login', [AdminController::class, 'do_login'])->name('admin.do_login');
 });

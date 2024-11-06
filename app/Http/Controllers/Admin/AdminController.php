@@ -73,25 +73,18 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'User created successfully!');
     }
 
-    public function do_login(Request $request)
-    {
-        
+    public function do_login(Request $request) {
         $credentials = $request->only('email', 'password');
-        
         Log::info('Login attempt', ['credentials' => $credentials]);
-
+    
         if (Auth::attempt($credentials)) {
-            // Regenerate session on successful login
-            // $request->session()->regenerate();
-
             Log::info('Login successful', ['user' => Auth::user()]);
-
-            // Check if the user has an 'admin' role
+    
             if (Auth::user()->role === 'admin') {
                 return response()->json([
                     'message' => 'Admin login successful',
                     'user' => Auth::user(),
-                    'success'=>1
+                    'success' => 1
                 ], 200);
             } else {
                 Auth::logout();
@@ -101,12 +94,13 @@ class AdminController extends Controller
                 ], 401);
             }
         }
-
+    
         Log::warning('Invalid login credentials', ['credentials' => $credentials]);
         return response()->json([
             'message' => 'Invalid credentials',
         ], 401);
     }
+    
 
 
    
