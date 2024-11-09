@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('home');
     }
 
@@ -65,24 +67,38 @@ class HomeController extends Controller
         // Redirect with success message
         return redirect()->route('sign_up')->with('success', 'Registration successful!');
     }
-    
+
     // Handle login logic
     public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+{
+    \Log::info("Login attempt started for email: {$request->email}");
 
-        // Attempt to log the user in
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Authentication passed, redirect to dashboard
-            return redirect()->intended('/user');  // Change to your desired route
-        }
+    // Validate the incoming request
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+    ]);
 
-        // Authentication failed
-        return back()->withErrors(['email' => 'Invalid credentials.']);
+    // Attempt to authenticate the user
+    if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        // Authentication passed
+        \Log::info("Login successful for email: {$request->email}");
+        
+        session()->flash('success', 'Login successful! Welcome back.');
+        
+        // Redirect the user to their intended destination (or /user as fallback)
+        return redirect()->intended('/user');
     }
+
+    // Authentication failed
+    \Log::warning("Login failed for email: {$request->email}. Invalid credentials.");
+
+    // Return with error message
+    return back()->withErrors(['email' => 'Invalid credentials.'])
+        ->with('error', 'Login failed! Please check your credentials and try again.');
+}
+
+
 
     // Show the registration form
     public function showRegistrationForm()

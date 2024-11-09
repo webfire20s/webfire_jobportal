@@ -38,10 +38,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 });
 
 // User routes - Only accessible by users with role 'user'
-Route::middleware(['auth', 'role:user'])->group(function () {
-    Route::get('/user', [UserController::class, 'index'])->name('user.dashboard');
-});
-Route::get('/login', [HomeController::class, 'login'])->name('home.login');
+// Route::middleware(['auth', 'role:user'])->prefix('user')->group(function () {
+//     Route::get('/', [UserController::class, 'index'])->name('user.dashboard');
+// });
+Route::post('/login', [HomeController::class, 'login'])->name('home.login');
 // Admin Routes
 // Route::get('/admin/login', [AdminController::class,'login'])->name('admin.login');
 
@@ -83,7 +83,7 @@ Route::prefix('admin')->group(function () {
 });
 
 
-Route::prefix('user')->group(function () {
+Route::middleware(['auth', 'role:user'])->prefix('user')->group(function () {
     Route::get('/', [UserDashboardController::class, 'index'])->name('user.home');
 
     Route::get('/poster_detail/{id}', [UserDashboardController::class, 'show'])->name('poster.detail');

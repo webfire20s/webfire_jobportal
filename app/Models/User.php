@@ -3,71 +3,58 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\User as Authenticatable; // Correct inheritance
 
-class User extends Authenticatable
+class User extends Authenticatable // Change here: extend Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    // Table name (optional if the default is used)
+    protected $table = 'users';
+
+    // Primary key (optional if the default is 'id')
+    protected $primaryKey = 'id';
+
+    // The attributes that are mass assignable
     protected $fillable = [
         'name',
         'email',
         'password',
-        'role',          // If you have a 'role' field to define user roles
-        'mobile',        // Added mobile field
-        'aadhar',        // Added aadhar field
-        'address',       // Added address field
-        'state',         // Added state field
-        'pincode',       // Added pincode field
-        'photo',         // For storing user profile photo (file path)
-        'aadhar_photo',  // For storing aadhar photo (file path)
-        'pan_photo',     // For storing PAN photo (file path)
+        'role',
+        'shop_name',
+        'aadhar',
+        'mobile',
+        'address',
+        'state',
+        'pincode',
+        'status',
+        'photo',
+        'aadhar_photo',
+        'pan_photo',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+    // The attributes that should be hidden for arrays (e.g. passwords)
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
+    // The attributes that should be cast to native types
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed', // Laravel 10+ auto-hashes password fields
     ];
 
-    /**
-     * Set the user's password and automatically hash it.
-     *
-     * @param string $password
-     */
-    public function setPasswordAttribute($password)
+    // The method to automatically hash passwords before storing
+    public function setPasswordAttribute($value)
     {
-        $this->attributes['password'] = Hash::make($password);
+        // If the password is not already hashed, hash it before saving
+        if (!empty($value)) {
+            $this->attributes['password'] = Hash::make($value);
+        }
     }
 
-    /**
-     * Define relationship if the user has transactions
-     * You can add more relationships as needed.
-     */
-    public function transactions()
-    {
-        return $this->hasMany(Transaction::class);
-    }
+   
 }
