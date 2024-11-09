@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head> <!--end::Head--> <!--begin::Body-->
-
+<!-- add login page  content here -->
 <body class="login-page bg-body-secondary">
     <div class="login-box">
         <div class="login-logo"> <a href="{{ url('/') }}"><b>Admin</b> Panel</a> </div> <!-- /.login-logo -->
