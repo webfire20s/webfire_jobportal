@@ -5,6 +5,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> @yield('title', 'JobPortal') </title>
+    <meta name="description" content="@yield('meta_description', 'JobPortal')">
+    <meta name="keywords" content="@yield('keywords', 'JobPortal')">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="@yield('meta_title', 'JobPortal')">
+    <meta property="og:description" content="@yield('meta_description', 'JobPortal')">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:image" content="@yield('meta_image', asset('public/logo1.png') )">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="@yield('meta_image', asset('public/logo1.png') )">
+    <meta name="twitter:title" content="@yield('meta_title', 'JobPortal')">
+    <meta name="twitter:description" content="@yield('meta_description', 'JobPortal')">
+    <meta name="twitter:image" content="@yield('meta_image', asset('public/logo1.png') )">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+       "@context": "https://schema.org",
+       "@type": "BlogPosting",
+       "headline": "@yield('meta_title', 'JobPortal')",
+       "image": "@yield('meta_image', asset('public/logo1.png') )",
+       "author": {
+           "@type": "Person",
+           "name": "@yield('author', 'Adarsh')"
+       },
+       "publisher": {
+           "@type": "Organization",
+           "name": "@yield('meta_title', 'JobPortal')",
+           "logo": {
+               "@type": "ImageObject",
+               "url": "@yield('meta_image', asset('public/logo1.png') )"
+           }
+       },
+       "datePublished": "2024-11-10T08:00:00+00:00",
+       "description": "@yield('meta_description', 'JobPortal')"
+    }
+    </script>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('public/theme/web') }}/css/vendor.css">
 

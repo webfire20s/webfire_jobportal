@@ -23,7 +23,15 @@ class UserDashboardController extends Controller
     
     public function show($id)
     {
+        $categories = PostersCategory::where('status', 1)->get();
         $poster = Poster::findOrFail($id);
-        return view('user.poster_detail', compact('poster'));
+        return view('user.poster_detail', compact('poster','categories'));
     }
+    public function setting(){
+
+    }
+    public function profile(){
+
+    }
+    
 }

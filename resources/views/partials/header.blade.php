@@ -33,9 +33,9 @@
                             <a class="nav-link me-md-4" href="#help">Contact</a>
                         </li>
 
-                        <div class="dropdown">
-                            @auth
-                                @if(auth()->user()->role === 'user')
+                        @auth
+                            @if(auth()->user()->role === 'user')
+                                <div class="dropdown">
                                     <!-- If the user is authenticated and has the role 'user', show profile dropdown -->
                                     <a href="#"
                                         class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
@@ -46,6 +46,7 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
                                         aria-labelledby="dropdownUser1">
+                                        <li><a class="dropdown-item" href="{{ url('user') }}">Dashboard</a></li>
                                         <li><a class="dropdown-item" href="{{ url('profile') }}">Profile</a></li>
                                         <li><a class="dropdown-item" href="{{ url('settings') }}">Settings</a></li>
                                         <li>
@@ -53,18 +54,18 @@
                                         </li>
                                         <li><a class="dropdown-item" href="{{ url('logout') }}">Sign out</a></li>
                                     </ul>
-                                @endif
-                            @else
-                                <!-- If the user is not authenticated, show login and sign-up -->
-                                <li class="nav-item">
-                                    <a class="nav-link mx-md-4" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">Login</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="btn-medium btn btn-primary" href="{{ url('sign_up') }}">Sign up</a>
-                                </li>
-                            @endauth
-                        </div>
+                                   </div>
+                            @endif
+                        @else
+                            <!-- If the user is not authenticated, show login and sign-up -->
+                            <li class="nav-item">
+                                <a class="nav-link mx-md-4" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn-medium btn btn-primary" href="{{ url('sign_up') }}">Sign up</a>
+                            </li>
+                        @endauth
 
 
                         <!-- Modal -->

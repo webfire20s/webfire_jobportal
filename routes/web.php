@@ -42,6 +42,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 //     Route::get('/', [UserController::class, 'index'])->name('user.dashboard');
 // });
 Route::post('/login', [HomeController::class, 'login'])->name('home.login');
+Route::get('/logout', [HomeController::class, 'logout'])->name('home.logout');
 // Admin Routes
 // Route::get('/admin/login', [AdminController::class,'login'])->name('admin.login');
 

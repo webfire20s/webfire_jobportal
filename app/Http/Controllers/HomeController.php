@@ -134,6 +134,6 @@ class HomeController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/login');  // Change to your desired route
+        return redirect('/');  // Change to your desired route
     }
 }
