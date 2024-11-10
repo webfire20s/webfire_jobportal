@@ -19,7 +19,7 @@
               <li class="user-header text-bg-primary"> 
                 <p>
                   Name - Admin
-                  <small>Member since Nov. 2023</small>
+                  <!-- <small>Member since Nov. 2023</small> -->
                 </p>
               </li> <!--end::User Image--> <!--begin::Menu Body-->
               <li class="user-body"> <!--begin::Row-->
@@ -29,7 +29,8 @@
                   <div class="col-4 text-center"> <a href="#">Youtube</a> </div>
                 </div> <!--end::Row-->
               </li> <!--end::Menu Body--> <!--begin::Menu Footer-->
-              <li class="user-footer"> <a href="#" class="btn btn-default btn-flat">Profile</a> <a href="#"
+              <li class="user-footer"> <a href="#" class="btn btn-default btn-flat">Profile</a> 
+              <a onclick="return confirm('Are you sure ?')" href="{{ url('admin/logout') }}"
                   class="btn btn-default btn-flat float-end">Sign out</a> </li> <!--end::Menu Footer-->
             </ul>
           </li> <!--end::User Menu Dropdown-->

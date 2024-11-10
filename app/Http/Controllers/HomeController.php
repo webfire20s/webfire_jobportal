@@ -70,33 +70,33 @@ class HomeController extends Controller
 
     // Handle login logic
     public function login(Request $request)
-{
-    \Log::info("Login attempt started for email: {$request->email}");
+    {
+        \Log::info("Login attempt started for email: {$request->email}");
 
-    // Validate the incoming request
-    $request->validate([
-        'email' => 'required|email',
-        'password' => 'required',
-    ]);
+        // Validate the incoming request
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-    // Attempt to authenticate the user
-    if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-        // Authentication passed
-        \Log::info("Login successful for email: {$request->email}");
-        
-        session()->flash('success', 'Login successful! Welcome back.');
-        
-        // Redirect the user to their intended destination (or /user as fallback)
-        return redirect()->intended('/user');
+        // Attempt to authenticate the user
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            // Authentication passed
+            \Log::info("Login successful for email: {$request->email}");
+
+            session()->flash('success', 'Login successful! Welcome back.');
+
+            // Redirect the user to their intended destination (or /user as fallback)
+            return redirect()->intended('/user');
+        }
+
+        // Authentication failed
+        \Log::warning("Login failed for email: {$request->email}. Invalid credentials.");
+
+        // Return with error message
+        return back()->withErrors(['email' => 'Invalid credentials.'])
+            ->with('error', 'Login failed! Please check your credentials and try again.');
     }
-
-    // Authentication failed
-    \Log::warning("Login failed for email: {$request->email}. Invalid credentials.");
-
-    // Return with error message
-    return back()->withErrors(['email' => 'Invalid credentials.'])
-        ->with('error', 'Login failed! Please check your credentials and try again.');
-}
 
 
 

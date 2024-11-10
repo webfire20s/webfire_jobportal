@@ -74,10 +74,12 @@ class AdminController extends Controller
     }
 
     public function do_login(Request $request) {
-        $credentials = $request->only('email', 'password');
-        Log::info('Login attempt', ['credentials' => $credentials]);
-    
-        if (Auth::attempt($credentials)) {
+        // Validate the incoming request
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             Log::info('Login successful', ['user' => Auth::user()]);
     
             if (Auth::user()->role === 'admin') {
@@ -95,10 +97,16 @@ class AdminController extends Controller
             }
         }
     
-        Log::warning('Invalid login credentials', ['credentials' => $credentials]);
+        Log::warning('Invalid login credentials', ['email' => $request->email, 'password' => $request->password]);
         return response()->json([
             'message' => 'Invalid credentials',
         ], 401);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');  // Change to your desired route
     }
     
 

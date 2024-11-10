@@ -50,7 +50,7 @@ Route::get('/logout', [HomeController::class, 'logout'])->name('home.logout');
 // middleware(['web','admin'])
 
 
-Route::prefix('admin')->group(function () {
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/category', [PosterCategoryController::class, 'index']);
     Route::get('/category/add', [PosterCategoryController::class, 'add']);
@@ -93,5 +93,6 @@ Route::middleware(['auth', 'role:user'])->prefix('user')->group(function () {
 
 Route::middleware(['web'])->group(function () {
     Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
+    Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
     Route::post('/api/admin/login', [AdminController::class, 'do_login'])->name('admin.do_login');
 });
