@@ -1,5 +1,3 @@
-
-
 @extends('admin.layout.main')
 
 @section('title', 'Home Page')
@@ -37,17 +35,28 @@
                     </div>
                 @endif
 
+                <!-- Plan Name -->
                 <div class="form-group">
                     <label for="name">Plan Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
                 </div>
+
+                <!-- Plan Price -->
                 <div class="form-group">
                     <label for="price">Plan Price:</label>
-                    <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}">
+                    <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}" required>
                 </div>
+
+                <!-- Plan Description -->
                 <div class="form-group">
                     <label for="description">Plan Description:</label>
-                    <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}">
+                    <textarea class="form-control" id="description" name="description" required>{{ old('description') }}</textarea>
+                </div>
+
+                <!-- Plan Duration -->
+                <div class="form-group">
+                    <label for="duration">Plan Duration (Months):</label>
+                    <input type="number" class="form-control" id="duration" name="duration" value="{{ old('duration') }}" required>
                 </div>
 
             </div>

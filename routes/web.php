@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\PosterCategoryController;
 use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\Admin\PageController;
-
+use App\Http\Controllers\User\UserPlanController;
 
 
 
@@ -78,8 +78,12 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 // User Routes - Restricted to authenticated users with the 'user' role
 Route::middleware(['auth', 'role:user'])->prefix('user')->group(function () {
     // User Dashboard Route
-    Route::get('/', [UserDashboardController::class, 'index'])->name('user.home');
+    Route::middleware('check.plan')->group(function () {
+        Route::get('/', [UserDashboardController::class, 'index'])->name('user.home');
+        Route::get('/poster_detail/{id}', [UserDashboardController::class, 'show'])->name('poster.detail');
+    });
+    Route::get('/plans', [UserPlanController::class, 'index'])->name('plans.page');
+    Route::post('/plans/purchase/{planId}', [UserPlanController::class, 'purchase'])->name('user.plan.purchase');
 
-    // Poster Details Route for Users
-    Route::get('/poster_detail/{id}', [UserDashboardController::class, 'show'])->name('poster.detail');
-});
+    // Route to handle receipt upload after payment
+    Route::post('/plans/upload-receipt/{transactionId}', [UserPlanController::class, 'uploadReceipt'])->name('user.plan.uploadReceipt');});

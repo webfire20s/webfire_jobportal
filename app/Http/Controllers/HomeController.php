@@ -65,7 +65,7 @@ class HomeController extends Controller
         ]);
 
         // Redirect with success message
-        return redirect()->route('sign_up')->with('success', 'Registration successful!');
+        return redirect()->route('sign_up.form')->with('success', 'Registration successful!');
     }
 
     // Handle login logic

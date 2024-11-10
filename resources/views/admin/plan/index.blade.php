@@ -23,6 +23,7 @@
                     <th>#</th>
                     <th>Plan Name</th>
                     <th>Price</th>
+                    <th>Duration (in Months)</th>
                     <th>Description</th>
                     <th>Action</th>
                 </thead>
@@ -32,6 +33,7 @@
                         <td>{{ $loop->iteration }}</td> <!-- Row number -->
                         <td>{{ $plan->name }}</td> <!-- Plan name from database -->
                         <td>{{ $plan->price }}</td> <!-- Plan price from database -->
+                        <td>{{ $plan->duration }}</td> <!-- Plan price from database -->
                         <td>{{ $plan->description }}</td> <!-- Plan description from database -->
                         <td>
                             <!-- Edit Button -->

@@ -9,13 +9,14 @@ class Plan extends Model
 {
     use HasFactory;
 
-    protected $table = 'plans'; 
+    protected $table = 'plans';
 
-    protected $primaryKey = 'id'; 
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'name',
         'price',
-        'description', 
+        'description',
+        'duration', // Include the 'duration' field
     ];
 }

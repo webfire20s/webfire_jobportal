@@ -45,6 +45,7 @@
     }
     </script>
 
+    <link rel="stylesheet" href="//cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('public/theme/web') }}/css/vendor.css">
 
@@ -113,7 +114,11 @@
             toastr.error("{{ session('error') }}");
         @endif
     </script>
+    <script src="//cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script>
+let table = new DataTable('.datatable');
 
+        </script>
 </body>
 
 </html>

@@ -1,0 +1,40 @@
+<!-- resources/views/user/plan/purchase.blade.php -->
+
+@extends('web')
+@section('title', 'Payment Page')
+
+@section('content')
+<div class="container">
+    <h3>Payment for Plan: {{ $plan->name }}</h3>
+
+    <!-- Show the QR code for payment -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Scan this QR Code to Pay</h5>
+            <div>
+                <!-- You can use a package to generate QR code for UPI link -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?data={{ urlencode($paymentLink) }}&size=200x200" alt="QR Code">
+            </div>
+            <p>Scan the QR code and complete the payment using your UPI app.</p>
+        </div>
+    </div>
+
+    <!-- Form to upload receipt after payment -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Upload Payment Receipt</h5>
+            <form method="POST" action="{{ route('user.plan.uploadReceipt', $transaction->id) }}" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    <label for="receipt">Upload Receipt (JPEG, PNG, PDF only)</label>
+                    <input type="file" class="form-control" id="receipt" name="receipt" required>
+                </div>
+                <div class="form-group">
+                <button type="submit" class="btn btn-primary my-4">Submit Receipt</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+@endsection

@@ -47,6 +47,7 @@
                                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
                                         aria-labelledby="dropdownUser1">
                                         <li><a class="dropdown-item" href="{{ url('user') }}">Dashboard</a></li>
+                                        <li><a class="dropdown-item" href="{{ url('user/plans') }}">Plans & Transaction</a></li>
                                         <li><a class="dropdown-item" href="{{ url('profile') }}">Profile</a></li>
                                         <li><a class="dropdown-item" href="{{ url('settings') }}">Settings</a></li>
                                         <li>

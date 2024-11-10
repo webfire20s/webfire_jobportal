@@ -46,6 +46,7 @@ class PlanController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',    // Validate name as required, string, and max length of 255 characters
             'price' => 'required|numeric',          // Ensure price is required and numeric
+            'duration' => 'required|numeric',          // Ensure price is required and numeric
             'description' => 'required|string|max:1000', // Ensure description is required, string, and max 1000 characters
         ]);
     
@@ -53,6 +54,7 @@ class PlanController extends Controller
         Plan::create([
             'name' => $request->name,               // Store the plan name
             'price' => $request->price,             // Store the plan price
+            'duration' => $request->duration,             // Duration the plan
             'description' => $request->description, // Store the plan description
         ]);
     
