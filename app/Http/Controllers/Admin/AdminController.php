@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
 
 
 class AdminController extends Controller
@@ -79,9 +80,14 @@ class AdminController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
+    
+        // Attempt login
+        Log::info('Login attempt', ['email' => $request->email, 'password' => $request->password]);
+
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             Log::info('Login successful', ['user' => Auth::user()]);
     
+            // Check if the user is an admin
             if (Auth::user()->role === 'admin') {
                 return response()->json([
                     'message' => 'Admin login successful',
@@ -89,6 +95,7 @@ class AdminController extends Controller
                     'success' => 1
                 ], 200);
             } else {
+                // Log out if the user is not an admin
                 Auth::logout();
                 Log::warning('Unauthorized access attempt', ['user' => Auth::user()]);
                 return response()->json([
@@ -97,11 +104,12 @@ class AdminController extends Controller
             }
         }
     
-        Log::warning('Invalid login credentials', ['email' => $request->email, 'password' => $request->password]);
+        Log::warning('Invalid login credentials', ['email' => $request->email]);
         return response()->json([
             'message' => 'Invalid credentials',
         ], 401);
     }
+    
 
     public function logout()
     {

@@ -12,6 +12,9 @@ use App\Models\Page;
 
 class HomeController extends Controller
 {
+    public function test(){
+        echo Hash::make('admin');
+    }
     public function index()
     {
         $pages = Page::all();  // Retrieve all pages

@@ -35,7 +35,7 @@ class UserPlanController extends Controller
         $user = auth()->user();  // Get the logged-in user
 
         // Generate a unique payment URL or QR code data for the plan (example: UPI link)
-        $paymentLink = "upi://pay?pa=9955718214@ybl&pn=Your+College&mc=1234&tid=" . uniqid();
+        $paymentLink = "upi://pay?pa=9955718214@ybl&pn=" . urlencode($plan->name) . "&mc=1234&tid=" . uniqid() . "&am=" . $plan->price;
 
         // Store the transaction with an "initiated" status
         $transaction = new Transaction();

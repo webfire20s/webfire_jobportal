@@ -44,6 +44,7 @@ Route::middleware(['web'])->group(function () {
     Route::post('/api/admin/login', [AdminController::class, 'do_login'])->name('admin.do_login');
     Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
     Route::get('latest-news/{id}', [UserDashboardController::class, 'latest_news_details'])->name('latest_news.show');
+    Route::get('test', [HomeController::class, 'test'])->name('test');
 });
 
 // Admin Routes - Restricted to authenticated users with the 'admin' role

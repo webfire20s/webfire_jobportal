@@ -18,9 +18,8 @@
 
                             <!-- Check if user has an active plan -->
                             @php
-                                $userHasActivePlan = \App\Helpers\SubscriptionHelper::isActive(auth()->id(), $plan->id);
+                                $userHasActivePlan = \App\Helpers\SubscriptionHelper::isActive(auth()->id());
                             @endphp
-
                             <!-- If the user has no active plan, show the purchase button -->
                             @if(!$userHasActivePlan)
                                 <form method="POST" action="{{ route('user.plan.purchase', $plan->id) }}">
@@ -37,7 +36,7 @@
     </div>
 
     <div class="col-md-12">
-        @if($userHasActivePlan)
+        @if(isset($userHasActivePlan) && $userHasActivePlan)
             <center><a href="{{ url('user') }}" class="btn btn-sm btn-primary mb-4">Go to dashboard</a></center>
         @endif
     </div>
