@@ -1,32 +1,52 @@
-
-
 @extends('admin.layout.main')
 
-@section('title', 'Home Page')
+@section('title', 'Poster Categories')
 
 @section('content')
-<div class="container">
-    <div class="card card-primary">
-        <div class="card-header">
-            <i class="fa fa-list"></i>
-        </div>
-        <div class="card-body">
-            <table class="table table-stripped table-bordered">
-                <thead>
-                    <th>#</th>
-                    <th>Plan name</th>
-                    <th>description</th>
-                </thead>
-                <tbody>
-                
-                    <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td><img src="" alt="" width="100"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<h1>Poster Categories</h1>
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
     </div>
-</div>
+@endif
+
+<a href="{{ route('admin.category.create') }}" class="btn btn-primary">Add New Category</a>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($categories as $category)
+            <tr>
+                <td>{{ $category->id }}</td>
+                <td>{{ $category->name }}</td>
+                <td>{{ $category->status }}</td>
+
+                <td>
+                    <a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-warning btn-sm">Edit</a>
+
+                    @if ($category->id > 3) <!-- Only allow delete for categories with id greater than 3 -->
+                        <form action="{{ route('admin.category.destroy', $category->id) }}" method="POST"
+                            style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    @else
+                        <button class="btn btn-danger btn-sm" disabled>Delete</button>
+                        <!-- Disabled button for first 3 categories -->
+                    @endif
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+
+</table>
 @endsection

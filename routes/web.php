@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\PosterCategoryController;
 use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\User\UserPlanController;
+use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\LatestNewController;
 
 
 
@@ -34,10 +36,14 @@ Route::middleware(['web'])->group(function () {
     Route::post('/login', [HomeController::class, 'login'])->name('home.login');
     Route::get('/logout', [HomeController::class, 'logout'])->name('home.logout');
 
+    // Route for dynamic public page
+    Route::get('/page/{slug}', [HomeController::class, 'showPublicPage'])->name('page.show');
+
     // Admin Login and Logout Routes
     Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
     Route::post('/api/admin/login', [AdminController::class, 'do_login'])->name('admin.do_login');
     Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+    Route::get('latest-news/{id}', [UserDashboardController::class, 'latest_news_details'])->name('latest_news.show');
 });
 
 // Admin Routes - Restricted to authenticated users with the 'admin' role
@@ -46,8 +52,13 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
 
     // Category Management Routes
-    Route::get('/category', [PosterCategoryController::class, 'index']);
-    Route::get('/category/add', [PosterCategoryController::class, 'add']);
+    Route::get('category', [PosterCategoryController::class, 'index'])->name('admin.category.index');
+    Route::get('category/create', [PosterCategoryController::class, 'create'])->name('admin.category.create');
+    Route::post('category', [PosterCategoryController::class, 'store'])->name('admin.category.store');
+    Route::get('category/{id}', [PosterCategoryController::class, 'show'])->name('admin.category.show');
+    Route::get('category/{id}/edit', [PosterCategoryController::class, 'edit'])->name('admin.category.edit');
+    Route::put('category/{id}', [PosterCategoryController::class, 'update'])->name('admin.category.update');
+    Route::delete('category/{id}', [PosterCategoryController::class, 'destroy'])->name('admin.category.destroy');
 
     // Poster Management Routes
     Route::get('/poster', [PosterController::class, 'index']);
@@ -69,10 +80,32 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     // Transaction Management Routes
     Route::get('/transaction', [TransactionController::class, 'index']);
     Route::get('/transaction/add', [TransactionController::class, 'add']);
-    Route::post('/transactions/{transaction}/approve', [TransactionController::class, 'approve']);
-    
+    Route::get('/transactions/{transaction}/approve', [TransactionController::class, 'approve'])->name('transaction.approve');
+    Route::get('/transactions/{transaction}/reject', [TransactionController::class, 'reject'])->name('transaction.reject');
+
     // manage pages
     Route::resource('pages', PageController::class);
+
+    // Admin Settings Routes
+    Route::get('/settings', [SettingsController::class, 'index'])->name('admin.settings');
+    Route::post('/settings/update', [SettingsController::class, 'update'])->name('admin.settings.update');
+    Route::post('/settings/change-password', [SettingsController::class, 'changePassword'])->name('admin.settings.changePassword');
+    Route::get('/settings/notices', [SettingsController::class, 'showNotices'])->name('admin.settings.notices');
+    Route::post('/settings/notices/update', [SettingsController::class, 'updateNotice'])->name('admin.settings.updateNotice');
+
+    // latest news
+    Route::get('latest_news', [LatestNewController::class, 'index'])->name('admin.latest_news.index');
+    // Show the form to create new latest news
+    Route::get('latest_news/create', [LatestNewController::class, 'create'])->name('admin.latest_news.create');
+    // Store new latest news
+    Route::post('latest_news', [LatestNewController::class, 'store'])->name('admin.latest_news.store');
+    // Show the form to edit an existing latest news
+    Route::get('latest_news/{id}/edit', [LatestNewController::class, 'edit'])->name('admin.latest_news.edit');
+    // Update an existing latest news
+    Route::put('latest_news/{id}', [LatestNewController::class, 'update'])->name('admin.latest_news.update'); 
+    // Delete an existing latest news
+    Route::delete('latest_news/{id}', [LatestNewController::class, 'destroy'])->name('admin.latest_news.destroy');
+
 });
 
 // User Routes - Restricted to authenticated users with the 'user' role
@@ -86,4 +119,10 @@ Route::middleware(['auth', 'role:user'])->prefix('user')->group(function () {
     Route::post('/plans/purchase/{planId}', [UserPlanController::class, 'purchase'])->name('user.plan.purchase');
 
     // Route to handle receipt upload after payment
-    Route::post('/plans/upload-receipt/{transactionId}', [UserPlanController::class, 'uploadReceipt'])->name('user.plan.uploadReceipt');});
+    Route::post('/plans/upload-receipt/{transactionId}', [UserPlanController::class, 'uploadReceipt'])->name('user.plan.uploadReceipt');
+    Route::get('/profile', [UserDashboardController::class, 'profile'])->name('user.profile');
+    Route::post('/profile/update', [UserDashboardController::class, 'updateProfile'])->name('user.profile.update');
+
+    Route::get('/change-password', [UserDashboardController::class, 'changePassword'])->name('user.changePassword');
+    Route::post('/change-password', [UserDashboardController::class, 'updatePassword'])->name('user.updatePassword');
+});

@@ -18,7 +18,7 @@
             <a href="{{ asset('admin/plan/add') }}" class="btn btn-success" style="float:right">Create</a>
         </div>
         <div class="card-body">
-            <table class="table table-stripped table-bordered">
+            <table class="table table-stripped table-bordered datatable">
                 <thead>
                     <th>#</th>
                     <th>Plan Name</th>

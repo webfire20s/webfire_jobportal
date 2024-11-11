@@ -7,22 +7,29 @@ use App\Models\User;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Page;
+
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $pages = Page::all();  // Retrieve all pages
+        return view('home',compact('pages'));
     }
 
     // Show the login form
     public function showLoginForm()
     {
-        return view('auth.login');  // Create a view for the login form
+        $pages = Page::all();  // Retrieve all pages
+        
+        return view('auth.login',compact('pages'));  // Create a view for the login form
     }
     public function signUpForm()
     {
-        return view('sign_up');
+        $pages = Page::all();  // Retrieve all pages
+        
+        return view('sign_up',compact('pages'));
     }
 
     public function signUpSubmit(Request $request)
@@ -103,7 +110,8 @@ class HomeController extends Controller
     // Show the registration form
     public function showRegistrationForm()
     {
-        return view('auth.register');  // Create a view for the registration form
+        $pages = Page::all();  // Retrieve all pages
+        return view('auth.register',compact('pages'));  // Create a view for the registration form
     }
 
     // Handle registration logic
@@ -135,5 +143,14 @@ class HomeController extends Controller
     {
         Auth::logout();
         return redirect('/');  // Change to your desired route
+    }
+    public function showPublicPage($slug)
+    {
+        // Retrieve the page by slug
+        $page = Page::where('slug', $slug)->firstOrFail();
+        $pages = Page::all();  // Retrieve all pages
+        
+        // Return the view with the page data
+        return view('public', compact('page','pages'));
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Plan; // Import the Plan model
 use App\Models\Transaction;
 use Carbon\Carbon;
+use App\Models\Page;
 
 class UserPlanController extends Controller
 {
@@ -19,9 +20,11 @@ class UserPlanController extends Controller
         ->where('user_id', $user->id)
         ->latest()
         ->get();
+        $pages = Page::all();  // Retrieve all pages
+        
 
         // Pass the plans to the view
-        return view('user.plan.index', compact('plans','transactions'));
+        return view('user.plan.index', compact('plans','transactions','pages'));
     }
 
     // Handle purchasing a plan (you can implement this as per your requirements)
@@ -43,9 +46,10 @@ class UserPlanController extends Controller
         $transaction->purchase_date = Carbon::now();
         $transaction->receipt_url = 'receipt/url';  // Receipt URL will be added after the user uploads the receipt
         $transaction->save();
-
+        $pages = Page::all();  // Retrieve all pages
+        
         // Generate and pass the payment link (or QR code data) to the view
-        return view('user.plan.purchase', compact('plan', 'transaction', 'paymentLink'));
+        return view('user.plan.purchase', compact('plan', 'transaction', 'paymentLink','pages'));
     }
 
     // Handle receipt upload after payment

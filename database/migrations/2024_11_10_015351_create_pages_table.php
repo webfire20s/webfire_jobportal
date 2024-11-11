@@ -20,7 +20,7 @@ class CreatePagesTable extends Migration
             $table->string('feature_image')->nullable();  // Path to feature image
             $table->string('meta_title')->nullable();     // Meta title for SEO
             $table->text('meta_description')->nullable(); // Meta description for SEO
-            $table->json('meta_tags')->nullable();        // Meta tags for SEO
+            $table->text('meta_tags')->nullable();        // Meta tags for SEO
             $table->longText('content')->nullable();      // Main page content
             $table->boolean('status')->default(true);     // Published status
             $table->timestamps();

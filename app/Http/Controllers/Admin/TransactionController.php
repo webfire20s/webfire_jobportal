@@ -17,9 +17,16 @@ class TransactionController extends Controller
     // Admin: Approve a customer’s transaction
     public function approve(Transaction $transaction)
     {
-        $transaction->approved = true;
+        $transaction->status = 'approved';
         $transaction->save();
 
         return redirect()->back()->with('success', 'Plan approved successfully.');
+    }
+    public function reject(Transaction $transaction)
+    {
+        $transaction->status = 'reject';
+        $transaction->save();
+
+        return redirect()->back()->with('success', 'Plan rejected successfully.');
     }
 }

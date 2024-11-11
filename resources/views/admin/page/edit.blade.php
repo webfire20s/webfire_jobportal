@@ -1,46 +1,66 @@
+<!-- resources/views/admin/page/edit.blade.php -->
 @extends('admin.layout.main')
 
 @section('content')
-<div class="container">
-    <h1>Edit Page: {{ $page->title }}</h1>
+    <div class="container">
+        <h1>Edit Page</h1>
 
-    <form action="{{ route('pages.update', $page) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
+        <form action="{{ route('pages.update', $page->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
 
-        <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="title" value="{{ $page->title }}" required>
-        </div>
-        <div class="mb-3">
-            <label for="slug" class="form-label">Slug</label>
-            <input type="text" class="form-control" id="slug" name="slug" value="{{ $page->slug }}" required>
-        </div>
-        <div class="mb-3">
-            <label for="feature_image" class="form-label">Feature Image</label>
-            <input type="file" class="form-control" id="feature_image" name="feature_image">
-            @if ($page->feature_image)
-                <img src="{{ Storage::url($page->feature_image) }}" width="100">
+            <!-- Display Validation Errors -->
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             @endif
-        </div>
-        <div class="mb-3">
-            <label for="meta_title" class="form-label">Meta Title</label>
-            <input type="text" class="form-control" id="meta_title" name="meta_title" value="{{ $page->meta_title }}">
-        </div>
-        <div class="mb-3">
-            <label for="meta_description" class="form-label">Meta Description</label>
-            <textarea class="form-control" id="meta_description" name="meta_description">{{ $page->meta_description }}</textarea>
-        </div>
-        <div class="mb-3">
-            <label for="meta_tags" class="form-label">Meta Tags</label>
-            <input type="text" class="form-control" id="meta_tags" name="meta_tags[]" value="{{ implode(',', json_decode($page->meta_tags ?? '[]')) }}">
-        </div>
-        <div class="mb-3">
-            <label for="content" class="form-label">Content</label>
-            <textarea class="form-control" id="content" name="content">{{ $page->content }}</textarea>
-        </div>
 
-        <button type="submit" class="btn btn-primary">Save Changes</button>
-    </form>
-</div>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" class="form-control" value="{{ old('title', $page->title) }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="slug">Slug</label>
+                <input type="text" name="slug" id="slug" class="form-control" value="{{ old('slug', $page->slug) }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="feature_image">Feature Image</label>
+                @if ($page->feature_image)
+                    <div>
+                        <img src="{{ asset('storage/app/public/' . $page->feature_image) }}" alt="Feature Image" style="width: 150px; height: auto;">
+                    </div>
+                @endif
+                <input type="file" name="feature_image" id="feature_image" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="meta_title">Meta Title</label>
+                <input type="text" name="meta_title" id="meta_title" class="form-control" value="{{ old('meta_title', $page->meta_title) }}">
+            </div>
+
+            <div class="form-group">
+                <label for="meta_description">Meta Description</label>
+                <textarea name="meta_description" id="meta_description" class="form-control">{{ old('meta_description', $page->meta_description) }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="meta_tags">Meta Tags (comma-separated)</label>
+                <input type="text" name="meta_tags" id="meta_tags" class="form-control" value="{{ old('meta_tags', $page->meta_tags) }}">
+            </div>
+
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea name="content" id="content" class="form-control ckeditor">{{ old('content', $page->content) }}</textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Page</button>
+        </form>
+    </div>
 @endsection

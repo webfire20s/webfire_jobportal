@@ -30,7 +30,7 @@ class PageController extends Controller
             'feature_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string',
-            'meta_tags' => 'nullable|array',
+            'meta_tags' => 'nullable|string',
             'content' => 'nullable|string',
         ]);
 
@@ -47,7 +47,7 @@ class PageController extends Controller
             'feature_image' => $imagePath,
             'meta_title' => $request->meta_title,
             'meta_description' => $request->meta_description,
-            'meta_tags' => json_encode($request->meta_tags),
+            'meta_tags' => $request->meta_tags,
             'content' => $request->content,
         ]);
 
@@ -69,7 +69,7 @@ class PageController extends Controller
             'feature_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string',
-            'meta_tags' => 'nullable|array',
+            'meta_tags' => 'nullable|string',
             'content' => 'nullable|string',
         ]);
 
@@ -89,7 +89,7 @@ class PageController extends Controller
             'slug' => $request->slug,
             'meta_title' => $request->meta_title,
             'meta_description' => $request->meta_description,
-            'meta_tags' => json_encode($request->meta_tags),
+            'meta_tags' => ($request->meta_tags),
             'content' => $request->content,
         ]);
 

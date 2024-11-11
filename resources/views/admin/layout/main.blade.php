@@ -25,6 +25,9 @@
     integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous"><!-- jsvectormap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
     integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head> <!--end::Head--> <!--begin::Body-->
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary"> <!--begin::App Wrapper-->
@@ -293,6 +296,18 @@
     );
     sparkline3.render();
   </script> <!--end::Script-->
+  <script src="//cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script>
+let table = new DataTable('.datatable');
+
+        </script>
+        <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+        <script>
+    document.querySelectorAll('.ckeditor').forEach((editor) => {
+        CKEDITOR.replace(editor);
+    });
+</script>
+
 </body><!--end::Body-->
 
 </html>
