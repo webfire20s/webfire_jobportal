@@ -1,3 +1,17 @@
+1. in poster form (admin panel), do pdf field optional (done)
+2. latest new image issue (done)
+3. in poster form - description input type change text to textarea (longtext) (done)
+4. check all the edit and delete 
+5. poster responsive (done)
+6. download poster button on details page (done)
+7. poster details page image size original (done)
+8. latest news dynamic on details page (done)
+9. share options below the poster image (done)
+10. registration krte wakt new user - state all ana chahiye (done)
+
+==========================================
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

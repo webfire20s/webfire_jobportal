@@ -54,7 +54,7 @@
 <section id="billboard">
     <div class="container">
         <marquee direction="left">
-            <p> <strong class="text-danger h3">*</strong> {{ $notice->notice }}</p>
+            <p> <strong class="text-danger h3">*</strong> {{ @$notice->notice }}</p>
         </marquee>
 
         <div class="row flex-lg-row-reverse align-items-center">
@@ -100,30 +100,36 @@
             <div class="col-md-6">
                 <div class="row">
                     @foreach ($posters as $poster)
-                        <div class="col-md-3">
-                            <div class="panel panel-primary" style="width:80%;background-color:white">
-                                <a href="{{ url('user/poster_detail', $poster->id) }}" target="_blank">
-                                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <div class="panel panel-primary" style="background-color:white; width: 250px; height: 100%;">
+                                <a href="{{ url('user/poster_detail', $poster->id) }}" target="_blank" style="text-decoration: none;">
+                                    <div class="panel-body" style="position: relative;">
                                         <img class="card-img-top" src="{{ asset('storage/app/public/' . $poster->image) }}"
-                                            alt="{{ $poster->title }}">
-                                    </div>
-                                    <div class="panel-footer">
-                                        <p class="panel-text text-center" style="color:black">{{ $poster->title }}</p>
+                                             alt="{{ $poster->title }}" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <!-- Overlay with Title -->
+                                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                                             style="background: rgb(0 0 0 / 30%); color: white;">
+                                            <p class="m-0 text-center" style="font-size: 16px; font-weight: bold; padding: 0 10px;
+                                                                              white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                                {{ $poster->title }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     @endforeach
                 </div>
+
             </div>
 
             <div class="col-md-3">
                 <div class="row">
-                    <div class="card">
+                    <div class="card" style="height: 300px; ">
                         <div class="card-header bg-primary text-white">
-                            <h6>Latest News</h6>
+                            <h6>Updated News</h6>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="overflow: hidden;">
                             <ul class="marquee">
                                 @foreach($latestNews as $news)
                                     <li><a href="{{ route('latest_news.show', $news->id) }}">{{ $news->title }}</a></li>
@@ -144,7 +150,7 @@
                                         @foreach($latestNews as $index => $news)
                                             <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                                 @if($news->banner_image)
-                                                    <img src="{{ asset('storage/app/public/latest_news/' . $news->banner_image) }}"
+                                                    <img src="{{ Storage::url('app/public/latest_news/' . $news->banner_image) }}"
                                                         class="d-block w-100" alt="{{ $news->title }}"
                                                         style="width: 60%; margin: auto;">
                                                 @else

@@ -59,7 +59,14 @@
                     <div class="card card-primary">
                         <div class="card-header">
                             <h2>{{ $poster->title }}</h2> <!-- Display the title of the poster -->
-                            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                        </div>
+
+                        <div class="card-body">
+
+                           <center> <img src="{{ asset('storage/app/public/' . $poster->image) }}" alt="{{ $poster->title }}"
+                                class="img-fluid mb-3" style="max-width:100%;"></center>
+                                
+                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style mb-4">
                                 <a class="a2a_button_facebook"></a>
                                 <a class="a2a_button_twitter"></a>
                                 <a class="a2a_button_whatsapp"></a>
@@ -67,18 +74,15 @@
                                 <a class="a2a_button_email"></a>
                                 <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
                             </div>
-                        </div>
-
-                        <div class="card-body">
-
-                            <img src="{{ asset('storage/app/public/' . $poster->image) }}" alt="{{ $poster->title }}"
-                                class="img-fluid mb-3" style="height:40%;width:100%">
-
-                            <a href="{{ asset('storage/app/public/' . $poster->pdf)}}" class="btn btn-primary">Download
-                                JOB PDF </a>
+                            @if( $poster->pdf != '')
+                            <a href="{{ asset('storage/app/public/' . $poster->pdf)}}" class="btn btn-primary">Download PDF </a>
+                            @endif
                             <a href="{{ $poster->poster_url }}" class="btn btn-primary">Job Link</a>
                             <a href="{{ route('user.home') }}" class="btn btn-primary">Back to Home</a>
-                            <p class="mt-3">{{ $poster->description }}</p> <!-- Display the description -->
+                            <a download href="{{ asset('storage/app/public/' . $poster->image) }}" class="btn btn-primary">Download Poster</a>
+                            
+                            
+                            <p class="mt-3">{!! $poster->description !!}</p> <!-- Display the description -->
                         </div>
                     </div>
                 </div>
@@ -96,21 +100,23 @@
                                 <div id="verticalNewsCarousel" class="carousel slide carousel-vertical"
                                     data-bs-ride="carousel" data-bs-interval="3000">
                                     <div class="carousel-inner">
-                                        <!-- News Slide 1 -->
-                                        <div class="carousel-item active">
-                                            <img src="{{ asset('public/theme/user/1.jpeg') }}" class="d-block w-100"
-                                                alt="News Image 1" style="width: 60%; margin: auto;">
-                                        </div>
-                                        <!-- News Slide 2 -->
-                                        <div class="carousel-item">
-                                            <img src="{{ asset('public/theme/user/2.jpeg') }}" class="d-block w-100"
-                                                alt="News Image 2" style="width: 60%; margin: auto;">
-                                        </div>
-                                        <!-- News Slide 3 -->
-                                        <div class="carousel-item">
-                                            <img src="{{ asset('public/theme/user/3.jpeg') }}" class="d-block w-100"
-                                                alt="News Image 3" style="width: 60%; margin: auto;">
-                                        </div>
+                                        @foreach($latestNews as $index => $news)
+                                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                                @if($news->banner_image)
+                                                    <img src="{{ Storage::url('app/public/latest_news/' . $news->banner_image) }}"
+                                                        class="d-block w-100" alt="{{ $news->title }}"
+                                                        style="width: 60%; margin: auto;">
+                                                @else
+                                                    <img src="{{ asset('public/theme/user/default.jpg') }}"
+                                                        class="d-block w-100" alt="Default News Image"
+                                                        style="width: 60%; margin: auto;">
+                                                @endif
+                                                <!-- <div class="carousel-caption d-none d-md-block">
+                                                            <h5>{{ $news->title }}</h5>
+                                                            <p>{{ Str::limit($news->content, 100) }}</p>
+                                                        </div> -->
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <!-- Vertical Carousel End -->

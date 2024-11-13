@@ -1,0 +1,43 @@
+[12-Nov-2024 16:12:50 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:12:50 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:12:50 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/karanwebfire/public_html/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/karanwebfire/public_html/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:13:11 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:13:11 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:13:11 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/karanwebfire/public_html/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/karanwebfire/public_html/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:15:46 UTC] PHP Warning:  require(/home/karanwebfire/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/public/index.php on line 34
+[12-Nov-2024 16:15:46 UTC] PHP Warning:  require(/home/karanwebfire/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/public/index.php on line 34
+[12-Nov-2024 16:15:46 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/karanwebfire/public_html/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/karanwebfire/public_html/public/index.php:34
+Stack trace:
+#0 /home/karanwebfire/public_html/index.php(21): require_once()
+#1 {main}
+  thrown in /home/karanwebfire/public_html/public/index.php on line 34
+[12-Nov-2024 16:16:42 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:16:42 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:16:42 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/karanwebfire/public_html/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/karanwebfire/public_html/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:16:47 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:16:47 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:16:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/karanwebfire/public_html/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/karanwebfire/public_html/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:17:55 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:17:55 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:17:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/karanwebfire/public_html/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/karanwebfire/public_html/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:18:00 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:18:00 UTC] PHP Warning:  require(/home/karanwebfire/public_html/vendor/autoload.php): Failed to open stream: No such file or directory in /home/karanwebfire/public_html/artisan on line 18
+[12-Nov-2024 16:18:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/karanwebfire/public_html/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/karanwebfire/public_html/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/karanwebfire/public_html/artisan on line 18

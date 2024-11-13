@@ -30,11 +30,12 @@ class UserDashboardController extends Controller
 
     public function show($id)
     {
+        $latestNews = LatestNews::latest()->get();
         $categories = PostersCategory::where('status', 1)->get();
         $poster = Poster::findOrFail($id);
         $pages = Page::all();  // Retrieve all pages
 
-        return view('user.poster_detail', compact('poster', 'categories', 'pages'));
+        return view('user.poster_detail', compact('poster', 'categories', 'pages','latestNews'));
     }
     public function profile()
     {

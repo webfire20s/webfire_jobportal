@@ -34,7 +34,7 @@ class PosterController extends Controller
         $plan->delete();
 
         // Redirect back with success message
-        return redirect()->route('admin.poster')->with('success', 'Poster deleted successfully!');
+        return redirect()->route('poster')->with('success', 'Poster deleted successfully!');
     }
 
 
@@ -46,7 +46,7 @@ class PosterController extends Controller
     // Validation - keep this outside of the try-catch block
     $validator = \Validator::make($request->all(), [
         'title' => 'required|string|max:255',
-        'description' => 'required|string|max:1000',
+        'description' => 'required|string',
         'image' => 'required|image|mimes:jpeg,png|max:2048', // Limit the file size to 2MB
     ]);
 
@@ -59,7 +59,10 @@ class PosterController extends Controller
     try {
         // Store the poster image - change 'poster' to 'image'
         $posterPath = $request->file('image')->store('posters', 'public'); // Stores in 'storage/app/public/posters'
-        $pdfPath = $request->file('pdf')->store('posters', 'public'); // Stores in 'storage/app/public/posters'
+        $pdfPath = '';
+        if($_FILES['pdf']['name'] != ''){
+            $pdfPath = $request->file('pdf')->store('posters', 'public'); // Stores in 'storage/app/public/posters'
+        }
 
         // Log the path where the poster was stored
         Log::info('Poster stored at: ' . $posterPath);
@@ -69,7 +72,7 @@ class PosterController extends Controller
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'image' => $posterPath, // Save the file path
-            'pdf' => $pdfPath, // Save the file path
+            // 'pdf' => $pdfPath, // Save the file path
             'poster_url' => $request->input('poster_url'),
             'category_id' => $request->input('category_id')
         ]);

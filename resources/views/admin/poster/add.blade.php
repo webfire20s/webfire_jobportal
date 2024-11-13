@@ -35,8 +35,8 @@
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <input type="text" class="form-control" name="description" value="{{ old('description') }}"
-                    placeholder="Enter Description">
+                <textarea class="form-control ckeditor" name="description" 
+                    placeholder="Enter Description">{{ old('description') }}</textarea>
                 @error('description')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror

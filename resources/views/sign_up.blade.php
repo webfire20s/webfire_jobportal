@@ -110,10 +110,48 @@
                                         <label for="exampleState" class="form-label fs-6 text-uppercase fw-bold text-black">State</label>
                                     </div>
                                     <div class="col-lg-9">
+                                        
+                                        <!-- States of India -->
+
                                         <select name="state" class="form-control" id="exampleState">
-                                            <option value="">Select State</option>
-                                            <option value="Uttar Pradesh" {{ old('state') == 'Uttar Pradesh' ? 'selected' : '' }}>Uttar Pradesh</option>
-                                        </select>
+    <option value="">Select State</option>
+    <option value="AP" {{ old('state') == 'AP' ? 'selected' : '' }}>Andhra Pradesh</option>
+    <option value="AR" {{ old('state') == 'AR' ? 'selected' : '' }}>Arunachal Pradesh</option>
+    <option value="AS" {{ old('state') == 'AS' ? 'selected' : '' }}>Assam</option>
+    <option value="BR" {{ old('state') == 'BR' ? 'selected' : '' }}>Bihar</option>
+    <option value="CT" {{ old('state') == 'CT' ? 'selected' : '' }}>Chhattisgarh</option>
+    <option value="GA" {{ old('state') == 'GA' ? 'selected' : '' }}>Goa</option>
+    <option value="HR" {{ old('state') == 'HR' ? 'selected' : '' }}>Haryana</option>
+    <option value="HP" {{ old('state') == 'HP' ? 'selected' : '' }}>Himachal Pradesh</option>
+    <option value="JK" {{ old('state') == 'JK' ? 'selected' : '' }}>Jammu and Kashmir</option>
+    <option value="JH" {{ old('state') == 'JH' ? 'selected' : '' }}>Jharkhand</option>
+    <option value="KA" {{ old('state') == 'KA' ? 'selected' : '' }}>Karnataka</option>
+    <option value="KL" {{ old('state') == 'KL' ? 'selected' : '' }}>Kerala</option>
+    <option value="MP" {{ old('state') == 'MP' ? 'selected' : '' }}>Madhya Pradesh</option>
+    <option value="MH" {{ old('state') == 'MH' ? 'selected' : '' }}>Maharashtra</option>
+    <option value="MN" {{ old('state') == 'MN' ? 'selected' : '' }}>Manipur</option>
+    <option value="ML" {{ old('state') == 'ML' ? 'selected' : '' }}>Meghalaya</option>
+    <option value="MZ" {{ old('state') == 'MZ' ? 'selected' : '' }}>Mizoram</option>
+    <option value="NL" {{ old('state') == 'NL' ? 'selected' : '' }}>Nagaland</option>
+    <option value="OR" {{ old('state') == 'OR' ? 'selected' : '' }}>Odisha</option>
+    <option value="PB" {{ old('state') == 'PB' ? 'selected' : '' }}>Punjab</option>
+    <option value="RJ" {{ old('state') == 'RJ' ? 'selected' : '' }}>Rajasthan</option>
+    <option value="SK" {{ old('state') == 'SK' ? 'selected' : '' }}>Sikkim</option>
+    <option value="TN" {{ old('state') == 'TN' ? 'selected' : '' }}>Tamil Nadu</option>
+    <option value="TG" {{ old('state') == 'TG' ? 'selected' : '' }}>Telangana</option>
+    <option value="TR" {{ old('state') == 'TR' ? 'selected' : '' }}>Tripura</option>
+    <option value="UT" {{ old('state') == 'UT' ? 'selected' : '' }}>Uttarakhand</option>
+    <option value="UP" {{ old('state') == 'UP' ? 'selected' : '' }}>Uttar Pradesh</option>
+    <option value="WB" {{ old('state') == 'WB' ? 'selected' : '' }}>West Bengal</option>
+    <option value="AN" {{ old('state') == 'AN' ? 'selected' : '' }}>Andaman and Nicobar Islands</option>
+    <option value="CH" {{ old('state') == 'CH' ? 'selected' : '' }}>Chandigarh</option>
+    <option value="DN" {{ old('state') == 'DN' ? 'selected' : '' }}>Dadra and Nagar Haveli</option>
+    <option value="DD" {{ old('state') == 'DD' ? 'selected' : '' }}>Daman and Diu</option>
+    <option value="DL" {{ old('state') == 'DL' ? 'selected' : '' }}>Delhi</option>
+    <option value="LD" {{ old('state') == 'LD' ? 'selected' : '' }}>Lakshadweep</option>
+    <option value="PY" {{ old('state') == 'PY' ? 'selected' : '' }}>Puducherry</option>
+</select>
+
                                     </div>
                                 </div>
                             </div>
