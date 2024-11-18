@@ -17,6 +17,86 @@ class UserController extends Controller
         return view('admin.user.add');
     }
 
+    public function edit($id)
+    {
+        $users = User::findOrFail($id);
+        return view('admin/user/edit', compact('users'));
+    }
+
+
+    public function update(Request $request, $id)
+    {
+    // Find the user by ID
+    $user = User::findOrFail($id);
+
+    // Validate input
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email,' . $user->id,
+        'mobile' => 'nullable|string|max:15',
+        'aadhar' => 'nullable|string|max:12',
+        'address' => 'nullable|string|max:255',
+        'state' => 'nullable|string|max:50',
+        'pincode' => 'nullable|string|max:6',
+        'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        'aadhar_photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        'pan_photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        'password' => 'nullable|confirmed|min:8',
+    ]);
+
+    // Update user details
+    $user->name = $request->input('name');
+    $user->email = $request->input('email');
+    $user->mobile = $request->input('mobile');
+    $user->aadhar = $request->input('aadhar');
+    $user->address = $request->input('address');
+    $user->state = $request->input('state');
+    $user->pincode = $request->input('pincode');
+
+    // Handle password update if provided
+    if ($request->filled('password')) {
+        $user->password = bcrypt($request->input('password'));
+    }
+
+    // Handle photo upload
+    if ($request->hasFile('photo')) {
+        $photoPath = $request->file('photo')->store('photos', 'public');
+        $user->photo = $photoPath;
+    }
+
+    // Handle Aadhar photo upload
+    if ($request->hasFile('aadhar_photo')) {
+        $aadharPhotoPath = $request->file('aadhar_photo')->store('aadhar_photos', 'public');
+        $user->aadhar_photo = $aadharPhotoPath;
+    }
+
+    // Handle PAN photo upload
+    if ($request->hasFile('pan_photo')) {
+        $panPhotoPath = $request->file('pan_photo')->store('pan_photos', 'public');
+        $user->pan_photo = $panPhotoPath;
+    }
+
+    // Save changes
+    $user->save();
+
+    // Redirect back with success message
+    return redirect()->route('admin.user.index')->with('success', 'User updated successfully.');
+}
+
+
+public function toggleStatus($id)
+{
+    $user = User::findOrFail($id);
+
+    // Toggle status
+    $user->status = $user->status === 'active' ? 'inactive' : 'active';
+    $user->save();
+
+    // Redirect back with success message
+    return redirect()->back()->with('success', 'User status updated successfully!');
+}
+
+
     public function store(Request $request)
     {
         // Validate the request data
@@ -61,6 +141,18 @@ class UserController extends Controller
         return redirect()->back()->with('success', 'User created successfully.');
     }
     
+    
+    public function destroy($id)
+    {
+        // Find the plan by ID
+        $user = User::findOrFail($id);
+
+        // Delete the plan
+        $plan->delete();
+
+        // Redirect back with success message
+        return redirect()->route('user/')->with('success', 'User deleted successfully!');
+    }
     
     // You can add more user-specific methods here
 }

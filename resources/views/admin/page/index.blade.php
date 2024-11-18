@@ -4,13 +4,17 @@
 @section('content')
     <div class="container">
         <h1>Pages</h1>
-        <a href="{{ route('pages.create') }}" class="btn btn-primary mb-3">Create New Page</a>
+        
 
         @if(session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
-
-        <table class="table table-bordered datatable">
+        <div class="card card-primary">
+            <div class="card-header">
+                <a href="{{ route('pages.create') }}" class="btn btn-success mb-3">Create New Page</a>
+            </div>
+            <div class="card-body">
+                        <table class="table table-bordered datatable">
             <thead>
                 <tr>
                     <th>#</th>
@@ -39,5 +43,8 @@
                 @endforeach
             </tbody>
         </table>
+            </div>
+        </div>
+
     </div>
 @endsection

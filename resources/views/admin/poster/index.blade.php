@@ -34,12 +34,13 @@
                         <td><img src="{{ asset('storage/app/public/' . $poster->image) }}" alt="Poster Image" style="width: 100px;"></td>
                         <td>
                             <a href="{{ url('admin/poster/edit', $poster->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                            <form action="{{ url('admin/poster/delete', $poster->id) }}" method="POST" style="display:inline;">
+                            <form action="{{ route('poster.destroy', $poster->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                             </form>
                         </td>
+
                     </tr>
                     @endforeach
                 </tbody>

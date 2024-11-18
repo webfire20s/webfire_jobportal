@@ -24,18 +24,52 @@ class PosterController extends Controller
         return view('admin.poster.add',compact('categories'));
     }
 
+    public function edit($id)
+    {
+        $poster = Poster::findOrFail($id);
+        return view('admin.poster.edit', compact('poster'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'poster_url' => 'required|string',
+            'pdf' => 'file|mimes:pdf',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $poster = Poster::findOrFail($id);
+        $poster->title = $request->title;
+        $poster->description = $request->description;
+        $poster->poster_url = $request->poster_url;
+
+        if ($request->hasFile('pdf')) {
+            $poster->pdf = $request->file('pdf')->store('pdfs', 'public');
+        }
+
+        if ($request->hasFile('image')) {
+            $poster->image = $request->file('image')->store('images', 'public');
+        }
+
+        $poster->save();
+
+        return redirect()->route('admin.poster.index')->with('success', 'Poster updated successfully.');
+    }
 
     public function destroy($id)
     {
-        // Find the plan by ID
-        $plan = Poster::findOrFail($id);
-
-        // Delete the plan
-        $plan->delete();
-
-        // Redirect back with success message
-        return redirect()->route('poster')->with('success', 'Poster deleted successfully!');
+        // Find the poster by ID
+        $poster = Poster::findOrFail($id);
+    
+        // Delete the poster
+        $poster->delete();
+    
+        // Redirect back to the poster index with a success message
+        return redirect()->route('poster.index')->with('success', 'Poster deleted successfully!');
     }
+
 
 
     public function store(Request $request)

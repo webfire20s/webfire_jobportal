@@ -24,17 +24,41 @@ class PlanController extends Controller
     }
 
 
+    public function edit($id)
+    {
+        $plan = Plan::findOrFail($id);
+        return view('admin.plan.edit', compact('plan'));
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+            'duration' => 'required|integer'
+        ]);
+    
+        $plan = Plan::findOrFail($id);
+        $plan->update($request->only('name', 'price', 'description', 'duration'));
+    
+        return redirect()->route('admin.plan.index')->with('success', 'Plan updated successfully');
+    }
+
+
     public function destroy($id)
     {
-        // Find the plan by ID
-        $plan = Plan::findOrFail($id);
-
-        // Delete the plan
-        $plan->delete();
-
-        // Redirect back with success message
-        return redirect()->route('plan/')->with('success', 'Plan deleted successfully!');
+        // Find the poster by ID
+        $poster = Poster::findOrFail($id);
+    
+        // Delete the poster
+        $poster->delete();
+    
+        // Redirect back to the poster index with a success message
+        return redirect()->route('poster.index')->with('success', 'Poster deleted successfully!');
     }
+
 
 
 

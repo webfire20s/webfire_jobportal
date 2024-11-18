@@ -99,28 +99,27 @@
 
             <div class="col-md-6">
                 <div class="row">
-                    @foreach ($posters as $poster)
-                        <div class="col-md-4">
-                            <div class="panel panel-primary" style="background-color:white; width: 250px; height: 100%;">
-                                <a href="{{ url('user/poster_detail', $poster->id) }}" target="_blank" style="text-decoration: none;">
-                                    <div class="panel-body" style="position: relative;">
-                                        <img class="card-img-top" src="{{ asset('storage/app/public/' . $poster->image) }}"
-                                             alt="{{ $poster->title }}" style="width: 100%; height: 100%; object-fit: cover;">
-                                        <!-- Overlay with Title -->
-                                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
-                                             style="background: rgb(0 0 0 / 30%); color: white;">
-                                            <p class="m-0 text-center" style="font-size: 16px; font-weight: bold; padding: 0 10px;
-                                                                              white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                                {{ $poster->title }}
-                                            </p>
-                                        </div>
+                @foreach ($posters as $poster)
+                    <div class="col-md-4">
+                        <div class="panel" style="background-color:white;margin-top:2rem">
+                            <a href="{{ url('user/poster_detail', $poster->id) }}" target="_blank" style="text-decoration: none;">
+                                <div class="panel-body" style="position: relative;">
+                                    <img class="card-img-top" src="{{ asset('storage/app/public/' . $poster->image) }}"
+                                         alt="{{ $poster->title }}" style="width: 100%; height: 100%; object-fit: cover;">
+                                    <!-- Overlay with Title -->
+                                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                                         style="background: rgb(0 0 0 / 30%); color: white;">
+                                        <p class="m-0 text-center" style="font-size: 16px; font-weight: bold; padding: 0 10px;
+                                                                          white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                            {{ $poster->title }}
+                                        </p>
                                     </div>
-                                </a>
-                            </div>
+                                </div>
+                            </a>
                         </div>
-                    @endforeach
+                    </div>
+                @endforeach
                 </div>
-
             </div>
 
             <div class="col-md-3">

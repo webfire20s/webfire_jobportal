@@ -62,21 +62,31 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::delete('category/{id}', [PosterCategoryController::class, 'destroy'])->name('admin.category.destroy');
 
     // Poster Management Routes
-    Route::get('/poster', [PosterController::class, 'index']);
+    Route::get('/poster', [PosterController::class, 'index'])->name('admin.poster.index');
     Route::get('/poster/add', [PosterController::class, 'add']);
     Route::post('/poster/store', [PosterController::class, 'store']);
-    Route::delete('/poster/delete/{id}', [PosterController::class, 'destroy']);
+    Route::get('/poster/edit/{id}', [PosterController::class, 'edit']);
+    Route::put('/poster/update/{id}', [PosterController::class, 'update'])->name('admin.poster.update');
+    Route::delete('/poster/delete/{id}', [PosterController::class, 'destroy'])->name('poster.destroy');
+
 
     // Plan Management Routes
-    Route::get('/plan', [PlanController::class, 'index']);
+    Route::get('/plan', [PlanController::class, 'index'])->name('admin.plan.index');
     Route::get('/plan/add', [PlanController::class, 'add']);
     Route::post('/plan/store', [PlanController::class, 'store']);
+    Route::get('/plan/edit/{id}', [PlanController::class, 'edit'])->name('admin.plan.edit');
+    Route::put('/plan/update/{id}', [PlanController::class, 'update'])->name('admin.plan.update');
     Route::delete('/plan/destroy/{id}', [PlanController::class, 'destroy'])->name('plans.destroy');
 
     // User Management Routes
-    Route::get('/user', [UserController::class, 'index']);
+    Route::get('/user', [UserController::class, 'index'])->name('admin.user.index');
     Route::get('/user/add', [UserController::class, 'add']);
     Route::post('/user/store', [UserController::class, 'store']);
+    Route::get('/user/edit/{id}',[UserController::class,'edit'])->name('admin.user.edit');
+    Route::put('/user/update/{id}',[UserController::class,'update'])->name('admin.user.update');
+    Route::delete('/user/destroy/{id}',[UserController::class,'destroy'])->name('user.destroy');
+    Route::post('/user/toggle-status/{id}', [UserController::class, 'toggleStatus'])->name('admin.user.toggleStatus');
+
 
     // Transaction Management Routes
     Route::get('/transaction', [TransactionController::class, 'index']);

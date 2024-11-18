@@ -1,7 +1,7 @@
 1. in poster form (admin panel), do pdf field optional (done)
 2. latest new image issue (done)
 3. in poster form - description input type change text to textarea (longtext) (done)
-4. check all the edit and delete 
+4. check all the edit and delete  
 5. poster responsive (done)
 6. download poster button on details page (done)
 7. poster details page image size original (done)

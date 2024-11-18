@@ -74,7 +74,7 @@
                     <tbody>
                         @foreach($transactions as $transaction)
                             <tr>
-                                <td>{{ $transaction->plan->name }}</td>
+                                <td>{{ $transaction->name }}</td>
                                 <td>₹{{ $transaction->price }}</td>
                                 <td>{{ $transaction->month }} months</td>
                                 <td>{{ $transaction->purchase_date->format('d M Y') }}</td>

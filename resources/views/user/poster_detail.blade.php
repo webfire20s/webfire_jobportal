@@ -74,12 +74,14 @@
                                 <a class="a2a_button_email"></a>
                                 <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
                             </div>
-                            @if( $poster->pdf != '')
-                            <a href="{{ asset('storage/app/public/' . $poster->pdf)}}" class="btn btn-primary">Download PDF </a>
-                            @endif
+                            <!--@if( $poster->pdf != '')-->
+                            
+                            <!--@endif-->
                             <a href="{{ $poster->poster_url }}" class="btn btn-primary">Job Link</a>
                             <a href="{{ route('user.home') }}" class="btn btn-primary">Back to Home</a>
                             <a download href="{{ asset('storage/app/public/' . $poster->image) }}" class="btn btn-primary">Download Poster</a>
+                            <a href="{{ asset('storage/app/public/' . $poster->pdf)}}" class="btn btn-primary">Download PDF </a>
+                            
                             
                             
                             <p class="mt-3">{!! $poster->description !!}</p> <!-- Display the description -->
