@@ -11,6 +11,11 @@
             <p>Dashboard</p>
           </a> </li>
         <li class="nav-header">Main</li>
+        <li class="nav-item">
+            <a href="{{ url('admin/slider')}}" class="nav-link"><i class="nav-icon bi bi-image"></i>
+                <p>Slider</p>
+            </a>
+        </li>
         <li class="nav-item"> <a href="{{ url('admin/pages') }}" class="nav-link"> <i class="nav-icon bi bi-list"></i>
             <p>Pages</p>
           </a> </li>

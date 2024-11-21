@@ -116,6 +116,17 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::put('latest_news/{id}', [LatestNewController::class, 'update'])->name('admin.latest_news.update'); 
     // Delete an existing latest news
     Route::delete('latest_news/{id}', [LatestNewController::class, 'destroy'])->name('admin.latest_news.destroy');
+    
+    Route::get('slider', [SliderController::class, 'index'])->name('admin.slider.index');
+    Route::get('slider/create', [SliderController::class, 'create'])->name('admin.slider.create');
+    Route::post('slider/store', [SliderController::class, 'store'])->name('admin.slider.store');
+    Route::get('slider/edit/{id}', [SliderController::class, 'edit'])->name('admin.slider.edit');
+    Route::put('slider/update/{id}', [SliderController::class, 'update'])->name('admin.slider.update');
+    Route::delete('slider/destroy/{id}', [SliderController::class, 'destroy'])->name('admin.slider.destroy');
+
+
+
+
 
 });
 

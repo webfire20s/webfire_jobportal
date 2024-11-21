@@ -9,7 +9,7 @@
     <div class="row">
         @foreach($plans as $plan)
                 <div class="col-md-4">
-                    <div class="card mb-4">
+                    <div class="card card-primary mb-4">
                         <div class="card-body">
                             <h5 class="card-title">{{ $plan->name }}</h5>
                             <p class="card-text">{{ $plan->description }}</p>

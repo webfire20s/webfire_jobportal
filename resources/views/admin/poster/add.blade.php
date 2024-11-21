@@ -73,7 +73,7 @@
             </div>
 
             <div class="form-group">
-                <label>Image</label>
+                <label>Image(Upload Size 1280px * 720px)</label>
                 <input type="file" class="form-control" name="image" accept="image/*">
                 <!-- Changed 'images/*' to 'image/*' -->
                 @error('image')
