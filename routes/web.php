@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\User\UserPlanController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\LatestNewController;
+use App\Http\Controllers\Admin\SliderController;
 
 
 
