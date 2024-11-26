@@ -9,7 +9,7 @@
             <a href="{{ asset('admin/poster/add') }}" class="btn btn-success" style="float:right">Create</a>
         </div>
         <div class="card-body">
-            <table class="table table-striped table-bordered datatable">
+            <table class="table table-striped table-bordered datatable table-reponsive">
                 <thead>
                     <tr>
                         <th>#</th>

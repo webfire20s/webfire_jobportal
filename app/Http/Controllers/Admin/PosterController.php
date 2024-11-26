@@ -13,10 +13,13 @@ class PosterController extends Controller
 {
     // Admin: Show all posters for management
     public function index()
-    {
-        $posters = Poster::all();
-        return view('admin.poster.index', compact('posters'));
-    }
+{
+    // Fetch posters ordered by id (ascending)
+    $posters = Poster::orderBy('id', 'desc')->get(); // Use 'desc' for descending order if needed
+
+    // Return view with the ordered posters
+    return view('admin.poster.index', compact('posters'));
+}
 
     public function add()
     {
@@ -67,7 +70,7 @@ class PosterController extends Controller
         $poster->delete();
     
         // Redirect back to the poster index with a success message
-        return redirect()->route('poster.index')->with('success', 'Poster deleted successfully!');
+        return redirect()->route('admin.poster.index')->with('success', 'Poster deleted successfully!');
     }
 
 

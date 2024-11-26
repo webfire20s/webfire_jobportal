@@ -84,14 +84,16 @@
                             <!--@if( $poster->pdf != '')-->
                             
                             <!--@endif-->
-                            <a href="{{ $poster->poster_url }}" class="btn btn-primary">Job Link</a>
-                            <a href="{{ route('user.home') }}" class="btn btn-primary">Back to Home</a>
-                            <a download href="{{ asset('storage/app/public/' . $poster->image) }}" class="btn btn-primary">Download Poster</a>
-                            <a href="{{ asset('storage/app/public/' . $poster->pdf)}}" class="btn btn-primary">Download PDF </a>
-                          
+                            <a target="_blank" href="{{ $poster->poster_url }}" class="btn btn-primary m-1">Job Link</a>
+                            <a download href="{{ asset('storage/app/public/' . $poster->image) }}" class="btn btn-primary m-1">Download Poster</a>
+                            <a href="{{ asset('storage/app/public/' . $poster->pdf)}}" class="btn btn-primary m-1">Download PDF </a>
+                            <button class="btn btn-primary m-1" onclick="copyDescription()">Copy Text</button>
+                            <a href="{{ route('user.home') }}" class="btn btn-primary m-1">Back to Home</a>
+                              
 
-                            <p id="description" class="mt-3">{!! $poster->description !!}</p> <!-- Display the description -->
-                              <button class="btn btn-primary" onclick="copyDescription()">Copy Text</button>
+                            <div id="description" class="mt-3">{!! $poster->description !!}</div> <!-- Display the description -->
+                            
+                              
                         </div>
                     </div>
                 </div>
@@ -144,25 +146,14 @@
         // Get the description text from the element with id "description"
         var description = $("#description").text();
 
-        // Create a temporary textarea element to hold the text
-        var $tempTextarea = $("<textarea>");
-        $("body").append($tempTextarea);
-        $tempTextarea.val(description).select();
-
-        // Copy the text to the clipboard
-        try {
-            var successful = document.execCommand("copy");
-            if (successful) {
+        // Use the Clipboard API to copy the text to the clipboard
+        navigator.clipboard.writeText(description)
+            .then(function() {
                 alert("Description copied to clipboard!");
-            } else {
-                alert("Failed to copy description.");
-            }
-        } catch (err) {
-            alert("An error occurred while copying the description.");
-        }
-
-        // Remove the temporary textarea element
-        $tempTextarea.remove();
+            })
+            .catch(function(err) {
+                alert("Failed to copy description: " + err);
+            });
     }
 </script>
 

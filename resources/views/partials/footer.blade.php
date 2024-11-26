@@ -5,11 +5,12 @@
 
             <div class=" col-md-12">
                 <h3><img src="{{ asset('public/logo.png') }}" alt="image" height="150px"></h3>
-                <p>प्रतिभेला संधीशी जोडणे. नोकरीच्या सूची एक्सप्लोर करा, नियोक्त्यांसोबत कनेक्ट करा आणि JobLinker सह तुमचे करिअर तयार करा - तुमचे व्यावसायिक यशाचे प्रवेशद्वार.</p>
-                <i class="bi-facebook pe-4"></i>
-                <i class="bi-instagram pe-4"></i>
-                <i class="bi-twitter pe-4"></i>
-                <i class="bi-youtube pe-4"></i>
+                <!--<p>प्रतिभेला संधीशी जोडणे. नोकरीच्या सूची एक्सप्लोर करा, नियोक्त्यांसोबत कनेक्ट करा आणि JobLinker सह तुमचे करिअर तयार करा - तुमचे व्यावसायिक यशाचे प्रवेशद्वार.</p>-->
+                <p>Boost your monthly income by registering as ADARSH MAHITI KENDRA. You can open a one-stop digital shop and earn commission by providing services such as cash withdrawal, cash deposit, money transfer, pan correction and updation, AePS linked transactions, loans, insurance, ticket booking and much more in your local area.</p>
+                <!--<br><i class="bi-facebook pe-4"></i>-->
+                <!--<i class="bi-instagram pe-4"></i>-->
+                <!--<i class="bi-twitter pe-4"></i>-->
+                <!--<i class="bi-youtube pe-4"></i>-->
             </div>
 
             <!--<div class="col-md-2 ">-->

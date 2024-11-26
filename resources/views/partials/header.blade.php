@@ -21,61 +21,67 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav align-items-center justify-content-end align-items-center flex-grow-1 ">
-                        <li class="nav-item">
-                            <a class="nav-link active me-md-4" href="{{ url('') }}">Home</a>
-                        </li>
+                    <ul class="navbar-nav align-items-center justify-content-end flex-grow-1">
+    @guest
+        <!-- Show public pages if the user is not logged in -->
+        <li class="nav-item">
+            <a class="nav-link active me-md-4" href="{{ url('') }}">Home</a>
+        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link me-md-4" href="{{ url('#about-us') }}">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link me-md-4" href="{{ url('#help') }}">Contact</a>
-                        </li>
-                        @foreach($pages as $page)
-                            <li class="nav-item">
-                                <a class="nav-link me-md-4" href="{{ route('page.show', $page->slug) }}">{{ ucwords($page->title) }}</a>
-                            </li>
-                        @endforeach
+        <li class="nav-item">
+            <a class="nav-link me-md-4" href="{{ url('#about-us') }}">About</a>
+        </li>
 
-                        @auth
-                            @if(auth()->user()->role === 'user')
-                                <div class="dropdown">
-                                    <!-- If the user is authenticated and has the role 'user', show profile dropdown -->
-                                    <a href="#"
-                                        class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="{{ url("storage/app").'/'.auth()->user()->photo ?? 'https://github.com/mdo.png' }}" alt="" width="32"
-                                            height="32" class="rounded-circle me-2">
-                                        <strong>{{ auth()->user()->name }}</strong>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
-                                        aria-labelledby="dropdownUser1">
-                                        <li><a class="dropdown-item" href="{{ url('user') }}">Dashboard</a></li>
-                                        <li><a class="dropdown-item" href="{{ url('user/plans') }}">Plans & Transaction</a></li>
-                                        <li><a class="dropdown-item" href="{{ url('user/profile') }}">Profile</a></li>
-                                        <li><a class="dropdown-item" href="{{ url('user/change-password') }}">Settings</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="{{ url('logout') }}">Sign out</a></li>
-                                    </ul>
-                                </div>
-                            @endif
-                        @else
-                            <!-- If the user is not authenticated, show login and sign-up -->
-                            <li class="nav-item">
-                                <a class="nav-link mx-md-4" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="btn-medium btn btn-primary" href="{{ url('sign_up') }}">Sign up</a>
-                            </li>
-                        @endauth
+        <li class="nav-item">
+            <a class="nav-link me-md-4" href="{{ url('#help') }}">Contact</a>
+        </li>
+        @foreach($pages as $page)
+            <li class="nav-item">
+                <a class="nav-link me-md-4" href="{{ route('page.show', $page->slug) }}">{{ ucwords($page->title) }}</a>
+            </li>
+        @endforeach
 
+        <!-- Show login and sign-up links for guests -->
+        <li class="nav-item">
+            <a class="nav-link mx-md-4" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn-medium btn btn-primary" href="{{ url('sign_up') }}">Sign up</a>
+        </li>
+    @endguest
 
-
-                    </ul>
+    @auth
+        <!-- Show user-related menu items if the user is logged in -->
+        @if(auth()->user()->role === 'user')
+        <li class="nav-item">
+            <a class="nav-link me-md-4" href="{{ url('user') }}">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link me-md-4" href="{{ url('user/plans') }}">Plans & Transaction</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link me-md-4" href="{{ url('user/profile') }}">Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link me-md-4" href="{{ url('user/change-password') }}">Settings</a>
+        </li>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{ url('storage/app/public/') . '/' . (auth()->user()->photo ?? 'https://github.com/mdo.png') }}" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <strong>{{ auth()->user()->name }}</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="{{ url('user') }}">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="{{ url('user/plans') }}">Plans & Transaction</a></li>
+                    <li><a class="dropdown-item" href="{{ url('user/profile') }}">Profile</a></li>
+                    <li><a class="dropdown-item" href="{{ url('user/change-password') }}">Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{ url('logout') }}">Sign out</a></li>
+                </ul>
+            </div>
+        @endif
+    @endauth
+</ul>
 
                 </div>
             </div>
