@@ -25,22 +25,29 @@
             <div class="col-lg-12">
                 <div class="row">
                     <div class="card" style="width: 30%;">
-                        <img class="card-img-top"
-                            src="https://img.freepik.com/free-vector/gradient-background-vasant-panchami-festival_23-2149906730.jpg"
-                            alt="Card image cap">
+                        <a href="{{ url('user?category_id=1') }}">
+                            <img class="card-img-top"
+                                src="{{ asset('public/theme/user/job_poster.jpg') }}"
+                                alt="Card image cap">
+                        </a>
 
                     </div>
                     <div class="card" style="width:30%;">
-                        <img class="card-img-top"
-                            src="https://img.freepik.com/free-vector/gradient-background-vasant-panchami-festival_23-2149906730.jpg"
-                            alt="Card image cap">
+                        <a href="{{ url('user?category_id=2') }}">
+
+                            <img class="card-img-top"
+                                src="{{ asset('public/theme/user/education_poster.jpg') }}"
+                                alt="Card image cap">
+                        </a>
 
                     </div>
                     <div class="card" style="width:30%;">
-                        <img class="card-img-top"
-                            src="https://img.freepik.com/free-vector/gradient-background-vasant-panchami-festival_23-2149906730.jpg"
-                            alt="Card image cap">
+                        <a href="{{ url('user?category_id=3') }}">
 
+                            <img class="card-img-top"
+                                src="{{ asset('public/theme/user/yojna_poster.jpg') }}"
+                                alt="Card image cap">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -81,10 +88,10 @@
                             <a href="{{ route('user.home') }}" class="btn btn-primary">Back to Home</a>
                             <a download href="{{ asset('storage/app/public/' . $poster->image) }}" class="btn btn-primary">Download Poster</a>
                             <a href="{{ asset('storage/app/public/' . $poster->pdf)}}" class="btn btn-primary">Download PDF </a>
-                            
-                            
-                            
-                            <p class="mt-3">{!! $poster->description !!}</p> <!-- Display the description -->
+                          
+
+                            <p id="description" class="mt-3">{!! $poster->description !!}</p> <!-- Display the description -->
+                              <button class="btn btn-primary" onclick="copyDescription()">Copy Text</button>
                         </div>
                     </div>
                 </div>
@@ -131,5 +138,34 @@
         </div>
     </div>
 </section>
+
+<script>
+    function copyDescription() {
+        // Get the description text from the element with id "description"
+        var description = $("#description").text();
+
+        // Create a temporary textarea element to hold the text
+        var $tempTextarea = $("<textarea>");
+        $("body").append($tempTextarea);
+        $tempTextarea.val(description).select();
+
+        // Copy the text to the clipboard
+        try {
+            var successful = document.execCommand("copy");
+            if (successful) {
+                alert("Description copied to clipboard!");
+            } else {
+                alert("Failed to copy description.");
+            }
+        } catch (err) {
+            alert("An error occurred while copying the description.");
+        }
+
+        // Remove the temporary textarea element
+        $tempTextarea.remove();
+    }
+</script>
+
+
 
 @endsection

@@ -63,23 +63,23 @@
                     <div class="card" style="width: 30%;">
                         <a href="{{ url('user?category_id=1') }}">
                             <img class="card-img-top"
-                                src="https://img.freepik.com/free-vector/gradient-background-vasant-panchami-festival_23-2149906730.jpg"
+                                src="{{ asset('public/theme/user/job_poster.jpg') }}"
                                 alt="Card image cap">
                         </a>
                     </div>
                     <div class="card" style="width:30%;">
-                        <a href="{{ url('user?category_id=1') }}">
+                        <a href="{{ url('user?category_id=2') }}">
 
                             <img class="card-img-top"
-                                src="https://img.freepik.com/free-vector/gradient-background-vasant-panchami-festival_23-2149906730.jpg"
+                                src="{{ asset('public/theme/user/education_poster.jpg') }}"
                                 alt="Card image cap">
                         </a>
                     </div>
                     <div class="card" style="width:30%;">
-                        <a href="{{ url('user?category_id=1') }}">
+                        <a href="{{ url('user?category_id=3') }}">
 
                             <img class="card-img-top"
-                                src="https://img.freepik.com/free-vector/gradient-background-vasant-panchami-festival_23-2149906730.jpg"
+                                src="{{ asset('public/theme/user/yojna_poster.jpg') }}"
                                 alt="Card image cap">
                         </a>
                     </div>

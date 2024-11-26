@@ -57,8 +57,8 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <h1 class=" text-capitalize  lh-1 my-3">नोकऱ्या शोधा</h1>
-                    <p class="lead">प्रतिभेला संधीशी जोडणे. नोकरीच्या सूची एक्सप्लोर करा, नियोक्त्यांसोबत कनेक्ट करा आणि JobLinker सह तुमचे करिअर तयार करा - तुमचे व्यावसायिक यशाचे प्रवेशद्वार.</p>
+                    <h1 class=" text-capitalize  lh-1 my-3">ADARSH MAHITI KENDRA</h1>
+                    <p class="lead">Boost your monthly income by registering as ADARSH MAHITI KENDRA. You can open a one-stop digital shop and earn commission by providing services such as cash withdrawal, cash deposit, money transfer, pan correction and updation, AePS linked transactions, loans, insurance, ticket booking and much more in your local area.</p>
                    <div >
                    <button type="submit"
                     class="btn btn-primary btn-lg billboard-search" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
