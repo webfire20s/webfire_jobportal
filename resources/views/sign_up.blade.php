@@ -186,6 +186,12 @@
                                         <input type="file" id="ExamplePen" name="panImage" class="form-control ps-3" onchange="previewImage(event, 'panPreview')">
                                         <img id="panPreview" class="img-thumbnail mt-2" style="display: none; width: 100px; height: auto;">
                                     </div>
+                                    <div class="col-lg-4">
+    <label for="OfficePhoto" class="form-label fs-6 text-uppercase fw-bold text-black">Office Photo</label>
+    <input type="file" id="OfficePhoto" name="officePhoto" class="form-control ps-3" onchange="previewImage(event, 'officePhotoPreview')">
+    <img id="officePhotoPreview" class="img-thumbnail mt-2" style="display: none; width: 100px; height: auto;">
+</div>
+
                                 </div>
                             </div>
 

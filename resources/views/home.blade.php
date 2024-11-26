@@ -13,27 +13,30 @@
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://img.freepik.com/free-vector/online-job-interview_23-2148612474.jpg?ga=GA1.1.3878707.1729821176&semt=ais_hybrid" height="400" width="100%" class="d-block" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
-          </div>
+@foreach ($sliders as $index => $slider)
+    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+        <img src="{{ asset('public/uploads/sliders/' . $slider->image) }}" height="400" width="100%" class="d-block" alt="{{ $slider->title }}">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>{{ $slider->title }}</h5>
+            <p>{{ $slider->description }}</p>
         </div>
-        <div class="carousel-item">
-          <img src="https://img.freepik.com/free-vector/online-job-interview_23-2148612474.jpg?ga=GA1.1.3878707.1729821176&semt=ais_hybrid" height="400" width="100" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="https://img.freepik.com/free-vector/online-job-interview_23-2148612474.jpg?ga=GA1.1.3878707.1729821176&semt=ais_hybrid" height="400" width="100" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
+    </div>
+@endforeach
+
+        <!--<div class="carousel-item">-->
+        <!--  <img src="https://img.freepik.com/free-vector/online-job-interview_23-2148612474.jpg?ga=GA1.1.3878707.1729821176&semt=ais_hybrid" height="400" width="100" class="d-block w-100" alt="...">-->
+        <!--  <div class="carousel-caption d-none d-md-block">-->
+        <!--    <h5>Second slide label</h5>-->
+        <!--    <p>Some representative placeholder content for the second slide.</p>-->
+        <!--  </div>-->
+        <!--</div>-->
+        <!--<div class="carousel-item">-->
+        <!--  <img src="https://img.freepik.com/free-vector/online-job-interview_23-2148612474.jpg?ga=GA1.1.3878707.1729821176&semt=ais_hybrid" height="400" width="100" class="d-block w-100" alt="...">-->
+        <!--  <div class="carousel-caption d-none d-md-block">-->
+        <!--    <h5>Third slide label</h5>-->
+        <!--    <p>Some representative placeholder content for the third slide.</p>-->
+        <!--  </div>-->
+        <!--</div>-->
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

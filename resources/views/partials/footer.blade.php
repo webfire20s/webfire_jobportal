@@ -3,7 +3,7 @@
     <div class="container footer-container">
         <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5  ">
 
-            <div class=" col-md-4">
+            <div class=" col-md-12">
                 <h3><img src="{{ asset('public/logo.png') }}" alt="image" height="150px"></h3>
                 <p>प्रतिभेला संधीशी जोडणे. नोकरीच्या सूची एक्सप्लोर करा, नियोक्त्यांसोबत कनेक्ट करा आणि JobLinker सह तुमचे करिअर तयार करा - तुमचे व्यावसायिक यशाचे प्रवेशद्वार.</p>
                 <i class="bi-facebook pe-4"></i>
@@ -12,43 +12,43 @@
                 <i class="bi-youtube pe-4"></i>
             </div>
 
-            <div class="col-md-2 ">
-                <h5>Project</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Houses</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Rooms</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Flats</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Appartments</a></li>
-                </ul>
-            </div>
+            <!--<div class="col-md-2 ">-->
+            <!--    <h5>Project</h5>-->
+            <!--    <ul class="nav flex-column">-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Houses</a></li>-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Rooms</a></li>-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Flats</a></li>-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Appartments</a></li>-->
+            <!--    </ul>-->
+            <!--</div>-->
 
-            <div class="col-md-2 ">
-                <h5>Company</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">How we work ?</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Capital </a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Security </a></li>
-                </ul>
-            </div>
+            <!--<div class="col-md-2 ">-->
+            <!--    <h5>Company</h5>-->
+            <!--    <ul class="nav flex-column">-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">How we work ?</a></li>-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Capital </a></li>-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Security </a></li>-->
+            <!--    </ul>-->
+            <!--</div>-->
 
-            <div class="col-md-2 ">
-                <h5>Movement</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Movement</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Support us</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Pricing</a></li>
-                </ul>
-            </div>
+            <!--<div class="col-md-2 ">-->
+            <!--    <h5>Movement</h5>-->
+            <!--    <ul class="nav flex-column">-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Movement</a></li>-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Support us</a></li>-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Pricing</a></li>-->
+            <!--    </ul>-->
+            <!--</div>-->
 
-            <div class="col-md-2 ">
-                <h5>Help</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Privacy </a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Condition</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Blog</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">FAQs</a></li>
-                </ul>
-            </div>
+            <!--<div class="col-md-2 ">-->
+            <!--    <h5>Help</h5>-->
+            <!--    <ul class="nav flex-column">-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Privacy </a></li>-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Condition</a></li>-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Blog</a></li>-->
+            <!--        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">FAQs</a></li>-->
+            <!--    </ul>-->
+            <!--</div>-->
         </footer>
     </div>
 

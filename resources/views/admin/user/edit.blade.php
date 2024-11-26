@@ -116,33 +116,63 @@
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-
+                
                 <!-- Photo Field -->
                 <div class="form-group">
                     <label for="photo">Photo:</label>
                     <input type="file" class="form-control" id="photo" name="photo" accept="image/*">
+                    @if ($users->photo)
+                        <div class="mt-2">
+                            <img src="{{ asset('storage/app/public/' . $users->photo) }}" alt="Photo" class="img-thumbnail" style="width: 100px; height: auto;">
+                        </div>
+                    @endif
                     @error('photo')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-
+                
                 <!-- Aadhar Photo Field -->
                 <div class="form-group">
                     <label for="aadhar_photo">Aadhar Photo:</label>
                     <input type="file" class="form-control" id="aadhar_photo" name="aadhar_photo" accept="image/*">
+                    @if ($users->aadhar_photo)
+                        <div class="mt-2">
+                            <img src="{{ asset('storage/app/public/' . $users->aadhar_photo) }}" alt="Aadhar Photo" class="img-thumbnail" style="width: 100px; height: auto;">
+                        </div>
+                    @endif
                     @error('aadhar_photo')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-
+                
                 <!-- PAN Photo Field -->
                 <div class="form-group">
                     <label for="pan_photo">PAN Photo:</label>
                     <input type="file" class="form-control" id="pan_photo" name="pan_photo" accept="image/*">
+                    @if ($users->pan_photo)
+                        <div class="mt-2">
+                            <img src="{{ asset('storage/app/public/' . $users->pan_photo) }}" alt="PAN Photo" class="img-thumbnail" style="width: 100px; height: auto;">
+                        </div>
+                    @endif
                     @error('pan_photo')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                
+                <!-- Office Photo Field -->
+                <div class="form-group">
+                    <label for="office_photo">Office Photo:</label>
+                    <input type="file" class="form-control" id="office_photo" name="office_photo" accept="image/*">
+                    @if ($users->office_photo)
+                        <div class="mt-2">
+                            <img src="{{ asset('storage/app/public/' . $users->office_photo) }}" alt="Office Photo" class="img-thumbnail" style="width: 100px; height: auto;">
+                        </div>
+                    @endif
+                    @error('office_photo')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+
             </div>
 
             <!-- Save Button -->

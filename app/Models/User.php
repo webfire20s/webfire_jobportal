@@ -34,11 +34,12 @@ class User extends Authenticatable // Change here: extend Authenticatable
         'photo',
         'aadhar_photo',
         'pan_photo',
+        'office_photo'
     ];
 
     // The attributes that should be hidden for arrays (e.g. passwords)
     protected $hidden = [
-        'password',
+        
         'remember_token',
     ];
 
@@ -48,13 +49,13 @@ class User extends Authenticatable // Change here: extend Authenticatable
     ];
 
     // The method to automatically hash passwords before storing
-    public function setPasswordAttribute($value)
-    {
-        // If the password is not already hashed, hash it before saving
-        if (!empty($value)) {
-            $this->attributes['password'] = Hash::make($value);
-        }
-    }
+    // public function setPasswordAttribute($value)
+    // {
+    //     // If the password is not already hashed, hash it before saving
+    //     if (!empty($value)) {
+    //         $this->attributes['password'] = Hash::make($value);
+    //     }
+    // }
 
    
 }
