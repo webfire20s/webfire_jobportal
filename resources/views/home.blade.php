@@ -71,7 +71,7 @@
             </div>
         </div>
     </section>
-
+<?/*
     <!-- Feature start  -->
     <section id="feature">
         <div class="container py-5">
@@ -274,5 +274,5 @@
             </div>
         </div>
     </section>
-
+*/?>
 @endsection
