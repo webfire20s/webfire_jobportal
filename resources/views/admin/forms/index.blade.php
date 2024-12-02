@@ -9,13 +9,15 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <table class="table">
+    <table class="table table-bordered datatable">
         <thead>
             <tr>
                 <th>SL</th>
                 <th>Description</th>
                 <th>Document</th>
                 <th>File Size (KB)</th>
+                <th>Created At</th>
+                <th>Updated At</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -26,6 +28,8 @@
                     <td>{{ $form->form_description }}</td>
                     <td><a href="{{ Storage::url($form->document_path) }}" target="_blank">View Document</a></td>
                     <td>{{ $form->file_size }}</td>
+                    <td>{{ $form->created_at }}</td>
+                    <td>{{ $form->updated_at }}</td>
                     <td>
                         <a href="{{ route('forms.edit', $form) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('forms.destroy', $form) }}" method="POST" style="display:inline;">
