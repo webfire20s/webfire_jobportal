@@ -53,6 +53,10 @@
               class="nav-icon bi bi-list"></i>
             <p>Latest News</p>
           </a> </li>
+          <li class="nav-item"> <a href="{{ url('admin/forms') }}" class="nav-link"> <i
+              class="nav-icon bi bi-list"></i>
+            <p>Forms</p>
+          </a> </li>
 
       </ul> <!--end::Sidebar Menu-->
     </nav>

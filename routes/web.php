@@ -15,6 +15,8 @@ use App\Http\Controllers\User\UserPlanController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\LatestNewController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\FormController;
+
 
 
 
@@ -126,6 +128,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::delete('slider/destroy/{id}', [SliderController::class, 'destroy'])->name('admin.slider.destroy');
 
 
+    Route::resource('forms', FormController::class);
 
 
 
