@@ -53,7 +53,7 @@
                             <div class="form-input col-lg-12 my-4">
                                 <div class="row">
                                     <div class="col-lg-3">
-                                        <label for="exampleInputEmail4" class="form-label fs-6 text-uppercase fw-bold text-black">Email Address</label>
+                                        <label for="exampleInputEmail4" class="form-label fs-6 text-uppercase fw-bold text-black">Email Address (Username)</label>
                                     </div>
                                     <div class="col-lg-9">
                                         <input type="text" id="exampleInputEmail4" name="email" placeholder="Email" class="form-control ps-3" value="{{ old('email') }}">

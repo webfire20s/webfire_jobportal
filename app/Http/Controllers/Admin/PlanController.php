@@ -50,13 +50,13 @@ class PlanController extends Controller
     public function destroy($id)
     {
         // Find the poster by ID
-        $poster = Poster::findOrFail($id);
+        $poster = Plan::findOrFail($id);
     
         // Delete the poster
         $poster->delete();
     
         // Redirect back to the poster index with a success message
-        return redirect()->route('poster.index')->with('success', 'Poster deleted successfully!');
+        return redirect()->route('admin.plan.index')->with('success', 'Poster deleted successfully!');
     }
 
 

@@ -23,6 +23,40 @@ class Transaction extends Model
         'status',
         'purchase_date',
     ];
+    
+    /**
+     * Get the expiration date of the user's active subscription for a given plan.
+     *
+     * @param int $userId
+     * @param int $planId
+     * @return Carbon|null  // Returns the expiration date or null if not active.
+     */
+    public static function getActivePlanExpiryDate(int $userId, int $planId): ?Carbon
+    {
+        // Get the latest active transaction for the user and plan
+        $latestTransaction = self::where('user_id', $userId)
+            ->where('plan_id', $planId)
+            ->where('status', 'active')
+            ->latest('purchase_date')
+            ->first();
+    
+        if (!$latestTransaction) {
+            return null; // No active transaction found
+        }
+    
+        // Get the plan details
+        $plan = Plan::find($planId);
+        if (!$plan) {
+            return null; // Plan not found
+        }
+    
+        // Calculate the expiration date
+        $expiryDate = Carbon::parse($latestTransaction->purchase_date)->addMonths($plan->duration);
+    
+        // Return the expiration date as a Carbon instance
+        return $expiryDate->isFuture() ? $expiryDate : null;
+    }
+
 
     /**
      * Check if the user's current subscription for this plan is active.

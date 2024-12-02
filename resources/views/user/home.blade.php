@@ -48,14 +48,37 @@
         transform: translateY(-100%); /* End at the top */
     }
 }
-
+.expiry{
+    margin-top: 10rem !important;
+    padding: 0rem;
+    background: #b0dccdb8;
+    color: aliceblue;
+    text-align:center;
+}
 </style>
 
 <section id="billboard">
     <div class="container">
+        <?php 
+            $userHasActivePlan = \App\Helpers\SubscriptionHelper::isActive(auth()->id());
+            
+            if ($userHasActivePlan) {
+                $userPlanExpiry = \App\Helpers\SubscriptionHelper::getExpiryDate(auth()->id());
+                if ($userPlanExpiry) { 
+            ?>
+                <div class="alert alert-success expiry">
+                    Your account's expiration date is set to <?php echo $userPlanExpiry->format('D, d-m-Y h:i:s'); ?>
+                </div>
+            <?php 
+                } 
+            } 
+            ?>
+
         <marquee direction="left">
             <p> <strong class="text-danger h3">*</strong> {{ @$notice->notice }}</p>
         </marquee>
+        
+        
 
         <div class="row flex-lg-row-reverse align-items-center">
             <div class="col-lg-12">

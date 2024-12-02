@@ -64,8 +64,8 @@
 
             </div>
             <div class="col-md-4 d-flex align-items-center">
-                <p>Designed by: <a href="https://webfire.in" class="link-primary"
-                        target="_blank">Webfire</a></p>
+                <p>Developed by: <a href="https://webfire.in" class="link-primary"
+                        target="_blank">Webfire Degitech</a></p>
 
             </div>
 

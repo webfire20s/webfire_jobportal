@@ -108,4 +108,34 @@ class SubscriptionHelper
         
         return $latestTransaction->plan;
     }
+    
+    /**
+     * Get the expiration date of the user's active subscription plan.
+     *
+     * @param int $userId
+     * @return Carbon|null
+     */
+    public static function getExpiryDate(int $userId): ?Carbon
+    {
+        Log::info('Fetching subscription expiry date for user ID: ' . $userId);
+
+        // Get the latest approved transaction for the user
+        $latestTransaction = Transaction::where('user_id', $userId)
+            ->where('status', 'approved')
+            ->latest('purchase_date')
+            ->first();
+
+        if (!$latestTransaction) {
+            Log::warning('No active subscription found for user ID: ' . $userId);
+            return null;
+        }
+
+        // Calculate the expiry date
+        $expiryDate = Carbon::parse($latestTransaction->purchase_date)->addMonths($latestTransaction->month);
+
+        // Log the expiry date
+        Log::info('Subscription for user ID ' . $userId . ' expires on: ' . $expiryDate->toDateString());
+
+        return $expiryDate;
+    }
 }
