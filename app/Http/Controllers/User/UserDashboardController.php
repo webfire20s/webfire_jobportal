@@ -12,9 +12,16 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\LatestNews;
+use App\Models\Form;
 
 class UserDashboardController extends Controller
 {
+    public function form_list()
+    {
+        $pages = Page::all();  // Retrieve all pages
+        $forms = Form::orderBy('id','desc')->get();
+        return view('user.form_list',compact('pages','forms'));  // Create a view for password change
+    }
     public function index(Request $request)
     {
 

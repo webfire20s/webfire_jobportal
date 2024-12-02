@@ -26,7 +26,9 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $form->form_description }}</td>
-                    <td><a href="{{ Storage::url($form->document_path) }}" target="_blank">View Document</a></td>
+                    <td><a href="{{ asset('storage/app/public/'.$form->document_path) }}" target="_blank">
+                    <img src="{{ asset('public/theme/web/pdf.svg') }}" width="30" />
+                    </a></td>
                     <td>{{ $form->file_size }}</td>
                     <td>{{ $form->created_at }}</td>
                     <td>{{ $form->updated_at }}</td>

@@ -60,6 +60,9 @@
             <a class="nav-link me-md-4" href="{{ url('user/plans') }}">Plans & Transaction</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link me-md-4" href="{{ url('user/forms') }}">Forms</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link me-md-4" href="{{ url('user/profile') }}">Profile</a>
         </li>
         <li class="nav-item">

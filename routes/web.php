@@ -151,4 +151,6 @@ Route::middleware(['auth', 'role:user'])->prefix('user')->group(function () {
 
     Route::get('/change-password', [UserDashboardController::class, 'changePassword'])->name('user.changePassword');
     Route::post('/change-password', [UserDashboardController::class, 'updatePassword'])->name('user.updatePassword');
+    
+    Route::get('/forms', [UserDashboardController::class, 'form_list'])->name('user.form_list');
 });
