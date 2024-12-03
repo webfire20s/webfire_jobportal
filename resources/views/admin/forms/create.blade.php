@@ -13,7 +13,7 @@
 
         <div class="form-group">
             <label for="document">Upload Document</label>
-            <input type="file" name="document" class="form-control" required>
+            <input type="file" name="document" class="form-control" required accept=".jpeg, .jpg, .pdf, .xls, .xlsx, .doc, .docx">
         </div>
 
         <button type="submit" class="btn btn-primary mt-2">Save</button>

@@ -21,8 +21,9 @@ class FormController extends Controller
     {
         $request->validate([
             'form_description' => 'required|string|max:255',
-            'document' => 'required|file|mimes:pdf,doc,docx|max:2048', // 2MB max
+            'document' => 'required|file|mimes:jpeg,jpg,pdf,doc,docx,xls,xlsx|max:2048', // 2MB max
         ]);
+
 
         $file = $request->file('document');
         $path = $file->store('documents', 'public');

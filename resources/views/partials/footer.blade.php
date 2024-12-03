@@ -60,7 +60,7 @@
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 ">
             <div class="col-md-8 d-flex align-items-center">
-                <p>© 2024 JobPortal, Inc. All rights reserved.</p>
+                <p>© 2024 Adarsh Online Service, All rights reserved.</p>
 
             </div>
             <div class="col-md-4 d-flex align-items-center">

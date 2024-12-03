@@ -57,7 +57,7 @@
 </style>
 
 <div class="container" style="margin-top:10rem !important;">
-    <h3 class="text-center">Forms</h3>
+    <h3 class="text-center">ALL FORMS</h3>
 
     @if(session('success'))
         <div class="alert alert-success text-center">{{ session('success') }}</div>

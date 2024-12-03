@@ -15,7 +15,7 @@
 
         <div class="form-group">
             <label for="document">Upload Document (Optional)</label>
-            <input type="file" name="document" class="form-control">
+            <input type="file" name="document" class="form-control" accept=".jpeg, .jpg, .pdf, .xls, .xlsx, .doc, .docx">
         </div>
 
         <button type="submit" class="btn btn-primary mt-2">Update</button>
