@@ -41,9 +41,14 @@
 <canvas id="canvas" width="800" height="600"></canvas>
 
 <div class="controls">
-    <a class="btn btn-sm btn-primary" onclick="downloadCanvas()" aria-label="Download Image">
-        <i class="fas fa-download"></i> Download Poster
-    </a>
+    <div>
+        <a class="btn btn-sm btn-primary" onclick="downloadCanvas()" aria-label="Download Image">
+            <i class="fas fa-download"></i> Download Poster
+        </a>
+         <a class="btn btn-sm btn-primary" onclick="toggleStripe()" aria-label="Download Image">
+            Show/Hide Stripe
+        </a>
+    </div>
     <div>
         <label for="h1-controls">Firm:</label>
         <a class="btn btn-sm btn-primary" id="h1-controls" onclick="changeFontSize(0, 'increase')" aria-label="Increase H1 Size">
@@ -89,9 +94,9 @@
     let dragTarget = null;
 
     const texts = [
-        { text: '{{ $user->shop_name }}', x: canvas.width / 2, y: 525 , fontSize: 30, isH1: true },
-        { text: '{{ $user->address }}', x: canvas.width / 2, y: 550, fontSize: 24 },
-        { text: '✆ {{ $user->mobile}} | ✉ {{$user->email}}', x: canvas.width / 2, y: 575, fontSize: 24 }
+        { text: '{{ $user->shop_name }}', x: canvas.width / 2, y: 525 , fontSize: 32, isH1: true , fontFamily:"Tiro Devanagari Marathi"},
+        { text: '{{ $user->address }}', x: canvas.width / 2, y: 550, fontSize: 20 , fontFamily:"Poppins"},
+        { text: '✆ {{ $user->mobile}} | ✉ {{$user->email}}', x: canvas.width / 2, y: 575, fontSize: 20 , fontFamily:"Poppins"}
     ];
 
     const bgImage = new Image();
@@ -101,11 +106,43 @@
         drawTexts();
     };
 
+    let isStripeVisible = true; // Flag to toggle stripe visibility
+
+    function toggleStripe() {
+        isStripeVisible = !isStripeVisible; // Toggle the flag
+        drawTexts(); // Redraw the canvas
+    }
+    
     function drawTexts() {
         ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
         ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height); // Redraw the background image
-        texts.forEach(({ text, x, y, fontSize }) => {
+    
+        if (isStripeVisible) {
+            // Draw the stripe
+            const stripeHeight = 30; // Adjust height as needed
+            const stripeColor = '#d3d1ce8f'; // Semi-transparent black
+            const stripeY = canvas.height / 2.4 - stripeHeight / 2;
+    
+            ctx.fillStyle = stripeColor;
+            ctx.fillRect(0, stripeY, canvas.width, stripeHeight);
+    
+            // Repeated text in the stripe
+            const repeatText = '{{$user->shop_name." | ✆ ".$user->mobile}}';
+            const fontSize = 12; // Adjust font size
             ctx.font = `${fontSize}px Arial`;
+            ctx.fillStyle = 'black'; // Text color
+            const textWidth = ctx.measureText(repeatText).width;
+            let startX = -textWidth; // Start off the canvas for a seamless loop
+    
+            while (startX < canvas.width) {
+                ctx.fillText(repeatText, startX, stripeY + stripeHeight / 2 + fontSize / 2); // Vertically center the text
+                startX += textWidth + 20; // Add spacing between repeats
+            }
+        }
+    
+        // Draw the main texts
+        texts.forEach(({ text, x, y, fontSize, fontFamily }) => {
+            ctx.font = `${fontSize}px ${fontFamily}`;
             ctx.textAlign = 'center'; // Center align text horizontally
             ctx.fillStyle = 'black';
             ctx.fillText(text, x, y);
