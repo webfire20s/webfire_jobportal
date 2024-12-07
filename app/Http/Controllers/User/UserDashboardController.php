@@ -50,8 +50,6 @@ class UserDashboardController extends Controller
 
         return view('user.profile',compact('pages'));  // Create a view for password change
     }
-    
-
     public function updateProfile(Request $request)
     {
         // Validate the incoming request data
@@ -152,6 +150,19 @@ class UserDashboardController extends Controller
         $news = LatestNews::findOrFail($id);  // Retrieve the news by its ID
         $pages = Page::all();  // Retrieve all pages
         return view('latest_news.show', compact('news','pages'));  // Return the view with the news data
+    }
+
+
+    public function customizePoster($id)
+    {
+        $poster = Poster::find($id);
+        $user = auth()->user();
+        $download_name = $poster->title."_{$id}_".$user->id;
+        return view('user.customer_poster',compact('poster','user','download_name'));
+        // Generate a customized PDF or image
+        // Logic for adding the user's details to the poster's PDF/image can be added here.
+    
+        // return response()->download(storage_path('app/public/' . $poster->image), 'customized_poster.jpg');
     }
 
 

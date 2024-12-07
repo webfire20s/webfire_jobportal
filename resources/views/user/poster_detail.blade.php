@@ -85,7 +85,8 @@
                             
                             <!--@endif-->
                             <a target="_blank" href="{{ $poster->poster_url }}" class="btn btn-primary m-1">Job Link</a>
-                            <a download href="{{ asset('storage/app/public/' . $poster->image) }}" class="btn btn-primary m-1">Download Poster</a>
+                            <!--<a download href="{{ asset('storage/app/public/' . $poster->image) }}" class="btn btn-primary m-1">Download Poster</a>-->
+                            <a href="{{ asset('user/poster/customize/' . $poster->id) }}" class="btn btn-primary m-1">Download Poster</a>
                             <a href="{{ asset('storage/app/public/' . $poster->pdf)}}" class="btn btn-primary m-1">Download PDF </a>
                             <button class="btn btn-primary m-1" onclick="copyDescription()">Copy Text</button>
                             <a href="{{ route('user.home') }}" class="btn btn-primary m-1">Back to Home</a>
@@ -160,3 +161,129 @@
 
 
 @endsection
+
+<!--@extends('web')-->
+
+<!--@section('title', 'Poster Details Page | ' . $poster->title)-->
+<!--@section('meta_title', $poster->title)-->
+<!--@section('meta_description', $poster->title)-->
+<!--@section('meta_keywords', $poster->title)-->
+<!--@section('meta_image', asset('storage/app/public/' . $poster->image))-->
+
+<!--@section('content')-->
+<!--<style>-->
+<!--    .carousel-vertical .carousel-inner {-->
+<!--        display: flex;-->
+<!--        flex-direction: column;-->
+<!--    }-->
+
+<!--    .carousel-vertical .carousel-item {-->
+<!--        transition: transform 1s ease-in-out;-->
+<!--    }-->
+<!--</style>-->
+
+<!-- Billboard Section -->
+<!--<section id="billboard">-->
+<!--    <div class="container">-->
+<!--        <div class="row flex-lg-row-reverse align-items-center">-->
+<!--            <div class="col-lg-12">-->
+<!--                <div class="row">-->
+<!--                    <div class="card" style="width: 30%;">-->
+<!--                        <a href="{{ url('user?category_id=1') }}">-->
+<!--                            <img class="card-img-top" src="{{ asset('public/theme/user/job_poster.jpg') }}" alt="Jobs">-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    <div class="card" style="width:30%;">-->
+<!--                        <a href="{{ url('user?category_id=2') }}">-->
+<!--                            <img class="card-img-top" src="{{ asset('public/theme/user/education_poster.jpg') }}" alt="Education">-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    <div class="card" style="width:30%;">-->
+<!--                        <a href="{{ url('user?category_id=3') }}">-->
+<!--                            <img class="card-img-top" src="{{ asset('public/theme/user/yojna_poster.jpg') }}" alt="Yojna">-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!-- Poster Details Section -->
+<!--<section>-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-3">-->
+<!--                @ include(' user.partials.sidebar') -->
+<!--            </div>-->
+<!--            <div class="col-md-6">-->
+<!--                <div class="card card-primary">-->
+<!--                    <div class="card-header">-->
+<!--                        <h2>{{ $poster->title }}</h2>-->
+<!--                    </div>-->
+<!--                    <div class="card-body text-center">-->
+<!--                        <img src="{{ asset('storage/app/public/' . $poster->image) }}" alt="{{ $poster->title }}" class="img-fluid mb-3">-->
+<!--                        <div class="mt-4">-->
+<!--                            <button class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#customizeModal">Customize and Download</button>-->
+<!--                            <a href="{{ route('user.home') }}" class="btn btn-primary m-1">Back to Home</a>-->
+<!--                        </div>-->
+<!--                        <div id="description" class="mt-3">{!! $poster->description !!}</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-3">-->
+<!--                @ include(' user.partials.latest_news')-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!-- Customize Modal -->
+<!--<div class="modal fade" id="customizeModal" tabindex="-1" aria-labelledby="customizeModalLabel" aria-hidden="true">-->
+<!--    <div class="modal-dialog">-->
+<!--        <form action=" { { route(' poster.customize') }}" method="POST">-->
+<!--            @csrf-->
+<!--            <input type="hidden" name="poster_id" value="{{ $poster->id }}">-->
+<!--            <div class="modal-content">-->
+<!--                <div class="modal-header">-->
+<!--                    <h5 class="modal-title" id="customizeModalLabel">Customize Poster Details</h5>-->
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                </div>-->
+<!--                <div class="modal-body">-->
+<!--                    <div class="mb-3">-->
+<!--                        <label for="name" class="form-label">Name</label>-->
+<!--                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>-->
+<!--                    </div>-->
+<!--                    <div class="mb-3">-->
+<!--                        <label for="email" class="form-label">Email</label>-->
+<!--                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>-->
+<!--                    </div>-->
+<!--                    <div class="mb-3">-->
+<!--                        <label for="phone" class="form-label">Phone</label>-->
+<!--                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>-->
+<!--                    </div>-->
+<!--                    <div class="mb-3">-->
+<!--                        <label for="address" class="form-label">Shop Address</label>-->
+<!--                        <textarea class="form-control" id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="modal-footer">-->
+<!--                    <button type="submit" class="btn btn-primary">Download Poster</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    function copyDescription() {-->
+<!--        const description = $("#description").text();-->
+<!--        navigator.clipboard.writeText(description)-->
+<!--            .then(() => alert("Description copied to clipboard!"))-->
+<!--            .catch(err => alert("Failed to copy description: " + err));-->
+<!--    }-->
+<!--</script>-->
+<!--@endsection-->
+
+
+
