@@ -143,16 +143,18 @@ public function toggleStatus($id)
     
     
     public function destroy($id)
-    {
-        // Find the plan by ID
-        $user = User::findOrFail($id);
+{
+    // Find the user by ID
+    $user = User::findOrFail($id);
+    
+    // Delete the user
+    $user->delete();
 
-        // Delete the plan
-        $plan->delete();
+    // Redirect back with a success message
+    return redirect()->route('admin.user.index')->with('success', 'User deleted successfully!');
+}
 
-        // Redirect back with success message
-        return redirect()->route('user/')->with('success', 'User deleted successfully!');
-    }
+
     
     // You can add more user-specific methods here
 }

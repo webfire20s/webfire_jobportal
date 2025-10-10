@@ -48,13 +48,14 @@
                             </td>
                             <td>
                                 <a href="{{ url('admin/user/edit', $user->id) }}" class="btn btn-primary btn-sm">Edit</a>
-
+                                <?php if($user->id != 1){?>
                                 <form action="{{ url('admin/user/destroy', $user->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
                                 </form>
 
+                            <?php } ?>
 
                             </td>
                         </tr>

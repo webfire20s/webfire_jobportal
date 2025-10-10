@@ -30,7 +30,9 @@ class UserDashboardController extends Controller
         $pages = Page::all();  // Retrieve all pages
         $notice = ImportantNotice::first(); // Assuming there is only one notice
         $categoryId = $request->input('category_id', $categories->first()->id ?? null);
-        $posters = Poster::where('category_id', $categoryId)->get();
+        $posters = Poster::where('category_id', $categoryId)
+                 ->orderBy('id', 'desc')
+                 ->get();
 
         return view('user.home', compact('categories', 'posters', 'pages', 'notice','latestNews'));
     }

@@ -3,6 +3,7 @@
 @section('title', 'User Dashboard')
 
 @section('content')
+
 <style>
     /* Ensure the carousel items are displayed correctly in horizontal scrolling */
     .carousel-vertical .carousel-inner {
@@ -147,7 +148,7 @@
 
             <div class="col-md-3">
                 <div class="row">
-                    <div class="card" style="height: 300px; ">
+                    <div class="card" style="height: 600px !important; ">
                         <div class="card-header bg-primary text-white">
                             <h6>Updated News</h6>
                         </div>
@@ -159,7 +160,7 @@
                             </ul>
                         </div>
                     </div>
-
+                   
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header bg-info text-white">
