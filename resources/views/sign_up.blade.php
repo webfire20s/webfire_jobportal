@@ -1,212 +1,251 @@
-@extends('web')
+@extends('web-layout')
 
-@section('title', 'Home Page')
+@section('title', 'Sign Up')
 
 @section('content')
-    <!-- billboard start -->
-    <section id="billboard">
-        <div class="container">
-            <div class="row flex-lg-row-reverse align-items-center">
-                <div class="panel mt-7" style="background-color:white">
-                    <div class="panel-heading mt-3">
-                        @if(session('success'))
-                            <div class="alert alert-success">{{ session('success') }}</div>
-                        @endif
 
-                        @if($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+<style>
+    body {
+        background: linear-gradient(135deg, #5636d6 0%, #3b82f6 100%);
+        font-family: 'Poppins', sans-serif;
+        min-height: 100vh;
+    }
 
-                        <h2 style="color:black;" class="text-center">Registration</h2>
+    .register-card {
+        max-width: 750px;
+        margin: 70px auto;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .register-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .register-header {
+        background: linear-gradient(135deg, #3b82f6, #5636d6);
+        color: #fff;
+        text-align: center;
+        padding: 30px 25px;
+    }
+
+    .register-header h2 {
+        font-weight: 600;
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .register-header p {
+        opacity: 0.9;
+        font-size: 0.95rem;
+    }
+
+    .register-body {
+        padding: 35px;
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #222;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .form-control:focus {
+        border-color: #3b82f6;
+        background-color: #fff;
+        box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+    }
+
+    .btn-signup {
+        background: linear-gradient(135deg, #5636d6, #3b82f6);
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: 0.3s;
+        color: #fff;
+    }
+
+    .btn-signup:hover {
+        background: linear-gradient(135deg, #3b82f6, #5636d6);
+        transform: scale(1.03);
+    }
+
+    .alert {
+        border-radius: 10px;
+    }
+
+    label a {
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    label a:hover {
+        text-decoration: underline;
+    }
+
+    .img-thumbnail {
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-section-title {
+        font-weight: 600;
+        color: #3b82f6;
+        border-left: 4px solid #3b82f6;
+        padding-left: 8px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<section id="registration">
+    <div class="container">
+        <div class="register-card">
+            <div class="register-header">
+                <h2>Join Adarsh Network ✨</h2>
+                <p>Fill in your details to create your account</p>
+            </div>
+
+            <div class="register-body">
+
+                @if(session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
+
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
-                    <div class="panel-body">
-                        <form id="form4" class="form-group flex-wrap p-3" action="{{ route('sign_up.submit') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="form-input col-lg-12 my-4">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label for="exampleFullName" class="form-label fs-6 text-uppercase fw-bold text-black">Full Name</label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <input type="text" id="exampleFullName" name="name" placeholder="Enter Name" class="form-control ps-3" value="{{ old('name') }}">
-                                    </div>
-                                </div>
-                            </div>
+                @endif
 
-                            <div class="form-input col-lg-12 my-4">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label for="exampleAadharNumber" class="form-label fs-6 text-uppercase fw-bold text-black">Aadhar Number</label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <input type="text" id="exampleAadharNumber" name="aadhar" placeholder="Enter Aadhar" class="form-control ps-3" value="{{ old('aadhar') }}">
-                                    </div>
-                                </div>
-                            </div>
+                <form action="{{ route('sign_up.submit') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
 
-                            <div class="form-input col-lg-12 my-4">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label for="exampleInputEmail4" class="form-label fs-6 text-uppercase fw-bold text-black">Email Address (Username)</label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <input type="text" id="exampleInputEmail4" name="email" placeholder="Email" class="form-control ps-3" value="{{ old('email') }}">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-input col-lg-12 my-4">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label for="password" class="form-label fs-6 text-uppercase fw-bold text-black">Password</label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <input type="password" id="password" name="password" placeholder="Password" class="form-control ps-3">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-input col-lg-12 my-4">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label for="password_confirmation" class="form-label fs-6 text-uppercase fw-bold text-black">Password Confirmation</label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="password_confirmation" class="form-control ps-3">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-input col-lg-12 my-4">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label for="exampleMobileNumber" class="form-label fs-6 text-uppercase fw-bold text-black">Mobile Number</label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <input type="text" id="exampleMobileNumber" name="mobile" placeholder="Enter Mobile" class="form-control ps-3" value="{{ old('mobile') }}">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-input col-lg-12 my-4">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label for="exampleAddress" class="form-label fs-6 text-uppercase fw-bold text-black">Address Line 1</label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <input type="text" id="exampleAddress" name="address" placeholder="Enter Address" class="form-control ps-3" value="{{ old('address') }}">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-input col-lg-12 my-4">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label for="exampleState" class="form-label fs-6 text-uppercase fw-bold text-black">State</label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        
-                                        <!-- States of India -->
-
-                                        <select name="state" class="form-control" id="exampleState">
-    <option value="">Select State</option>
-    <option value="AP" {{ old('state') == 'AP' ? 'selected' : '' }}>Andhra Pradesh</option>
-    <option value="AR" {{ old('state') == 'AR' ? 'selected' : '' }}>Arunachal Pradesh</option>
-    <option value="AS" {{ old('state') == 'AS' ? 'selected' : '' }}>Assam</option>
-    <option value="BR" {{ old('state') == 'BR' ? 'selected' : '' }}>Bihar</option>
-    <option value="CT" {{ old('state') == 'CT' ? 'selected' : '' }}>Chhattisgarh</option>
-    <option value="GA" {{ old('state') == 'GA' ? 'selected' : '' }}>Goa</option>
-    <option value="HR" {{ old('state') == 'HR' ? 'selected' : '' }}>Haryana</option>
-    <option value="HP" {{ old('state') == 'HP' ? 'selected' : '' }}>Himachal Pradesh</option>
-    <option value="JK" {{ old('state') == 'JK' ? 'selected' : '' }}>Jammu and Kashmir</option>
-    <option value="JH" {{ old('state') == 'JH' ? 'selected' : '' }}>Jharkhand</option>
-    <option value="KA" {{ old('state') == 'KA' ? 'selected' : '' }}>Karnataka</option>
-    <option value="KL" {{ old('state') == 'KL' ? 'selected' : '' }}>Kerala</option>
-    <option value="MP" {{ old('state') == 'MP' ? 'selected' : '' }}>Madhya Pradesh</option>
-    <option value="MH" {{ old('state') == 'MH' ? 'selected' : '' }}>Maharashtra</option>
-    <option value="MN" {{ old('state') == 'MN' ? 'selected' : '' }}>Manipur</option>
-    <option value="ML" {{ old('state') == 'ML' ? 'selected' : '' }}>Meghalaya</option>
-    <option value="MZ" {{ old('state') == 'MZ' ? 'selected' : '' }}>Mizoram</option>
-    <option value="NL" {{ old('state') == 'NL' ? 'selected' : '' }}>Nagaland</option>
-    <option value="OR" {{ old('state') == 'OR' ? 'selected' : '' }}>Odisha</option>
-    <option value="PB" {{ old('state') == 'PB' ? 'selected' : '' }}>Punjab</option>
-    <option value="RJ" {{ old('state') == 'RJ' ? 'selected' : '' }}>Rajasthan</option>
-    <option value="SK" {{ old('state') == 'SK' ? 'selected' : '' }}>Sikkim</option>
-    <option value="TN" {{ old('state') == 'TN' ? 'selected' : '' }}>Tamil Nadu</option>
-    <option value="TG" {{ old('state') == 'TG' ? 'selected' : '' }}>Telangana</option>
-    <option value="TR" {{ old('state') == 'TR' ? 'selected' : '' }}>Tripura</option>
-    <option value="UT" {{ old('state') == 'UT' ? 'selected' : '' }}>Uttarakhand</option>
-    <option value="UP" {{ old('state') == 'UP' ? 'selected' : '' }}>Uttar Pradesh</option>
-    <option value="WB" {{ old('state') == 'WB' ? 'selected' : '' }}>West Bengal</option>
-    <option value="AN" {{ old('state') == 'AN' ? 'selected' : '' }}>Andaman and Nicobar Islands</option>
-    <option value="CH" {{ old('state') == 'CH' ? 'selected' : '' }}>Chandigarh</option>
-    <option value="DN" {{ old('state') == 'DN' ? 'selected' : '' }}>Dadra and Nagar Haveli</option>
-    <option value="DD" {{ old('state') == 'DD' ? 'selected' : '' }}>Daman and Diu</option>
-    <option value="DL" {{ old('state') == 'DL' ? 'selected' : '' }}>Delhi</option>
-    <option value="LD" {{ old('state') == 'LD' ? 'selected' : '' }}>Lakshadweep</option>
-    <option value="PY" {{ old('state') == 'PY' ? 'selected' : '' }}>Puducherry</option>
-</select>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-input col-lg-12 my-4">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label for="examplePincode" class="form-label fs-6 text-uppercase fw-bold text-black">Pincode</label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <input type="text" id="examplePincode" name="pincode" placeholder="Enter Pincode" class="form-control ps-3" value="{{ old('pincode') }}">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-input col-lg-12 my-4">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <label for="ExamplePhoto" class="form-label fs-6 text-uppercase fw-bold text-black">Your Photo</label>
-                                        <input type="file" id="ExamplePhoto" name="image" class="form-control ps-3" onchange="previewImage(event, 'photoPreview')">
-                                        <img id="photoPreview" class="img-thumbnail mt-2" style="display: none; width: 100px; height: auto;">
-                                    </div>
-
-                                    <div class="col-lg-4">
-                                        <label for="ExampleAadhar" class="form-label fs-6 text-uppercase fw-bold text-black">Aadhar Photo</label>
-                                        <input type="file" id="ExampleAadhar" name="aadharImage" class="form-control ps-3" onchange="previewImage(event, 'aadharPreview')">
-                                        <img id="aadharPreview" class="img-thumbnail mt-2" style="display: none; width: 100px; height: auto;">
-                                    </div>
-
-                                    <div class="col-lg-4">
-                                        <label for="ExamplePen" class="form-label fs-6 text-uppercase fw-bold text-black">Pan Photo</label>
-                                        <input type="file" id="ExamplePen" name="panImage" class="form-control ps-3" onchange="previewImage(event, 'panPreview')">
-                                        <img id="panPreview" class="img-thumbnail mt-2" style="display: none; width: 100px; height: auto;">
-                                    </div>
-                                    <div class="col-lg-4">
-    <label for="OfficePhoto" class="form-label fs-6 text-uppercase fw-bold text-black">Office Photo</label>
-    <input type="file" id="OfficePhoto" name="officePhoto" class="form-control ps-3" onchange="previewImage(event, 'officePhotoPreview')">
-    <img id="officePhotoPreview" class="img-thumbnail mt-2" style="display: none; width: 100px; height: auto;">
-</div>
-
-                                </div>
-                            </div>
-
-                            <label class="py-3">
-                                <input type="checkbox" required class="d-inline">
-                                <span class="label-body text-black">I agree to the <a href="#" class="text-black border-bottom">Privacy Policy</a></span>
-                            </label>
-
-                            <div class="d-grid my-3">
-                                <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Sign Up</button>
-                            </div>
-                        </form>
+                    <h5 class="form-section-title mt-3">Basic Details</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="exampleFullName" class="form-label">Full Name</label>
+                            <input type="text" id="exampleFullName" name="name" class="form-control" placeholder="Enter your name" value="{{ old('name') }}">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="exampleAadharNumber" class="form-label">Aadhar Number</label>
+                            <input type="text" id="exampleAadharNumber" name="aadhar" class="form-control" placeholder="Enter Aadhar" value="{{ old('aadhar') }}">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="exampleInputEmail4" class="form-label">Email Address (Username)</label>
+                            <input type="email" id="exampleInputEmail4" name="email" class="form-control" placeholder="Enter email" value="{{ old('email') }}">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="exampleMobileNumber" class="form-label">Mobile Number</label>
+                            <input type="text" id="exampleMobileNumber" name="mobile" class="form-control" placeholder="Enter mobile" value="{{ old('mobile') }}">
+                        </div>
                     </div>
-                </div>
+
+                    <h5 class="form-section-title mt-4">Security Details</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter password">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password_confirmation" class="form-label">Confirm Password</label>
+                            <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Confirm password">
+                        </div>
+                    </div>
+
+                    <h5 class="form-section-title mt-4">Address Details</h5>
+                    <div class="row g-3">
+                        <div class="col-md-8">
+                            <label for="exampleAddress" class="form-label">Address Line 1</label>
+                            <input type="text" id="exampleAddress" name="address" class="form-control" placeholder="Enter address" value="{{ old('address') }}">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="examplePincode" class="form-label">Pincode</label>
+                            <input type="text" id="examplePincode" name="pincode" class="form-control" placeholder="Enter pincode" value="{{ old('pincode') }}">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="exampleState" class="form-label">State</label>
+                            <select name="state" id="exampleState" class="form-control">
+                                <option value="">Select State</option>
+                                <option value="UP" {{ old('state') == 'UP' ? 'selected' : '' }}>Uttar Pradesh</option>
+                                <option value="MH" {{ old('state') == 'MH' ? 'selected' : '' }}>Maharashtra</option>
+                                <option value="DL" {{ old('state') == 'DL' ? 'selected' : '' }}>Delhi</option>
+                                <option value="KA" {{ old('state') == 'KA' ? 'selected' : '' }}>Karnataka</option>
+                                <option value="RJ" {{ old('state') == 'RJ' ? 'selected' : '' }}>Rajasthan</option>
+                                <!-- Add others as needed -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <h5 class="form-section-title mt-4">Upload Documents</h5>
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label for="ExamplePhoto" class="form-label">Your Photo</label>
+                            <input type="file" id="ExamplePhoto" name="image" class="form-control" onchange="previewImage(event, 'photoPreview')">
+                            <img id="photoPreview" class="img-thumbnail mt-2" style="display: none; width: 100px;">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="ExampleAadhar" class="form-label">Aadhar Photo</label>
+                            <input type="file" id="ExampleAadhar" name="aadharImage" class="form-control" onchange="previewImage(event, 'aadharPreview')">
+                            <img id="aadharPreview" class="img-thumbnail mt-2" style="display: none; width: 100px;">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="ExamplePen" class="form-label">Pan Photo</label>
+                            <input type="file" id="ExamplePen" name="panImage" class="form-control" onchange="previewImage(event, 'panPreview')">
+                            <img id="panPreview" class="img-thumbnail mt-2" style="display: none; width: 100px;">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="OfficePhoto" class="form-label">Office Photo</label>
+                            <input type="file" id="OfficePhoto" name="officePhoto" class="form-control" onchange="previewImage(event, 'officePhotoPreview')">
+                            <img id="officePhotoPreview" class="img-thumbnail mt-2" style="display: none; width: 100px;">
+                        </div>
+                    </div>
+
+                    <div class="form-check mt-4">
+                        <input type="checkbox" required class="form-check-input" id="agree">
+                        <label for="agree" class="form-check-label">I agree to the <a href="#">Privacy Policy</a></label>
+                    </div>
+
+                    <div class="d-grid my-4">
+                        <button class="btn btn-signup btn-lg">Sign Up</button>
+                    </div>
+
+                    <div class="text-center text-muted">
+                        Already have an account? <a href="{{ url('login') }}">Log in</a>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    function previewImage(event, id) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            const output = document.getElementById(id);
+            output.src = reader.result;
+            output.style.display = 'block';
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+
 @endsection

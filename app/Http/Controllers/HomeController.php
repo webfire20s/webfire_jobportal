@@ -22,6 +22,10 @@ class HomeController extends Controller
         return view('home',compact('pages','sliders'));
     }
 
+    public function userloginform(){
+        return view('user_login_form');
+    }
+
     // Show the login form
     public function showLoginForm()
     {
@@ -160,5 +164,9 @@ class HomeController extends Controller
         
         // Return the view with the page data
         return view('public', compact('page','pages'));
+    }
+
+    public function productServices(){
+        return view('page.product_services');
     }
 }

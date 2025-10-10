@@ -125,7 +125,7 @@ select.form-select {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #00a536;
+  background: #000066;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -151,7 +151,7 @@ select.form-select {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background: #F9BD05;
+  background:#003366;
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
@@ -170,11 +170,11 @@ select.form-select {
 
 #topbar .contact-info i {
   font-style: normal;
-  color: #000000;
+  color: white;
 }
 #topbar .contact-info i a, #topbar .contact-info i span, #topbar .lang i span {
   padding-left: 5px;
-  color: #000000;
+  color: white;
   font-size:14px;
   font-weight:600;
 }
@@ -210,7 +210,7 @@ select.form-select {
   background: #fff;
   position: relative;
   height: 45px;
-  border: 1px solid #00A536;
+  border: 1px solid #000066;
   margin-top: 45px; }
   
   .acme-news-ticker li img{width:10px;}
@@ -218,7 +218,7 @@ select.form-select {
     .acme-news-ticker {
       margin-top: 0; } }
   .acme-news-ticker-label {
-    background:#00A536;
+    background:#000066;
     padding: 10px;
     width: auto;
     float: left;
@@ -324,7 +324,7 @@ select.form-select {
   padding: 15px 0;
   top:40px !important;
   background:#fff;
-  /*border-bottom: 1px solid #00a53687;*/
+  /*border-bottom: 1px solid #00006687;*/
 }
 #header.header-scrolled, #header.header-inner-pages {
   background:#F8F8F8;
@@ -386,7 +386,7 @@ select.form-select {
 }
 .navbar a:hover, .navbar .active:focus, .navbar li:hover > a {
   color: #000;
-  border-bottom: 2px solid #00A536;
+  border-bottom: 2px solid #000066;
   font-weight:600;
 }
 
@@ -401,7 +401,7 @@ select.form-select {
   font-size: 14px;
  
   font-weight: 600;
-  background:#00A536;
+  background:#000066;
 }
 .navbar .getstarted:hover, .navbar .getstarted:focus:hover {
   color: #fff;
@@ -586,10 +586,10 @@ select.form-select {
   transition: 0.5s;
   margin: 10px 0 0 0;
   color: #fff;
-  background: #00A536;
+  background: #000066;
 }
 
-#hero .btn-get-started.bgless{background: #ffffff; border:2px solid #00A536; color:#0B1B35; margin-left:25px;}
+#hero .btn-get-started.bgless{background: #ffffff; border:2px solid #000066; color:#0B1B35; margin-left:25px;}
  
 .banner-btn1, .banner-btn2{position:absolute; width:50%; }
 .banner-btn1 img, .banner-btn2 img{width:60%;}
@@ -621,7 +621,7 @@ select.form-select {
 #hero .btn-watch-video:hover i {
   color: #47b2e4;
 }
-#hero .greenHeading{color:#00A536;}
+#hero .greenHeading{color:#000066;}
 #hero .animated {
  
 }
@@ -686,7 +686,7 @@ section {
   display: block;
   width: 120px;
   height: 3px;
-  background: #00A536;
+  background: #000066;
   bottom: 0;
   left:calc(0% - 0px);
 }
@@ -697,7 +697,7 @@ section {
   display: block;
   width: 120px;
   height: 3px;
-  background: #00A536;
+  background: #000066;
   bottom: -10px;
   left: 0;
 }
@@ -708,7 +708,7 @@ section {
     display: block;
     width: 120px;
     height: 3px;
-    background: #00A536;
+    background: #000066;
     bottom: 0;
     left: calc(50% - 60px);
 }
@@ -743,7 +743,7 @@ section {
   font-family: "Poppins", sans-serif;
 }
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  background:#00A536;
+  background:#000066;
   color: #fff;
 }
 .portfolio .portfolio-item {margin-bottom: 30px;}
@@ -992,12 +992,13 @@ line-height: 22px;
 
 
 .skills {
-    background: #00a536 url(../images/bg-green.png) center center no-repeat;
+    background: #000066 url(../images/bg-blue.png) center center no-repeat;
+    /* background: #000066  */
 }
  
 /*----------About Us Section-----------------------*/
 
-.why-us.aboutus .btn-learn-more{border: 2px solid #00A536;
+.why-us.aboutus .btn-learn-more{border: 2px solid #000066;
     border-radius: 10px;
     color: #081D2C;
     padding: 10px 20px;
@@ -1048,12 +1049,13 @@ line-height: 22px;
 # GreenBelt Section 8
 --------------------------------------------------------------*/
 .cta {
-  background:url("../images/green-bg.jpg") left top no-repeat;
+  /* background:url("../images/green-bg.jpg") left top no-repeat; */
   background-size: cover;
   padding: 30px 0;
   position:relative;
   z-index:100;
   margin-top:0px;
+  background:#000066;
 }
 .cta h3 {
   color: #fff;
@@ -1221,8 +1223,8 @@ line-height: 22px;
 
 .owl-theme .owl-nav [class*='owl-'] {
     border-radius: 50% !important;
-    background: #00A536 !important;
-    border: 3px solid #00A536;
+    background: #000066 !important;
+    border: 3px solid #000066;
     color: #fff !important
 }
 
@@ -1304,7 +1306,7 @@ padding-top:0px;}
 .portfolio #portfolio-flters li{font-size:16px; padding:15px 5px;}	
 
 /*---BecomeAgent---*/
-.skills{background: #00A536 url(../images/bg-green.png) center center no-repeat}
+.skills{background: #000066 url(../images/bg-green.png) center center no-repeat}
 .skills .img1 img{margin-left:-20px;}	
 .skills .img1.mobview{display:block !important;}
 .skills .img1.desktopView{display:none !important;}
@@ -1543,7 +1545,7 @@ line-height: 36px; font-weight: 500;}
 #login .carousel-inner p{ color:#000;font-weight: 400;
 font-size: 16px;
 line-height: 24px;}
-#login .carousel-inner p span{color:#00A536;font-weight: 600;
+#login .carousel-inner p span{color:#000066;font-weight: 600;
 font-size: 16px;
 line-height: 24px;}
 
@@ -1551,7 +1553,7 @@ line-height: 24px;}
 #login .captionBox{width:60%; }
 .carousel-indicators, .carousel-caption{bottom:-140px !important;}
 .carousel-inner{overflow:inherit !important;}
-.carousel-indicators li{background-color:#00A536;}
+.carousel-indicators li{background-color:#000066;}
 #login .carouselSection{background:url(../images/Slider-bg.png) left top no-repeat; padding-bottom:180px; background-size:cover;}
 
 
@@ -1575,7 +1577,7 @@ line-height: 42px;
 }
 
 #login .formSec .headQ{font-weight:500; font-size: 16px; line-height: 26px; color:#444150;}
-#login .formSec .headQ a{color:#00A536;}
+#login .formSec .headQ a{color:#000066;}
 
 #login .leadform .resend {
     color: #212121;
@@ -1595,10 +1597,10 @@ line-height: 22px;}
 font-size: 16px;
 line-height: 24px; font-family: 'Poppins', sans-serif;}
 
-#login .form1 .mybtn{background:#00A536; color:#fff; font-family: 'Poppins', sans-serif; border-radius:10px; width:100%;}
+#login .form1 .mybtn{background:#000066; color:#fff; font-family: 'Poppins', sans-serif; border-radius:10px; width:100%;}
 #login .form2 .mybtn1, #login .form2 .mybtn11{background:#EDBD0D; color:#000000; font-family: 'Poppins', sans-serif; border-radius:6px; width:100%; margin-top:30px; padding:8px 0px; font-weight: 500; font-size: 16px;
 line-height: 24px;}
-#login .form2 .mybtn2{background:#00A536; color:#fff; font-family: 'Poppins', sans-serif; border-radius:10px; width:100%;}
+#login .form2 .mybtn2{background:#000066; color:#fff; font-family: 'Poppins', sans-serif; border-radius:10px; width:100%;}
 #login .form2Field{ margin-top:20px;}
 #login .form2 .mybtn11{margin:0px;}
 #login .form2 .introField{text-align:center;}
@@ -1609,7 +1611,7 @@ line-height: 24px;}
     line-height: 24px;}
 	
 #login .form2 p.intro span {
-    color: #00A536;
+    color: #000066;
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
@@ -1622,7 +1624,7 @@ line-height: 24px;}
     font-size: 14px;
     line-height: 24px;}
 	
-#login .form2 .lastfield p span{color: #00A536;
+#login .form2 .lastfield p span{color: #000066;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px; display:block;}
@@ -1677,7 +1679,7 @@ button:hover {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color:#00A536;
+  background-color:#000066;
   border: none;  
   border-radius: 50%;
   display: inline-block;
@@ -1723,7 +1725,7 @@ button:hover {
 
 
 #calculator .imageSec{position:fixed; top:150px; right:0px; width:500px; z-index:1000;}
-#calculator .calc-img-Table{padding-top:30px; width:75%; display:block; background:#00a536; font-family: 'Poppins', sans-serif; border-radius:15px; height:424px;}
+#calculator .calc-img-Table{padding-top:30px; width:75%; display:block; background:#000066; font-family: 'Poppins', sans-serif; border-radius:15px; height:424px;}
 
 #calculator .calc-img-Table .frstRow td:nth-child(1){width:45%; display:inline-block;}  
 #calculator .calc-img-Table .frstRow td:nth-child(2){width:21%; display:inline-block; text-align:center} 
@@ -1812,7 +1814,7 @@ button:hover {
 -------------------------------------------------------------*/
 
 #ContactUS .mybtn {
-    background: #00A536;
+    background: #000066;
     color: #fff;
     font-family: 'Poppins', sans-serif;
     border-radius: 10px;
@@ -1860,7 +1862,7 @@ line-height: 24px; padding:20px 20px; min-height:906px;}
 .blog .rightBar h3{ 
 font-size: 21px;
 line-height: 24px; color:#000;}
-.blog .rightBar span{color:#00A536;}
+.blog .rightBar span{color:#000066;}
 .blog .rightBar p{color:#000;}
 
 
@@ -1886,7 +1888,7 @@ line-height: 24px; color:#000;}
 
 .navbar .active{
   color: #000;
-  border-bottom: 2px solid #00A536;
+  border-bottom: 2px solid #000066;
   font-weight:600;
 }
 
@@ -2007,7 +2009,7 @@ a.login_join {
     color: #fff;
     font-size: 14px;
     font-weight: 600;
-    background: #00A536;
+    background: #000066;
 }
 
 a.login_join:hover{
@@ -2015,7 +2017,7 @@ background: #196e35;
 }
 
 .ms-options-wrap .ms-selectall{
-color: #00a536;
+color: #000066;
 }
 
 
@@ -2024,7 +2026,7 @@ top:30px !important;
 }
 
 .ms-options-wrap .ms-selectall{
-color: #00a536!important;
+color: #000066!important;
 }
 
 iframe.fit-content {

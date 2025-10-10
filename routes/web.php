@@ -36,6 +36,7 @@ Route::middleware(['web'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::get('/sign_up', [HomeController::class, 'signUpForm'])->name('sign_up.form');
     Route::post('/sign_up', [HomeController::class, 'signUpSubmit'])->name('sign_up.submit');
+    Route::get('/login', [HomeController::class, 'userloginform'])->name('home.login');
     Route::post('/login', [HomeController::class, 'login'])->name('home.login');
     Route::get('/logout', [HomeController::class, 'logout'])->name('home.logout');
 
@@ -48,6 +49,8 @@ Route::middleware(['web'])->group(function () {
     Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
     Route::get('latest-news/{id}', [UserDashboardController::class, 'latest_news_details'])->name('latest_news.show');
     Route::get('test', [HomeController::class, 'test'])->name('test');
+
+    Route::get('/products-services', [HomeController::class, 'productServices'])->name('products-services');
 });
 
 // Admin Routes - Restricted to authenticated users with the 'admin' role

@@ -28,16 +28,20 @@
     <link href="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/css/style.css" rel="stylesheet" />
 
     <!--<script src="https://kit.fontawesome.com/23ba61ec1e.js" crossorigin="anonymous"></script>-->
+    <!-- ✅ Correct CDN URLs -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <link
       rel="stylesheet"
-      href="../y3uQHg8V8vsy.com/ajax/libs/OwlCarousel2/39LePtfN87IV.4/assets/dXKCIwbmAORM.css"
-    />
-    <link
-      rel="stylesheet"
-      href="../y3uQHg8V8vsy.com/ajax/libs/OwlCarousel2/39LePtfN87IV.4/assets/tFQrSPfmAvlY.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
 
-    <script src="wp-content/themes/egov/assets/js/isotope.pkgd.min.js"></script>
+    <script src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/js/isotope.pkgd.min.js"></script>
     <script type="text/javascript">
       jQuery(document).ready(function ($) {
         $(".my-news-ticker").AcmeTicker({
@@ -51,7 +55,7 @@
       });
     </script>
 
-    <script src="wp-content/themes/egov/js/citylist.js"></script>
+    <script src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/js/citylist.js"></script>
 
     <meta
       name="robots"
@@ -241,7 +245,7 @@
     <link
       rel="stylesheet"
       id="wp-block-library-css"
-      href="wp-includes/css/dist/block-library/style.min.css"
+      href="{{ asset('public/theme/web-new') }}/wp-includes/css/dist/block-library/style.min.css"
       media="all"
     />
     <style id="classic-theme-styles-inline-css">
@@ -595,11 +599,11 @@
       media="all"
     />
     <script
-      src="wp-includes/js/jquery/jquery.min.js"
+      src="{{ asset('public/theme/web-new') }}/wp-includes/js/jquery/jquery.min.js"
       id="jquery-core-js"
     ></script>
     <script
-      src="wp-includes/js/jquery/jquery-migrate.min.js"
+      src="{{ asset('public/theme/web-new') }}/wp-includes/js/jquery/jquery-migrate.min.js"
       id="jquery-migrate-js"
     ></script>
     <script id="site24x7_rum_js-js-extra">
@@ -609,7 +613,7 @@
       };
     </script>
     <script
-      src="wp-content/plugins/site24x7-rum/js/site24x7-rum.js"
+      src="{{ asset('public/theme/web-new') }}/wp-content/plugins/site24x7-rum/js/site24x7-rum.js"
       id="site24x7_rum_js-js"
     ></script>
     <style id="wp-custom-css">
@@ -627,12 +631,6 @@
         background: #fff !important;
       }
     </style>
-
-    <link
-      href="../9YW0NaHu0HcO.net/npm/select2%404.0.13/dist/css/select2.min.css"
-      rel="stylesheet"
-    />
-    <script src="../9YW0NaHu0HcO.net/npm/select2%404.0.13/dist/js/select2.min.js"></script>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
@@ -735,89 +733,8 @@
       </div>
     </section>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-      <div class="container d-flex align-items-center">
-        <span class="logo me-auto"
-          ><a href="/"
-            ><img
-              src="wp-content/themes/egov/assets/images/logo_rbl.png"
-              class="img-fluid animated"
-              alt="Religare Digital" /></a
-        ></span>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto"><img src="https://aRregqpH93uL.in/wp-content/themes/egov/assets/images/y1B4hY5tpDwI.png" alt="" class="img-fluid"></a>-->
-
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link scrollto active_1" href="/">Home</a></li>
-
-            <li>
-              <a class="nav-link scrollto active_2" href="/products-services"
-                >Products & Services</a
-              >
-            </li>
-
-            <li>
-              <a class="nav-link scrollto active_3" href="/training-videos"
-                ><span>Training Videos </span></a
-              >
-            </li>
-            <li>
-              <a class="nav-link scrollto" href="https://aRregqpH93uL.in/#about"
-                >About us</a
-              >
-            </li>
-            <li>
-              <a class="nav-link scrollto" href="https://aRregqpH93uL.in/blog"
-                >Blog</a
-              >
-            </li>
-            <li class="dropdown">
-              <a href="#" class="active_4"
-                ><span>More</span> <i class="bi bi-chevron-down"></i
-              ></a>
-              <ul>
-                <li><a href="/income-calculator">Income Calculator</a></li>
-                <li><a href="/contact-us">Contact Us</a></li>
-                <li><a href="/career">Career</a></li>
-              </ul>
-            </li>
-
-            <li class="dropdown">
-              <a href="#" class="active_4"
-                ><span>Login</span> <i class="bi bi-chevron-down"></i
-              ></a>
-              <ul>
-                <li>
-                  <a
-                    href="https://aRregqpH93uL.in/login/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >PAN</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://digipay.religareonline.com/auth/login/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Digipay</a
-                  >
-                </li>
-              </ul>
-            </li>
-
-            <!-- <li><a class="nav-link scrollto active_5" href="/religaredigital/login"><strong>Login</strong></a></li>-->
-            <li><a class="getstarted scrollto" href="/signup">Join Now</a></li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!-- .navbar -->
-      </div>
-    </header>
-    <!-- End Header -->
-    <script src="../y3uQHg8V8vsy.com/ajax/libs/jquery/UB30JucjoGhG.0/0AgY9Xqsmuyu.js"></script>
+    @include('partials/header-new');
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script>
       $(document).ready(function () {
@@ -841,7 +758,7 @@
     <style>
       .active_1 {
         color: #000 !important;
-        border-bottom: 2px solid #00a536;
+        border-bottom: 2px solid #000066;
         font-weight: 600 !important;
       }
 
@@ -852,7 +769,7 @@
         float: left;
         font-weight: 500;
         text-align: center;
-        background: #00a536;
+        background: #000066;
         color: #fff;
         display: inline-block;
         border-radius: 5px;
@@ -912,236 +829,22 @@
       }
     </style>
 
-    <div class="container-fluid ticker p-0">
-      <div class="acme-news-ticker">
-        <div class="acme-news-ticker-label">What's New</div>
-        <div class="acme-news-ticker-box">
-          <ul class="my-news-ticker">
-            <li>
-              <a href="#"
-                ><strong style="font-size: 30px; line-height: 20px">.</strong>
-                <strong style="font-size: 14px; line-height: 14px"
-                  >asdf
-                </strong></a
-              >
-            </li>
+    
 
-            <li>
-              <a href="#"
-                ><strong style="font-size: 30px; line-height: 20px">.</strong>
-                <strong style="font-size: 14px; line-height: 14px"
-                  >Buy Mantra & Morpho L1 Biometric devices at best price. To
-                  order, call</strong
-                ></a
-              >
-            </li>
-
-            <li>
-              <a href="#"
-                ><strong style="font-size: 30px; line-height: 20px">.</strong>
-                <strong style="font-size: 14px; line-height: 14px"
-                  >Support available on Sundays & Holidays too.
-                </strong></a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><strong style="font-size: 30px; line-height: 20px"></strong
-              ></a>
-            </li>
-            <strong style="font-size: 30px; line-height: 20px"> </strong>
-          </ul>
-          <strong style="font-size: 30px; line-height: 20px"> </strong>
-        </div>
-        <strong style="font-size: 30px; line-height: 20px">
-          <div
-            class="acme-news-ticker-controls acme-news-ticker-horizontal-controls"
-          >
-            <button class="acme-news-ticker-pause"></button>
-          </div>
-        </strong>
-      </div>
-      <strong style="font-size: 30px; line-height: 20px"> </strong>
-    </div>
-    <strong style="font-size: 30px; line-height: 20px">
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-          <div class="download-app-qr">
-            <div class="image-content">
-              <h3>Download DigiPay Mobile App</h3>
-              <div class="image">
-                <picture>
-                  <a
-                    class="qrcode"
-                    href="https://play.google.com/store/apps/details?id=com.religare_digipay&hl=en_IN&gl=US"
-                    target="_blank"
-                    ><img
-                      src="wp-content/uploads/2024/07/DigiPay-Android-App-QR.png"
-                      alt="upstox-qr-code"
-                      width="78"
-                      height="78"
-                  /></a>
-                </picture>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ======= Hero Section ======= -->
-      <section class="p-0" id="hero" style="margin-top: 0">
-        <div id="demo" class="carousel slide" data-bs-ride="carousel">
-          <!-- The slideshow/carousel -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <a href="/signup" target="_blank">
-                <img
-                  src="wp-content/uploads/2023/06/main-banner.webp"
-                  alt="Banner-1"
-                  class="d-block"
-                  style="width: 100%"
-                />
-              </a>
-            </div>
-
-            <div class="carousel-item">
-              <a
-                href="https://www.religareonline.com/campaigns/demataccount-rdl/"
-                target="_blank"
-              >
-                <img
-                  src="../xL4fqpyWJVnd.in/wp-content/uploads/2025/01/FEnIbbdfEl7L.webp"
-                  alt="demat-egov-banner"
-                  class="d-block"
-                  style="width: 100%"
-                />
-              </a>
-            </div>
-
-            <div class="carousel-item">
-              <a
-                href="https://aRregqpH93uL.in/buy-digital-signature-online/"
-                target="_blank"
-              >
-                <img
-                  src="wp-content/uploads/2025/05/DSCHomepageBanne.jpeg"
-                  alt="dsc-egov-banner"
-                  class="d-block"
-                  style="width: 100%"
-                />
-              </a>
-            </div>
-
-            <div class="carousel-item">
-              <a
-                href="https://aRregqpH93uL.in/biometric-device/?utm_source=Organic-BiometricDevice"
-                target="_blank"
-              >
-                <img
-                  src="wp-content/uploads/2025/09/Product-Banner-updated-on-26-Sep-2025.jpg"
-                  alt="Banner-02"
-                  class="d-block"
-                  style="width: 100%"
-                />
-              </a>
-            </div>
-
-            <div class="carousel-item">
-              <a href="https://aRregqpH93uL.in/pan-service/" target="_blank"
-                ><img
-                  src="wp-content/uploads/2024/10/E-PAN-Banner_Artboard.jpg"
-                  alt="Banner-02"
-                  class="d-block"
-                  style="width: 100%"
-              /></a>
-            </div>
-
-            <div class="carousel-item">
-              <a
-                href="https://aRregqpH93uL.in/become-nps-agent/?utm_source=Organic-NPS"
-                target="_blank"
-              >
-                <img
-                  src="wp-content/uploads/2024/07/NPS-Banner-2.webp"
-                  alt="Banner-5"
-                  class="d-block"
-                  style="width: 100%"
-                />
-              </a>
-            </div>
-
-            <div class="carousel-item">
-              <a
-                href="https://aRregqpH93uL.in/biometric-device/?utm_source=Organic-BiometricDevice"
-                target="_blank"
-              >
-                <img
-                  src="wp-content/uploads/2025/04/Thermal-Printer-updated-on-30Apr.jpg"
-                  alt="Banner-7"
-                  class="d-block"
-                  style="width: 100%"
-                />
-              </a>
-            </div>
-
-            <!-- Left and right controls/icons -->
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#demo"
-              data-bs-slide="prev"
-            >
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#demo"
-              data-bs-slide="next"
-            >
-              <span class="carousel-control-next-icon"></span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======= Hero Section ======= -->
-      <!--<section id="hero" class="d-flex align-items-center mt-0 d-none">
-<div class="container">
-<div class="row" style="position:relative;">
-<div class="col-lg-6 pt-4 pt-lg-0 order-lg-1 bannerCont" data-aos="fade-up" data-aos-delay="200">
-<h3 class="banner_heading">अपनी  <span class="greenHeading">Digital</span> दुकान खोलें  सिर्फ <span class="greenHeading">Zero</span> लागत से!</h3>
-<h2>पूरे भारत में कहीं भी हमारी सर्विस प्राप्त करें और कमाएं अधिकतम कमीशन </h2>
-<div class="d-flex justify-content-center justify-content-lg-start">
-<a href="/Signup" class="btn-get-started scrollto">Join Religare Now</a>
-<a href="/income-calculator" class="btn-get-started bgless">Income Calculator</a>
-</div>
-</div>
-<div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-<img src="https://aRregqpH93uL.in/wp-content/themes/egov/assets/images/hero-img.png" class="img-fluid animated" alt="Become an Agent">
-</div>
-		
-<span class="banner-btn1"><img src="https://aRregqpH93uL.in/wp-content/themes/egov/assets/images/banner-btn1.png" class="img-fluid animated" alt="Become an Agent"></span>
-<span class="banner-btn2"><img src="https://aRregqpH93uL.in/wp-content/themes/egov/assets/images/banner-btn2.png" class="img-fluid animated" alt="Become an Agent"></span>
-</div>
-</div>
-</section>  --><!-- End Hero -->
       @yield('content')
       <!-- End #main -->
 
-      <link
-        href="../y3uQHg8V8vsy.com/ajax/libs/font-awesome/VN41y4ZJPw9D.0-beta3/css/rDWRcFL1twpG.css"
-        rel="stylesheet"
-      />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-      <footer class="footer text-white pt-5 pb-4" style="background: #081d2c">
-        <a
+
+      <footer class="footer text-white pt-5 pb-4" style="background: #0D1B2A">
+        {{-- <a
           class="apply-pan1"
           href="/pan-service/"
           target="_blank"
           rel="noopener noreferrer"
           >Apply PAN Online</a
-        >
+        > --}}
 
         <div class="container">
           <div class="row">
@@ -1149,27 +852,25 @@
             <div class="col-lg-3 col-md-6 mb-2">
               <h6 class="footer-title mb-3">
                 <img
-                  src="wp-content/themes/egov/campaigns/degital-footer/religare-digital-white-logo.png"
+                  src="{{ asset('public/logo1.png') }}"
                   alt="Religare Degital Logo"
                   class="img-fluid"
                 />
               </h6>
               <p class="footer-text" style="text-align: left">
-                Become a Religare Agent & Start Your Digital Shop - Join
-                Religare Digital, the most trusted eGovernance platform for
-                starting your business. Get free marketing and training support.
+                Boost your monthly income by registering as ADARSH MAHITI KENDRA. You can open a one-stop digital shop and earn commission by providing services such as cash withdrawal, cash deposit, money transfer, pan correction and updation, AePS linked transactions, loans, insurance, ticket booking and much more in your local area.
               </p>
 
               <!-- Play Store Icon -->
               <h6 class="download-title mt-4">Download the App Now :</h6>
               <div class="mt-2">
                 <a
-                  href="https://play.google.com/store/search?q=religare%20digipay&c=apps"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="wp-content/themes/egov/campaigns/degital-footer/play_store.webp"
+                    src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/campaigns/degital-footer/play_store.webp"
                     alt="Get it on Google Play"
                     class="img-fluid"
                   />
@@ -1276,85 +977,73 @@
             <div class="col-lg-2 col-md-6 mb-2">
               <h6 class="footer-title mb-3">Quick Links</h6>
               <ul class="list-unstyled footer-links">
-                <li><a href="/signup/"> Become an Agent</a></li>
-                <li><a href="/apply-new-pan-card/"> Apply PAN Online</a></li>
-                <li class="smart-bullet">
-                  <a href="/income-calculator/"> Calculate Income</a>
-                </li>
-                <li class="smart-bullet">
-                  <a href="/become-a-ticketing-agent/">
-                    Become a Ticketing Agent</a
-                  >
-                </li>
-                <li class="smart-bullet">
-                  <a href="/become-an-insurance-agent/">
-                    Become an Insurance Agent</a
-                  >
-                </li>
-                <li class="smart-bullet">
-                  <a href="/become-mutual-fund-agent/">
-                    Become a Mutual Fund Agent</a
-                  >
-                </li>
-                <li class="smart-bullet">
-                  <a href="/become-nps-agent/"> Become NPS Agent</a>
-                </li>
-                <li class="smart-bullet"><a href="/blog/"> Blog</a></li>
-                <li class="smart-bullet">
-                  <a href="/corporate-information/"> Corporate Information</a>
-                </li>
+                @php
+                    $quick_links = [
+                        '/' => 'Home',
+                        'products-services' => 'Products & Services',
+                        'training-videos' => 'Training Videos',
+                        'about-us' => 'About Us',
+                        'contact' => 'Contact',
+                        'login' => 'Login',
+                        'sign_up' => 'Join Now',
+                    ];
+                @endphp
+
+                @foreach($quick_links as $link => $label)
+                    <li class="smart-bullet">
+                        <a href="{{ url($link) }}">{{ $label }}</a>
+                    </li>
+                @endforeach
+
               </ul>
             </div>
             <!-- Address Section with Social Media Icons and Join Us Button -->
             <div class="col-lg-3 col-md-6 mb-4">
               <h6 class="footer-title mb-3">Address</h6>
               <p class="footer-text">
-                Prius Height,<br />
-                2nd Floor, Plot No 10/11,<br />
-                Sector 125,<br />
-                Noida - 201301, Uttar Pradesh
+                add
               </p>
               <p class="footer-text">
                 <i
                   class="fas fa-phone-alt me-2"
                   style="transform: rotate(90deg)"
                 ></i
-                ><a href="#">08068713333</a>
+                ><a href="#">000000000</a>
               </p>
               <p class="footer-text d-flex align-items-center">
                 <i class="fas fa-envelope me-2"></i>
                 <span
-                  ><a href="mailto:egov.support@religare.com"
-                    >egov.support@religare.com</a
+                  ><a href="mailto:>support@eadarsh.in"
+                    >support@eadarsh.in</a
                   ></span
                 >
               </p>
               <!-- Social Media Icons -->
               <div class="footer-social-links mt-3">
                 <a
-                  href="https://www.facebook.com/profile.php?id=100086340519649"
+                  href="#"
                   class="facebook"
                 >
                   <i class="fab fa-facebook-f"></i
                 ></a>
                 <a
-                  href="https://www.instagram.com/religaredigitalsolutions/"
+                  href="#"
                   class="instagram"
                 >
                   <i class="fab fa-instagram"></i
                 ></a>
                 <a
-                  href="https://www.linkedin.com/company/religare-digital-solutions/"
+                  href="#"
                   class="linkedin"
                   ><i class="fab fa-linkedin-in"></i
                 ></a>
                 <a
-                  href="https://www.youtube.com/@religaredigital"
+                  href="#"
                   class="youtube"
                 >
                   <i class="fab fa-youtube"></i
                 ></a>
-                <a href="https://twitter.com/ReligareDigital" class="twitter">
+                <a href="#" class="twitter">
                   <!--<i class="fab fa-twitter"></i>  -->
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1374,50 +1063,31 @@
               <!-- Join Us Button with new class and target="_blank" -->
               <div class="mt-3">
                 <a
-                  href="/signup/"
+                  href="{{ url('sign_up') }}"
                   class="btn-join-us"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Join Us</a
                 >
-                ���
-                <a
+              
+                {{-- <a
                   href="/career/"
                   class="btn-join-us"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Career</a
-                >
+                > --}}
               </div>
             </div>
             <div>
               <!-- Disclaimer Section -->
               <p class="footer-disclaimer mt-0">
-                Copyright 2010 Religare. Trademarks are the property of their
-                respective owners. All rights reserved. Please note that by
-                submitting the above mentioned details, you are authorizing us
-                to Call/SMS you even though you may be registered under DNC. We
-                shall Call/SMS you for a period of 12 months. Brokerage will not
-                exceed the SEBI prescribed limit. Religare Broking Limited
-                (RBL): Registered Office: 802 -815B, 8th Floor, Gopal Das
-                Bhawan, 28-Barakhamba Road, Connaught Place, New Delhi - 110001.
-                Board line number: +91-011-49871213. Fax No.: +91-011-49871189.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
               </p>
               <p class="footer-disclaimer">
-                Disclaimer: Investment in securities market are subject to
-                market risks, read all the related documents carefully before
-                investing. RBL is a distributor of Mutual Funds | IPOs |
-                Insurance | Bonds & NCDs |
-                <a
-                  href="https://www.religareonline.com/disclaimer/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Disclaimer</a
-                >
-                |
-                <a href="/sitemap/" target="_blank" rel="noopener noreferrer"
-                  >Sitemap</a
-                >.
+              © 2024 Adarsh Online Service, All rights reserved.
               </p>
             </div>
             <!--Footer End-->
@@ -1455,21 +1125,21 @@
       ></a>
 
       <!-- Vendor JS Files -->
-      <script src="wp-content/themes/egov/assets/js/aos.js"></script>
-      <script src="wp-content/themes/egov/assets/js/bootstrap.bundle.min.js"></script>
-      <script src="wp-content/themes/egov/assets/js/glightbox.min.js"></script>
-      <script src="wp-content/themes/egov/assets/js/swiper-bundle.min.js"></script>
-      <script src="wp-content/themes/egov/assets/js/isotope.pkgd.min.js"></script>
+      <script src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/js/aos.js"></script>
+      <script src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/js/bootstrap.bundle.min.js"></script>
+      <script src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/js/glightbox.min.js"></script>
+      <script src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/js/swiper-bundle.min.js"></script>
+      <script src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/js/isotope.pkgd.min.js"></script>
       <!-- Template Main JS File -->
-      <script src="wp-content/themes/egov/assets/js/main.js"></script>
+      <script src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/js/main.js"></script>
 
       <script
         type="text/javascript"
-        src="wp-content/themes/egov/assets/js/acmeticker.js"
+        src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/js/acmeticker.js"
       ></script>
       <!--<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>-->
 
-      <script src="../y3uQHg8V8vsy.com/ajax/libs/OwlCarousel2/X5urfY66eECp.1/xYKW4l9lNdTm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
       <!--<script src="https://aRregqpH93uL.in/wp-content/themes/egov/assets/js/custom-form-script.js"></script>-->
 
       <script>
@@ -1539,7 +1209,7 @@
 
       <script
         type="text/javascript"
-        src="wp-content/themes/egov/assets/js/multiselect.js"
+        src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/js/multiselect.js"
       ></script>
 
       <!--<script type="text/javascript" src="https://aRregqpH93uL.in/wp-content/themes/egov/assets/js/custom-form-data-api_BecomeAnAssociate.js"></script>-->
@@ -1570,7 +1240,7 @@
           float: left;
           font-weight: 500;
           text-align: center;
-          background: #00a536;
+          background: #000066;
           color: #fff;
           display: inline-block;
           border-radius: 5px;
