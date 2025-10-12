@@ -1,4 +1,4 @@
-@extends('web')  <!-- Assuming you have a layout file named 'web' -->
+@extends('web-layout')  <!-- Assuming you have a layout file named 'web' -->
 
 @section('content')
 <style>

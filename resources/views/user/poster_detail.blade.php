@@ -1,4 +1,4 @@
-@extends('web')
+@extends('web-layout')
 
 @section('title', 'Poster Details Page | ' . $poster->title)
 @section('meta_title', $poster->title)

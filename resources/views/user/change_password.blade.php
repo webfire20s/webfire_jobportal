@@ -1,4 +1,4 @@
-@extends('web')
+@extends('web-layout')
 
 @section('content')
 <div class="container mt-5">

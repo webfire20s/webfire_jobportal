@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Page;
 use App\Models\Slider;
+use App\Models\Feedback;
 
 class HomeController extends Controller
 {
@@ -19,7 +20,9 @@ class HomeController extends Controller
     {
         $sliders = Slider::all();
         $pages = Page::all();  // Retrieve all pages
-        return view('home',compact('pages','sliders'));
+        $feedbacks = Feedback::where('is_published',1)->get();
+
+        return view('home',compact('pages','sliders','feedbacks'));
     }
 
     public function userloginform(){
@@ -168,5 +171,20 @@ class HomeController extends Controller
 
     public function productServices(){
         return view('page.product_services');
+    }
+
+    public function aboutUs(){
+        return view('page.about-us');
+    }
+
+    public function contact(){
+        return view('page.contact');
+    }
+
+    public function trainingVideos(){
+        return view('page.training-videos');
+    }
+    public function productServiceDetails($title){
+        return view('page.product_services_details');
     }
 }

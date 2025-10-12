@@ -51,10 +51,15 @@ Route::middleware(['web'])->group(function () {
     Route::get('test', [HomeController::class, 'test'])->name('test');
 
     Route::get('/products-services', [HomeController::class, 'productServices'])->name('products-services');
+    Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about-us');
+    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+    Route::get('/training-videos', [HomeController::class, 'trainingVideos'])->name('training-videos');
+    Route::get('/details/{title}', [HomeController::class, 'productServiceDetails'])->name('details');
 });
 
 // Admin Routes - Restricted to authenticated users with the 'admin' role
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
+    Route::resource('feedbacks', \App\Http\Controllers\Admin\FeedbackController::class);
     // Admin Dashboard Route
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
 

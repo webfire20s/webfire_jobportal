@@ -49,9 +49,7 @@
                         <h3>Download DigiPay Mobile App</h3>
                         <div class="image">
                             <picture>
-                                <a class="qrcode"
-                                    href="#"
-                                    target="_blank"><img
+                                <a class="qrcode" href="#" target="_blank"><img
                                         src="{{ asset('public/theme/web-new') }}/wp-content/uploads/2024/07/DigiPay-Android-App-QR.png"
                                         alt="upstox-qr-code" width="78" height="78" /></a>
                             </picture>
@@ -66,17 +64,17 @@
             <div id="demo" class="carousel slide" data-bs-ride="carousel">
                 <!-- The slideshow/carousel -->
                 <div class="carousel-inner">
-                @foreach ($sliders as $index => $slider)
-                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                        <a href="/signup" target="_blank">
-                            <img src="{{ asset('public/uploads/sliders/' . $slider->image) }}"
-                                alt="Banner-1" class="d-block" style="width: 100%" />
-                        </a>
-                    </div>
-                @endforeach
+                    @foreach ($sliders as $index => $slider)
+                        <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                            <a href="/signup" target="_blank">
+                                <img src="{{ asset('public/uploads/sliders/' . $slider->image) }}" alt="Banner-1"
+                                    class="d-block" style="width: 100%" />
+                            </a>
+                        </div>
+                    @endforeach
 
 
-                    
+
                     <!-- Left and right controls/icons -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
@@ -90,890 +88,7 @@
 
         <main id="main" style="margin-top: 20px">
             <!-- ======= Products Section 2 ======= -->
-            <section id="portfolio" class="portfolio">
-                <div class="container-fluid">
-                    <div class="section-title">
-                        <h2>Our Products & Services</h2>
-                    </div>
-                </div>
-                <div class="container" data-aos="fade-up">
-                    <ul id="portfolio-flters" class="" data-aos="fade-up" data-aos-delay="100">
-                        <li data-filter=".filter-banking" class="fp">
-                            Banking & Finance
-                        </li>
-                        <li data-filter=".filter-egov" class="e-service">
-                            eGov Services
-                        </li>
-                        <li data-filter=".filter-recharge" class="rbp">
-                            Recharge & Bill Payments
-                        </li>
-                        <li data-filter=".filter-tour" class="tt">Travels</li>
-                        <li data-filter=".filter-Investments" class="investments">
-                            Investments
-                        </li>
-                        <li data-filter=".filter-payment" class="insurance">Insurance</li>
-                        <li data-filter=".filter-loan" class="loan-services">
-                            Loan Services
-                        </li>
-                        <li data-filter=".filter-indi" class="customer-services">
-                            Customer Services
-                        </li>
-                    </ul>
-
-                    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-banking">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/aeps.png"
-                                                class="img-fluid" alt="AePS" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>AePS</h4>
-                                        <p>
-                                            AePS service enables the customer to use their Aadhaar
-                                            card to access their Aadhaar-linked...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/aadhaar-enabled-payment-system/?utm_source=Organic-AePS"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-banking">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/dmt.png"
-                                                class="img-fluid" alt="DMT" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>DMT</h4>
-                                        <p>
-                                            This is a secure money transfer process with multiple
-                                            authentication levels to ensure...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/dmt/?utm_source=Organic-DMT" class="details-link"
-                                            title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-banking">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/micro-atm.png"
-                                                class="img-fluid" alt="Micro ATM" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Micro ATM</h4>
-                                        <p>
-                                            Our micro ATM centres will support all transactions
-                                            which can be normally conducted at...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/micro-atm/?utm_source=Organic-micro-atm"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-banking">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/csp.png"
-                                                class="img-fluid" alt="CSP" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>CSP</h4>
-                                        <p>
-                                            Customer Service Point (CSP) will enable people to open
-                                            bank accounts, withdraw...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/csp-agent/" class="details-link"
-                                            title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-egov">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/pan.png"
-                                                class="img-fluid" alt="PAN" /><br />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>PAN</h4>
-                                        <p>
-                                            Get a new PAN card made or get an existing one updated
-                                            with our prompt, hassle-free...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/pan-card-center/?utm_source=Organic-PAN"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-egov">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/tds.png"
-                                                class="img-fluid" alt="TDS/eTDS" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>TDS/eTDS</h4>
-                                        <p>
-                                            We are registered with ITD which has modernized the
-                                            current collection system...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/products-services/#eGovService"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-egov">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/dsc.png"
-                                                class="img-fluid" alt="DSC" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>DSC</h4>
-                                        <p>
-                                            A Digital Signature Certificate validates your identity
-                                            electronically...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/dsc-token/?utm_source=Organic-DSC"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-egov">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/swanidhi.png"
-                                                class="img-fluid" alt="DSC" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>PM SVANidhi Scheme</h4>
-                                        <p>
-                                            The Ministry of Housing & Urban Affairs launched PM
-                                            SVANidhi scheme...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/pmsvanidhi/?utm_source=Organic-pmsvanidhi"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-recharge">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/bbps.png"
-                                                class="img-fluid" alt="BBPS/Home Utilities" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>BBPS/Home Utilities</h4>
-                                        <p>
-                                            Our channel partners accept payments for all utility
-                                            bills such as water, electricity, Gas...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/bharat-bill-payment-system-bbps/?utm_source=Organic-BBPS"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-recharge">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/recharges.png"
-                                                class="img-fluid" alt="Recharges" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Recharges</h4>
-                                        <p>
-                                            Now recharge for your mobile, DTH or any prepaid
-                                            recharge on-the-go with the help of our agents....
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/products-services/#RechargeBillPayments"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-payment">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/two-wheeler-ins-s.png"
-                                                class="img-fluid" alt="Life Insurance" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Two Wheeler Insurance</h4>
-                                        <p>
-                                            A two-wheeler insurance policy is an insurance cover for
-                                            protection of two wheelers...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/products-services/#Insurance"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-payment">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/four-wheeler-insurance-s.png"
-                                                class="img-fluid" alt="General Insurance" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Four Wheeler Insurance</h4>
-                                        <p>
-                                            Four Wheeler insurance is a unique insurance policy for
-                                            vehicle owners to protect them...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/products-services/#Insurance"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-payment">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/healthcare-s.png"
-                                                class="img-fluid" alt="Health Insurance" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Health Insurance</h4>
-                                        <p>
-                                            Health insurance is a type of insurance that covers
-                                            medical expenses that arise due to an...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/products-services/#Insurance"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-payment">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/shield-s.png"
-                                                class="img-fluid" alt="Motor Insurance" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Life Insurance</h4>
-                                        <p>
-                                            Life insurance is a contract between an insurance policy
-                                            holder and an insurer...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/products-services/#Insurance"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-tour">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/irctc.png"
-                                                class="img-fluid" alt="Train Tickets" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Train Tickets</h4>
-                                        <p>
-                                            We are an authorized IRCTC partner, you can get a chance
-                                            to be an IRCTC agent...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/rail-e-ticketing/?utm_source=Organic-Rail-Ticket"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-tour">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/buslogo.png"
-                                                class="img-fluid" alt="Bus Tickets" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Bus Tickets</h4>
-                                        <p>
-                                            Now, book your bus tickets on Religare Digital and make
-                                            your bus booking experience smoother and more
-                                            affordable. We allow you to book tickets from anywhere
-                                            in India at the lowest price.
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/bus-ticketing/?utm_source=Organic-Bus-Ticket"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-tour">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/uploads/2022/12/ticket.png"
-                                                class="img-fluid" alt="Air Tickets" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Air Tickets</h4>
-                                        <p>
-                                            With a fully integrated B2B flight booking portal, we
-                                            take care of the end to end business processes and
-                                            ensure a smooth and seamless booking experience for our
-                                            clients.
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/air-ticketing/?utm_source=Organic-Air-Ticket"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-Investments">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/nps.png"
-                                                class="img-fluid" alt="National Pension System" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>National Pension System</h4>
-                                        <p>
-                                            NPS is a voluntary, defined contribution retirement
-                                            savings scheme designed to...
-                                        </p>
-                                        <a href="https://www.religareonline.com/campaigns/nps/?utm_source=Organic-NPS"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-Investments">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/mf.png"
-                                                class="img-fluid" alt="Mutual Fund" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Mutual Fund</h4>
-                                        <p>
-                                            Invest in a variety of mutual funds through our platform
-                                            in a hassle-free manner.
-                                        </p>
-                                        <a href="https://www.religareonline.com/campaigns/mutual-funds/?utm_source=Organic-Mutual-fund"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-Investments">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/sgb.png"
-                                                class="img-fluid" alt="Sovereign Gold Bond (SGB)" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Sovereign Gold Bond (SGB)</h4>
-                                        <p>
-                                            Issued by Reserve Bank on behalf of Government of India,
-                                            - SGBs are government securities...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/sovereign-gold-bonds-sgb/?utm_source=Organic-SGB"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-Investments">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/fd.png"
-                                                class="img-fluid" alt="Fixed Deposit (FD" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Fixed Deposit (FD)</h4>
-                                        <p>
-                                            Fixed Deposits are an easy way to earn returns from
-                                            funds that are lying idle.
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/fixed-deposit-fd/?utm_source=Organic-FD"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-Investments">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/cgb.png"
-                                                class="img-fluid" alt="Captital Gain Bonds" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Capital Gain Bonds</h4>
-                                        <p>
-                                            Capital gain bonds or 54EC bonds are the fixed income
-                                            instruments that provide capital...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/products-services/#Investments"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-Investments">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/ipo.png"
-                                                class="img-fluid" alt="IPOs" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>IPOs</h4>
-                                        <p>
-                                            Initial public offering is the process by which a
-                                            private company can go public by sale of its...
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/products-services/#Investments"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-loan">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/vespa-scooter.png"
-                                                class="img-fluid" alt="Two-Wheeler-Loan" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Two Wheeler Loan</h4>
-                                        <p>
-                                            A two-wheeler loan helps to buy a scooter or a
-                                            motorcycle at affordable EMIs for up to 60 months....
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/two-wheeler-loan/?utm_source=Organic-two-wheeler-loan"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-loan">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/real-estate.png"
-                                                class="img-fluid" alt="home-loan" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Home Loan</h4>
-                                        <p>
-                                            A home loan can be applied to buy, construct or renovate
-                                            a house. Any Indian national who is....
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/home-loan/?utm_source=Organic-HomeLoan"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-loan">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/personal.png"
-                                                class="img-fluid" alt="personal-loan" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Personal Loan</h4>
-                                        <p>
-                                            Personal loans are all-purpose unsecured loans which can
-                                            be availed for various needs such as....
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/personal-loan/?utm_source=Organic-PersonalLoan"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-loan">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/tractor.png"
-                                                class="img-fluid" alt="Tractor-Loan" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Tractor Loan</h4>
-                                        <p>
-                                            A tractor loan can be applied for purchase of a new
-                                            tractor, used tractor, harvester....
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/tractor-loan/?utm_source=Organic-TractorLoan"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-loan">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/personal.png"
-                                                class="img-fluid" alt="personal-loan" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Gold Loan</h4>
-                                        <p>
-                                            Gold loan is a secured loan, ideal for short term cash
-                                            requirements. The loan can be applied....
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/gold-loan/?utm_source=Organic-GoldLoan"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-loan">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/msme-icon.png"
-                                                class="img-fluid" alt="MSME-Loan" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>MSME Loan</h4>
-                                        <p>
-                                            MSME Loans are easy and flexible secured/unsecured
-                                            business loans that can be used for....
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/msme-loans/?utm_source=Organic-MSMELoan"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-loan">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/AGRI.png"
-                                                class="img-fluid" alt="AgriRural-Loan" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Agri & Rural Loan</h4>
-                                        <p>
-                                            Agri & rural loans are lending schemes for farmers and
-                                            rural applicants....
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/agri-and-rural/?utm_source=Organic-AgriRuralLoan"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-loan">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/Loan-against-property-icon.png"
-                                                class="img-fluid" alt="Loan-Against-Property" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Loan Against Property</h4>
-                                        <p>
-                                            Loan against property (LAP) is a secured loan that is
-                                            offered against residential....
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/loan-against-property/?utm_source=Organic-LonaAgainstPropertyLoan"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-loan" style="left: 0px !important">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/auto-loan-icon.png"
-                                                class="img-fluid" alt="Auto-Loan" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>Auto Loan</h4>
-                                        <p>
-                                            Auto loan is a secured loan offered for purchasing a new
-                                            car, pre-owned or used car....
-                                        </p>
-                                        <a href="https://aRregqpH93uL.in/auto-loan/?utm_source=Organic-AutoLoan"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-indi">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/pan-s.png"
-                                                class="img-fluid" alt="PAN-Card" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>PAN Card</h4>
-                                        <p>Apply for Pan Card Online</p>
-                                        <a href="https://aRregqpH93uL.in/pan-service/" class="details-link"
-                                            title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 portfolio-item filter-indi">
-                            <div class="innerBox">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/digital-signature.png"
-                                                class="img-fluid" alt="DSC" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="portfolio-info">
-                                        <h4>DSC</h4>
-                                        <p>Apply for DSC Online</p>
-                                        <a href="https://aRregqpH93uL.in/buy-digital-signature-online/"
-                                            class="details-link" title="More Details">More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row" data-aos="fade-up" data-aos-delay="200">
-                        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up"
-                            data-aos-delay="100">
-                            <li data-filter="*" class="filter-active viewAll"
-                                style="
-            background: transparent;
-            color: #fff;
-            border: 2px solid #000066;
-            border-radius: 10px;
-            color: #081d2c;
-            padding: 10px 20px;
-            list-style: none;
-          ">
-                                View all
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            @include('partials.products')
             <!-- End Products Section 2 -->
 
             <!-- ======= BecomeAgent Section 3======= -->
@@ -1170,17 +285,17 @@
                     <div class="row">
                         <div class="col-lg-9 text-lg-start greenBeltText">
                             <h1 class="text-white m-0">
-                                Become a Religare Agent & Start Your Digital Shop
+                                Adarsh Digital
                             </h1>
                             <p>
-                                Join Religare Digital, the most trusted eGovernance platform
-                                for starting your business. Get free marketing and training
-                                support.
+                                India's Most Trusted Digital Platform.
+Become an Agent, Distributor, or Super Distributor today!
+🧾 Verified Services | 🎯 Free Promotion | 📊 Training & Support
                             </p>
                         </div>
 
                         <div class="col-lg-3 cta-btn-container text-center">
-                            <a class="cta-btn align-middle" href="/Signup">Get Started</a>
+                            <a class="cta-btn align-middle" href="{{ url('sign_up') }}">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -1282,124 +397,63 @@
             </section>
             <!-- End Partners Section 7 -->
 
-            <!-- Testimonial Section Start -->
-            <section class="testimonialSec">
-                <div class="container rounded">
-                    <div class="section-title">
-                        <h2 style="text-transform: capitalize">Partner Reviews</h2>
-                    </div>
-                    <div id="demo1" class="carousel slide" data-bs-ride="carousel">
-                        <!-- Indicators/dots -->
-                        <div class="carousel-indicators" style="display: none">
-                            <button type="button" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
-                            <button type="button" data-bs-target="#demo1" data-bs-slide-to="1"></button>
-                            <button type="button" data-bs-target="#demo1" data-bs-slide-to="2"></button>
-                        </div>
-
-                        <!-- The slideshow/carousel -->
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="testi_img text-center">
-                                    <img
-                                        src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/9918.png" />
-                                    <h3 class="name">Sunil Kumar</h3>
-                                    <div class="mb-2">
-                                        <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                        <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                        <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                        <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                        <span class="fas fa-star-half-alt active-star" aria-hidden="true"></span>
-                                    </div>
-                                </div>
-                                <p class="">
-                                    I am writing to you to express my gratitude towards the
-                                    company. I have joined RELIGARE BROKING LIMITED 7yrs ago.I
-                                    am achieved 6 lakh pan card acknowledgement and 7 lakh Etds
-                                    .I am happy to generate a revenue of 5 lakh per year .Unlike
-                                    my previous experience with another company, I found this
-                                    platform very impressive We want to thank you for being your
-                                    true self while at work. Your optimistic attitude and good
-                                    conduct, while at work, is motivating for your peers and
-                                    senior colleagues alike. You are an inspiration for the team
-                                    and you have a significant role to play in the future
-                                    success of the organisation. Keep the good work going.
-                                </p>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="testi_img text-center">
-                                    <img
-                                        src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/9343.png" />
-                                    <h3 class="name">Sujeet Kumar</h3>
-                                    <div class="mb-2">
-                                        <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                        <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                        <span class="fas fa-star active-star" aria-hidden="true">
-                                        </span>
-                                        <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                        <span class="fas fa-star-half-alt active-star" aria-hidden="true"></span>
-                                    </div>
-                                </div>
-
-                                <p class="">
-                                    I am very happy to say that ,with Religare Broking Limited
-                                    Company we are dealing with PAN Card , TAN No , E-TDS
-                                    Aadhaar DSC since 2014 which is resolved in a friendly
-                                    manner with Religare Broking Limited Company and prompt
-                                    action is taken. No difficulties have arisen in doing the
-                                    work since 2014. And in future also the company will
-                                    continue to support us in our work. It was a good experience
-                                    to work with them. I hope that the co-workers of Religare
-                                    Broking Limited and their senior officers will continue to
-                                    have a good working relationship in the coming times so that
-                                    by joining them, they will continue to cooperate in more
-                                    profit and service to the general public.
-                                </p>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="testi_img text-center">
-                                    <img
-                                        src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/09101.png" />
-                                    <h3 class="name">Sathya</h3>
-                                    <div class="mb-2">
-                                        <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                        <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                        <span class="fas fa-star active-star" aria-hidden="true">
-                                        </span><span class="fas fa-star active-star" aria-hidden="true"></span>
-                                        <span class="fas fa-star-half-alt active-star" aria-hidden="true"></span>
-                                    </div>
-                                </div>
-
-                                <p>
-                                    I am writing to thank you for the quality of service
-                                    provided by your team. We sincerely appreciate your
-                                    efficient, gracious service, the level of detail and
-                                    accountability you have demonstrated on each services, and
-                                    the way you conduct business as a whole. I have associated
-                                    with Religare from last 10 years and processed more than 3
-                                    lack pan application and got good support and proactive
-                                    auctions regarding pan processing and other day to day work.
-                                    I am able to earn nearly 7 Lac per year through your
-                                    franchise. Your IT team, Accounts team and compliance team
-                                    is really working hard and supported us a lot And given
-                                    solution for all problems.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Left and right controls/icons -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#demo1"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#demo1"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
-                    </div>
+            @if(isset($feedbacks) && $feedbacks->count() > 0)
+    <section class="testimonialSec">
+        <div class="container rounded">
+            <div class="section-title">
+                <h2 style="text-transform: capitalize">Partner Reviews</h2>
+            </div>
+            <div id="demo1" class="carousel slide" data-bs-ride="carousel">
+                
+                <div class="carousel-indicators" style="display: none">
+                    @foreach ($feedbacks as $index => $feedback)
+                        <button type="button" data-bs-target="#demo1" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}"></button>
+                    @endforeach
                 </div>
-            </section>
-            <!-- Testimonial Section Ends -->
+
+                <div class="carousel-inner">
+                    @foreach ($feedbacks as $index => $feedback)
+                        <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                            <div class="testi_img text-center">
+                                {{-- Use the feedback photo, or a default image if photo is null --}}
+                                @if ($feedback->photo)
+                                    <img src="{{ url('public/').$feedback->photo }}" alt="{{ $feedback->name }}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;" />
+                                @else
+                                    {{-- Placeholder image if no photo is uploaded (Adjust path as needed) --}}
+                                    <img src="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/images/placeholder.png" alt="User Placeholder" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;" />
+                                @endif
+                                
+                                <h3 class="name">{{ $feedback->name }}</h3>
+                                <p class="address text-muted">{{ $feedback->office_address }}</p>
+                                
+                                {{-- Star Rating (Static as per previous discussion) --}}
+                                <div class="mb-2">
+                                    <span class="fas fa-star active-star" aria-hidden="true"></span>
+                                    <span class="fas fa-star active-star" aria-hidden="true"></span>
+                                    <span class="fas fa-star active-star" aria-hidden="true"></span>
+                                    <span class="fas fa-star active-star" aria-hidden="true"></span>
+                                    <span class="fas fa-star-half-alt active-star" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                            <p class="">
+                                {{ $feedback->feedback }}
+                            </p>
+                        </div>
+                    @endforeach
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo1"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo1"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+@endif
 
             <section class="section-header grey-blue" id="awards" style="padding-bottom: 0px">
                 <div class="container-fluid awards text-center" style="background: #fff; padding: 30px 20px">

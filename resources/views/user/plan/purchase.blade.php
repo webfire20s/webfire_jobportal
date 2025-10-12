@@ -1,6 +1,6 @@
 <!-- resources/views/user/plan/purchase.blade.php -->
 
-@extends('web')
+@extends('web-layout')
 @section('title', 'Payment Page')
 
 @section('content')

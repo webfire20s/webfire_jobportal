@@ -1,4 +1,4 @@
-@extends('web')
+@extends('web-layout')
 
 @section('title', 'Available Plans')
 

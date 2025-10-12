@@ -698,6 +698,8 @@
         "description": "@yield('meta_description', 'JobPortal')"
       }
     </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/scss/mixins/_utilities.scss" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
 
   <body
@@ -719,12 +721,12 @@
       <div class="container">
         <div class="contact-info">
           <i class="bi bi-envelope email"
-            ><a href="mailto:egov.support@religare.com"
-              >egov.support@religare.com</a
+            ><a href="mailto:support@eadarsh.in"
+              >support@eadarsh.in</a
             ></i
           >
           <i class="fa-solid fa-phone d-flex align-items-center ms-4"
-            ><a href="#"><span>08068713333</span></a></i
+            ><a href="#"><span>+91 8805826526</span></a></i
           >
         </div>
         <!-- <div class="lang">
@@ -840,7 +842,7 @@
       <footer class="footer text-white pt-5 pb-4" style="background: #0D1B2A">
         {{-- <a
           class="apply-pan1"
-          href="/pan-service/"
+          href="{{ url('details') }}/pan-service/"
           target="_blank"
           rel="noopener noreferrer"
           >Apply PAN Online</a
@@ -884,89 +886,89 @@
                 <ul class="col-6 list-unstyled footer-links">
                   <li>
                     <a
-                      href="/biometric-device/?utm_source=Organic-BiometricDevice"
+                      href="{{ url('details') }}/biometric-device/?utm_source=Organic-BiometricDevice"
                       >Biometric Devices</a
                     >
                   </li>
                   <li>
-                    <a href="/dsc-token/?utm_source=Organic-DSC">
+                    <a href="{{ url('details') }}/dsc-token/?utm_source=Organic-DSC">
                       Digital Signature Certificate</a
                     >
                   </li>
                   <li>
-                    <a href="/pmsvanidhi/?utm_source=Organic-pmsvanidhi">
+                    <a href="{{ url('details') }}/pmsvanidhi/?utm_source=Organic-pmsvanidhi">
                       PM Svanidhi Scheme</a
                     >
                   </li>
                   <li>
-                    <a href="/dmt/?utm_source=Organic-DMT">
+                    <a href="{{ url('details') }}/dmt/?utm_source=Organic-DMT">
                       DMT-Money Transfer</a
                     >
                   </li>
                   <li>
-                    <a href="/micro-atm/?utm_source=Organic-micro-atm">
+                    <a href="{{ url('details') }}/micro-atm/?utm_source=Organic-micro-atm">
                       Micro ATM</a
                     >
                   </li>
                   <li>
-                    <a href="/fixed-deposit-fd/?utm_source=Organic-FD">
+                    <a href="{{ url('details') }}/fixed-deposit-fd/?utm_source=Organic-FD">
                       Fixed Deposits</a
                     >
                   </li>
                   <li>
-                    <a href="/sovereign-gold-bonds-sgb/?utm_source=Organic-SGB"
+                    <a href="{{ url('details') }}/sovereign-gold-bonds-sgb/?utm_source=Organic-SGB"
                       >Sovereign Gold Bonds</a
                     >
                   </li>
                 </ul>
                 <ul class="col-6 list-unstyled footer-links">
                   <li>
-                    <a href="/bus-ticketing/?utm_source=Organic-Bus-Ticket"
+                    <a href="{{ url('details') }}/bus-ticketing/?utm_source=Organic-Bus-Ticket"
                       >Book Bus Tickets</a
                     >
                   </li>
                   <li>
-                    <a href="/air-ticketing/?utm_source=Organic-Air-Ticket"
+                    <a href="{{ url('details') }}/air-ticketing/?utm_source=Organic-Air-Ticket"
                       >Book Air Tickets</a
                     >
                   </li>
                   <li>
-                    <a href="/home-loan/?utm_source=Organic-HomeLoan">
+                    <a href="{{ url('details') }}/home-loan/?utm_source=Organic-HomeLoan">
                       Home Loan</a
                     >
                   </li>
                   <li>
-                    <a href="/msme-loan/?utm_source=Organic-MSMELoan">
+                    <a href="{{ url('details') }}/msme-loan/?utm_source=Organic-MSMELoan">
                       MSME Loan</a
                     >
                   </li>
-                  <li><a href="/auto-loan/">Auto Loan</a></li>
+                  <li><a href="{{ url('details') }}/auto-loan/">Auto Loan</a></li>
                   <li>
                     <a
-                      href="/loan-against-property/?utm_source=Organic-LonaAgainstPropertyLoan"
+                      href="{{ url('details') }}/loan-against-property/?utm_source=Organic-LonaAgainstPropertyLoan"
                       >Loan Against Property</a
                     >
                   </li>
                   <li>
                     <a
-                      href="/two-wheeler-loan/?utm_source=Organic-two-wheeler-loan"
+                      href="{{ url('details') }}/two-wheeler-loan/?utm_source=Organic-two-wheeler-loan"
                     >
                       Two Wheeler Loan</a
                     >
                   </li>
                   <li>
-                    <a href="/agri-and-rural/?utm_source=Organic-AgriRuralLoan"
+                    <a href="{{ url('details') }}/agri-and-rural/?utm_source=Organic-AgriRuralLoan"
                       >Agri & Rural Loan</a
                     >
                   </li>
                   <li>
-                    <a href="/rail-e-ticketing/?utm_source=Organic-Rail-Ticket"
+                    <a href="{{ url('details') }}/rail-e-ticketing/?utm_source=Organic-Rail-Ticket"
                       >Book Train Tickets</a
                     >
                   </li>
                   <li>
                     <a
-                      href="/aadhaar-enabled-payment-system/?utm_source=Organic-AePS"
+                      href="{{ url('details') }}/aadhaar-enabled-payment-system/?utm_source=Organic-AePS"
                       >AePS</a
                     >
                   </li>
@@ -982,7 +984,7 @@
                         '/' => 'Home',
                         'products-services' => 'Products & Services',
                         'training-videos' => 'Training Videos',
-                        'about-us' => 'About Us',
+                        '/#about-us' => 'About Us',
                         'contact' => 'Contact',
                         'login' => 'Login',
                         'sign_up' => 'Join Now',
@@ -1008,7 +1010,7 @@
                   class="fas fa-phone-alt me-2"
                   style="transform: rotate(90deg)"
                 ></i
-                ><a href="#">000000000</a>
+                ><a href="#">+91 8805826526</a>
               </p>
               <p class="footer-text d-flex align-items-center">
                 <i class="fas fa-envelope me-2"></i>
@@ -1071,7 +1073,7 @@
                 >
               
                 {{-- <a
-                  href="/career/"
+                  href="{{ url('details') }}/career/"
                   class="btn-join-us"
                   target="_blank"
                   rel="noopener noreferrer"

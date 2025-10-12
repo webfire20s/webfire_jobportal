@@ -1,1689 +1,946 @@
 @extends('web-layout')
 @section('title', 'Product Services')
 @section('content')
-    <link href="{{ asset('public/theme/web-new/wp-content/themes/egov/campaigns/e-pan/css/style_digital.css') }}"
-        rel="stylesheet">
+    <main id="products">
 
-    <div class="mainbanner fd" id="home">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-sm-12 float-start">
-                    <img src="https://religaredigital.in/wp-content/themes/egov/campaigns/e-pan/images/fd.png"
-                        class="img-fluid" alt="Religare Digital Dukaan ek sewayen Anek!">
-                </div>
-                <div class="col-lg-4 leadform">
-                    <h2 class="mb-2 hide-after">Become an Associate with Religare </h2>
-                    <div class="col-lg-12">
-
-                        <form action="https://crm.religareonline.com/suitecrm/index.php?entryPoint=WebToPersonCapture"
-                            name="WebToLeadForm" method="POST" id="WebToLeadForm" autocomplete="off">
-                            <div class="row gy-4">
-                                <div class="col-md-12 frmFld">
-                                    <input type="text" class="form-control" id="opportunity_name" name="opportunity_name"
-                                        placeholder="Name" onkeypress="checkNameLength(event)" autocomplete="off">
-                                    <span class="error-in" id="name-error" style="display: none;">Please enter valid
-                                        Name</span>
-                                </div>
-
-
-                                <div class="col-md-12 frmFld">
-                                    <input type="email" class="form-control" id="email1" name="email1"
-                                        placeholder="Email" onkeypress="checkEmailPattern(event)" autocomplete="off">
-                                    <span class="error-in" id="email-error" style="display: none;">Please enter valid
-                                        Email</span>
-                                </div>
-
-
-                                <div class="col-md-12 field-group" style="margin-top:15px;">
-                                    <select class="form-select select2-hidden-accessible" name="city_c" id="city"
-                                        data-select2-id="city" tabindex="-1" aria-hidden="true">
-                                        <option selected="selected" value="0" data-select2-id="2">City Name</option>
-                                        <option>ADONI</option>
-                                        <option>AGARTALA</option>
-                                        <option>AGRA</option>
-                                        <option>AHMEDABAD</option>
-                                        <option>SANGAMNER</option>
-                                        <option>AIZWAL</option>
-                                        <option>AJMER</option>
-                                        <option>AKOLA</option>
-                                        <option>ALAPPUZHA</option>
-                                        <option>ALIGARH</option>
-                                        <option>ALLAHABAD</option>
-                                        <option>ALWAR</option>
-                                        <option>AMBALA</option>
-                                        <option>AMRAVATI</option>
-                                        <option>AMRITSAR</option>
-                                        <option>ANAND</option>
-                                        <option>ANANTAPUR</option>
-                                        <option>ANANTHPUR</option>
-                                        <option>ANANTNAG</option>
-                                        <option>ANGAMALY</option>
-                                        <option>ANKOLA</option>
-                                        <option>ARANTHANGI</option>
-                                        <option>ARRAH</option>
-                                        <option>ASANSOL</option>
-                                        <option>ATTUR</option>
-                                        <option>AURANGABAD MH</option>
-                                        <option>AURANGABAD BH</option>
-                                        <option>AZAMGARH</option>
-                                        <option>BADAUN</option>
-                                        <option>BAHADURGARH</option>
-                                        <option>BALASORE</option>
-                                        <option>BALLIA</option>
-                                        <option>BANGALORE</option>
-                                        <option>BANSWARA</option>
-                                        <option>BARDOLI</option>
-                                        <option>BAREILLY</option>
-                                        <option>BARODA</option>
-                                        <option>BASTI</option>
-                                        <option>BEED</option>
-                                        <option>BELGAUM</option>
-                                        <option>BELLARY</option>
-                                        <option>BERHAMPUR</option>
-                                        <option>BETUL</option>
-                                        <option>BHAGALPUR</option>
-                                        <option>BHANDARA</option>
-                                        <option>BHARUCH</option>
-                                        <option>BHATINDA</option>
-                                        <option>BHAVANI</option>
-                                        <option>BHAVNAGAR</option>
-                                        <option>BHILWARA</option>
-                                        <option>BHIWANI</option>
-                                        <option>BHOJPUR</option>
-                                        <option>BHOPAL</option>
-                                        <option>BHUBANESHWAR</option>
-                                        <option>BHUJ</option>
-                                        <option>BHUSAWAL</option>
-                                        <option>BIHAR SHARIFF</option>
-                                        <option>BIJAPUR</option>
-                                        <option>BIJNOR</option>
-                                        <option>BIKANER</option>
-                                        <option>BILASPUR</option>
-                                        <option>BINA</option>
-                                        <option>BIRBHUM</option>
-                                        <option>BOKARO</option>
-                                        <option>BONGAIGON</option>
-                                        <option>BORSAD</option>
-                                        <option>BULANDSHAHAR</option>
-                                        <option>BULDANA</option>
-                                        <option>BURDWAN</option>
-                                        <option>CALCUTTA</option>
-                                        <option>CALICUT</option>
-                                        <option>CHANDIGARH</option>
-                                        <option>CHANDRAPURA</option>
-                                        <option>CHENGANNUR</option>
-                                        <option>CHENNAI</option>
-                                        <option>CHERTHALA</option>
-                                        <option>CHICKBALLAPUR</option>
-                                        <option>CHIKKODI</option>
-                                        <option>CHIRALA</option>
-                                        <option>CHITTORGARH</option>
-                                        <option>CHURU</option>
-                                        <option>COCHIN</option>
-                                        <option>COIMBATORE</option>
-                                        <option>CONTAI</option>
-                                        <option>COOCHBEHAR</option>
-                                        <option>CUDDALORE</option>
-                                        <option>THENI</option>
-                                        <option>CUMBUM -AP</option>
-                                        <option>CUTTACK</option>
-                                        <option>DAHOD</option>
-                                        <option>DARBHANGA</option>
-                                        <option>DATIA</option>
-                                        <option>DAVANGERE</option>
-                                        <option>DEESA</option>
-                                        <option>DEHRADUN</option>
-                                        <option>DEOGHAR</option>
-                                        <option>DHANBAD</option>
-                                        <option>DHARAPURAM</option>
-                                        <option>DHARWAD</option>
-                                        <option>DHOLPUR</option>
-                                        <option>DHULE</option>
-                                        <option>DIBIYAPUR</option>
-                                        <option>DIBRUGARH</option>
-                                        <option>DINDIGUL</option>
-                                        <option>DONDAICHA</option>
-                                        <option>DUNGARPUR</option>
-                                        <option>DURG</option>
-                                        <option>DURGAPUR</option>
-                                        <option>EASTGODAVARI</option>
-                                        <option>ELURU</option>
-                                        <option>ERODE</option>
-                                        <option>ETAWAH</option>
-                                        <option>FAIZABAD</option>
-                                        <option>FARIDABAD</option>
-                                        <option>FATEHPUR</option>
-                                        <option>FEROZEPUR</option>
-                                        <option>FIROZABAD</option>
-                                        <option>GADAG</option>
-                                        <option>GANDHIDHAM</option>
-                                        <option>GANDHINAGAR</option>
-                                        <option>GANGAVATI</option>
-                                        <option>GAUTAM BUDH NAGAR</option>
-                                        <option>GAYA</option>
-                                        <option>GHATAPRABHA</option>
-                                        <option>GHAZIABAD</option>
-                                        <option>GHAZIPUR</option>
-                                        <option>GIRIDIH</option>
-                                        <option>GOA</option>
-                                        <option>GOBICHETTYPALYAM</option>
-                                        <option>GODHRA</option>
-                                        <option>GOKAK</option>
-                                        <option>GONDIA</option>
-                                        <option>GORAKHPUR</option>
-                                        <option>GULBARGA</option>
-                                        <option>GUNTAKAL</option>
-                                        <option>GUNTUR</option>
-                                        <option>GURGAON</option>
-                                        <option>GUWAHATI</option>
-                                        <option>GWALIOR</option>
-                                        <option>HAILAKANDI</option>
-                                        <option>HALDWANI</option>
-                                        <option>HARIDWAR</option>
-                                        <option>HATHRAS</option>
-                                        <option>HISAR</option>
-                                        <option>HISSAR</option>
-                                        <option>HOOGHLY</option>
-                                        <option>HOSHANGABAD</option>
-                                        <option>HOSPET</option>
-                                        <option>HOWRAH</option>
-                                        <option>HUBLI</option>
-                                        <option>HYDERABAD</option>
-                                        <option>IMPHAL</option>
-                                        <option>INDORE</option>
-                                        <option>JABALPUR</option>
-                                        <option>JAGATSINGHPUR</option>
-                                        <option>JAIPUR</option>
-                                        <option>JALANDHAR</option>
-                                        <option>JALESWAR</option>
-                                        <option>JALGAON</option>
-                                        <option>JALGOAN</option>
-                                        <option>JALNA</option>
-                                        <option>JALPAIGURI</option>
-                                        <option>JAMMU</option>
-                                        <option>JAMNAGAR</option>
-                                        <option>JAMSHEDPUR</option>
-                                        <option>JAMTARA</option>
-                                        <option>JHANSI</option>
-                                        <option>JODHPUR</option>
-                                        <option>JUNAGADH</option>
-                                        <option>KADIRI</option>
-                                        <option>KAITHAL</option>
-                                        <option>KAKINADA</option>
-                                        <option>KALPETTA</option>
-                                        <option>KANCHEEPURAM</option>
-                                        <option>KANCHIPURAM</option>
-                                        <option>KANDUKUR</option>
-                                        <option>KANNUR</option>
-                                        <option>KANPUR</option>
-                                        <option>KANYAKUMARI</option>
-                                        <option>KARAD</option>
-                                        <option>KARAIKUDI</option>
-                                        <option>KARIMNAGAR</option>
-                                        <option>KARNAL</option>
-                                        <option>KARUR</option>
-                                        <option>KARWAR</option>
-                                        <option>KASGANJ</option>
-                                        <option>KASHIPUR</option>
-                                        <option>KATIHAR</option>
-                                        <option>KATNI</option>
-                                        <option>KATWA</option>
-                                        <option>KAVALI</option>
-                                        <option>KERALA</option>
-                                        <option>KESHOD</option>
-                                        <option>KHAMGAON</option>
-                                        <option>KHAMMAM</option>
-                                        <option>KHANNA</option>
-                                        <option>KHARGONE</option>
-                                        <option>KHATIMA</option>
-                                        <option>KISHANGARH</option>
-                                        <option>KODERMA</option>
-                                        <option>KOLAR</option>
-                                        <option>KOLHAPUR</option>
-                                        <option>KOLKATTA</option>
-                                        <option>KORIYA</option>
-                                        <option>KOTA</option>
-                                        <option>KOTDWARA</option>
-                                        <option>KOTTAYAM</option>
-                                        <option>KOZHIKODE</option>
-                                        <option>KUMBAKONAM</option>
-                                        <option>KUNDAPURA</option>
-                                        <option>KURNOOL</option>
-                                        <option>KURUKSHETRA</option>
-                                        <option>KUTCH</option>
-                                        <option>LAKHIMPUR</option>
-                                        <option>LALGUDI</option>
-                                        <option>LALITPUR</option>
-                                        <option>LATUR</option>
-                                        <option>LUCKNOW</option>
-                                        <option>LUDHIANA</option>
-                                        <option>MADANAPALLY</option>
-                                        <option>MADURAI</option>
-                                        <option>MAHABUBNAGAR</option>
-                                        <option>MAHARAJGANJ</option>
-                                        <option>MAHESANA</option>
-                                        <option>MAHUVA</option>
-                                        <option>MALAPPURAM</option>
-                                        <option>MALDA</option>
-                                        <option>MALKAPUR</option>
-                                        <option>MANAPARAI</option>
-                                        <option>MANDI</option>
-                                        <option>MANDYA</option>
-                                        <option>MANGALORE</option>
-                                        <option>MANMAD</option>
-                                        <option>MARAIMALAI NAGAR</option>
-                                        <option>MARGAO</option>
-                                        <option>MATHURA</option>
-                                        <option>MAU</option>
-                                        <option>MAYILADUTHURAI</option>
-                                        <option>MEERUT</option>
-                                        <option>MEHSANA</option>
-                                        <option>MIDNAPORE</option>
-                                        <option>MIRAJ</option>
-                                        <option>SANGLI</option>
-                                        <option>MIRYALGUDA</option>
-                                        <option>MOGA</option>
-                                        <option>MOODABIDRI</option>
-                                        <option>MORADABAD</option>
-                                        <option>MORBI</option>
-                                        <option>MOTIHARI</option>
-                                        <option>MUMBAI</option>
-                                        <option>MUNGER</option>
-                                        <option>MURSHIDABAD</option>
-                                        <option>MUZAFFARNAGAR</option>
-                                        <option>MUZAFFARPUR</option>
-                                        <option>MYSORE</option>
-                                        <option>NADIA</option>
-                                        <option>NADIAD</option>
-                                        <option>NAGAON</option>
-                                        <option>NAGAPATTINAM</option>
-                                        <option>NAGAUR</option>
-                                        <option>NAGERCOIL</option>
-                                        <option>NAGPUR</option>
-                                        <option>NAIHATI</option>
-                                        <option>NAINITAL</option>
-                                        <option>NAJIBABAD</option>
-                                        <option>NAMAKKAL</option>
-                                        <option>NANDED</option>
-                                        <option>NANDURBAR</option>
-                                        <option>NANDYAL</option>
-                                        <option>NARASARAOPET</option>
-                                        <option>NARWANA</option>
-                                        <option>NASHIK</option>
-                                        <option>NAVAPUR</option>
-                                        <option>NAVI MUMBAI</option>
-                                        <option>NAVSARI</option>
-                                        <option>NAWADA</option>
-                                        <option>NELLORE</option>
-                                        <option>NEW DELHI</option>
-                                        <option>NIPANI</option>
-                                        <option>NIZAMABAD</option>
-                                        <option>NOIDA</option>
-                                        <option>ONGOLE</option>
-                                        <option>OTHERS</option>
-                                        <option>PALAKKAD</option>
-                                        <option>PALAMPUR</option>
-                                        <option>PALANI</option>
-                                        <option>PALANPUR</option>
-                                        <option>PANAJIM</option>
-                                        <option>PANCHKULA</option>
-                                        <option>PANDHARPUR</option>
-                                        <option>PANIPAT</option>
-                                        <option>PANJIM</option>
-                                        <option>PANRUTI</option>
-                                        <option>PANVEL</option>
-                                        <option>PARACHUR</option>
-                                        <option>PARBHANI</option>
-                                        <option>PATHANAMTHITTA</option>
-                                        <option>PATHANKOT</option>
-                                        <option>PATIALA</option>
-                                        <option>PATNA</option>
-                                        <option>PILANI</option>
-                                        <option>PILIBHIT</option>
-                                        <option>POLLACHI</option>
-                                        <option>PONDICHERRY</option>
-                                        <option>PRAKASHAM</option>
-                                        <option>PRODDATUR</option>
-                                        <option>PUNE</option>
-                                        <option>PURBA MIDNAPUR</option>
-                                        <option>PURNIA</option>
-                                        <option>PUSAD</option>
-                                        <option>RAICHUR</option>
-                                        <option>RAIGAD</option>
-                                        <option>RAIPUR</option>
-                                        <option>RAJAHMUNDRY</option>
-                                        <option>RAJKOT</option>
-                                        <option>RAMANATHAPURAM</option>
-                                        <option>RAMNAGAR</option>
-                                        <option>RAMPUR</option>
-                                        <option>RANCHI</option>
-                                        <option>RANGAREDDY</option>
-                                        <option>RATH</option>
-                                        <option>RATLAM</option>
-                                        <option>RATNAGIRI</option>
-                                        <option>RATNAGIRI</option>
-                                        <option>RAYAGADA</option>
-                                        <option>RENUKOOT</option>
-                                        <option>ROHTAK</option>
-                                        <option>ROORKEE</option>
-                                        <option>ROURKELA</option>
-                                        <option>SABARKANTHA</option>
-                                        <option>SABARMATI</option>
-                                        <option>SAHARANPUR</option>
-                                        <option>SALEM</option>
-                                        <option>SAMBALPUR</option>
-                                        <option>SATARA</option>
-                                        <option>SATNA</option>
-                                        <option>SECUNDRABAD</option>
-                                        <option>SHAHAJAHANPUR UP</option>
-                                        <option>SHEGAON</option>
-                                        <option>SHIMLA</option>
-                                        <option>SIDDAPUR</option>
-                                        <option>SILCHAR</option>
-                                        <option>SILIGURI</option>
-                                        <option>SILVASSA</option>
-                                        <option>SINDHANUR</option>
-                                        <option>SINGUR</option>
-                                        <option>SIRCILLA</option>
-                                        <option>SIROHI</option>
-                                        <option>SIRSA</option>
-                                        <option>SIRSI</option>
-                                        <option>SITAMARHI</option>
-                                        <option>SIVAKASI</option>
-                                        <option>SIVASAGAR</option>
-                                        <option>SOLAPUR</option>
-                                        <option>SOMWARPET</option>
-                                        <option>SONBHADRA</option>
-                                        <option>SONEPAT</option>
-                                        <option>SRIGANGANAGAR</option>
-                                        <option>SRIVILLIPUTTUR</option>
-                                        <option>SUNAM</option>
-                                        <option>SURANDAI</option>
-                                        <option>SURAT</option>
-                                        <option>SURGUJA</option>
-                                        <option>SURI</option>
-                                        <option>TADEPALIIGUDEM</option>
-                                        <option>TADIPATRI</option>
-                                        <option>TANUKU</option>
-                                        <option>TARAKESHWAR</option>
-                                        <option>TENALI</option>
-                                        <option>TENKASI</option>
-                                        <option>THANE</option>
-                                        <option>THANJAVUR</option>
-                                        <option>THIRUVALLA</option>
-                                        <option>THRISSUR</option>
-                                        <option>TINDIVANAM</option>
-                                        <option>TIRUCHARPALLY</option>
-                                        <option>TIRUCHENDHUR</option>
-                                        <option>TIRUCHIRAPALLI</option>
-                                        <option>TIRUNELVELI</option>
-                                        <option>TIRUPUR</option>
-                                        <option>TONK</option>
-                                        <option>TRIVANDRUM</option>
-                                        <option>TUMKUR</option>
-                                        <option>TUTICORIN</option>
-                                        <option>UDAIPUR</option>
-                                        <option>UJJAIN</option>
-                                        <option>UNJHA</option>
-                                        <option>UNNAO</option>
-                                        <option>UPLETA</option>
-                                        <option>VADODARA</option>
-                                        <option>VALSAD</option>
-                                        <option>VAPI</option>
-                                        <option>VARANASI</option>
-                                        <option>VELLORE</option>
-                                        <option>VIJAYAWADA</option>
-                                        <option>VILLUPURAM TN</option>
-                                        <option>VIRAMGAM</option>
-                                        <option>VIRUDHUNAGAR</option>
-                                        <option>VISAKHAPATNAM</option>
-                                        <option>VISHAKAPATNAM</option>
-                                        <option>VISNAGAR</option>
-                                        <option>VIZIANAGARAM</option>
-                                        <option>WADAKANCHERY</option>
-                                        <option>WARANGAL</option>
-                                        <option>WASHIM</option>
-                                        <option>WEST GODAVARI</option>
-                                        <option>WESTGODAVARI</option>
-                                        <option>YAMUNANAGAR</option>
-                                        <option>YAVATMAL</option>
-                                        <option>YELLAPUR</option>
-                                    </select><span class="select2 select2-container select2-container--default"
-                                        dir="ltr" data-select2-id="1" style="width: 406px;"><span
-                                            class="selection"><span class="select2-selection select2-selection--single"
-                                                role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
-                                                aria-disabled="false" aria-labelledby="select2-city-container"><span
-                                                    class="select2-selection__rendered" id="select2-city-container"
-                                                    role="textbox" aria-readonly="true" title="City Name">City
-                                                    Name</span><span class="select2-selection__arrow" role="presentation"><b
-                                                        role="presentation"></b></span></span></span><span
-                                            class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                </div>
-                                <div class="col-md-12" style="margin-top:15px;">
-                                    <select class="multi-select jqmsLoaded" multiple="" id="multiSelect"
-                                        name="multi-select" style="visibility: hidden; display: none;">
-                                        <option value="PAN">PAN Card Services</option>
-                                        <option value="DSC">Digital Signature Certificate</option>
-                                        <option value="DIGIPAY">AEPS/MATM/DMT</option>
-                                        <option value="NPS">National Pension System</option>
-                                        <option value="BBPS">BBPS &amp; Recharge</option>
-                                        <option value="Insurance">Insurance</option>
-                                        <option value="EGOV Investments">Investments</option>
-                                        <option value="Train Ticket">Train Ticketing</option>
-
-                                        <option value="Air Ticket">Air Ticketing</option>
-                                        <option value="Bus Ticket">Bus Ticketing</option>
-                                    </select>
-                                    <div class="ms-options-wrap" style="position: relative;"><button
-                                            class="capture-value">Select All Products</button>
-                                        <div class="ms-options"
-                                            style="min-height: 200px; max-height: 200px; overflow: auto; display: none;"><a
-                                                class="ms-selectall global">Select all Products</a>
-                                            <ul style="column-count: 1; column-gap: 0px;">
-                                                <li class=""><label for="ms-opt-1"><input type="checkbox"
-                                                            value="PAN" title="PAN Card Services" id="ms-opt-1">PAN
-                                                        Card Services</label></li>
-                                                <li class=""><label for="ms-opt-2"><input type="checkbox"
-                                                            value="DSC" title="Digital Signature Certificate"
-                                                            id="ms-opt-2">Digital Signature Certificate</label></li>
-                                                <li class=""><label for="ms-opt-3"><input type="checkbox"
-                                                            value="DIGIPAY" title="AEPS/MATM/DMT"
-                                                            id="ms-opt-3">AEPS/MATM/DMT</label></li>
-                                                <li class=""><label for="ms-opt-4"><input type="checkbox"
-                                                            value="NPS" title="National Pension System"
-                                                            id="ms-opt-4">National Pension System</label></li>
-                                                <li class=""><label for="ms-opt-5"><input type="checkbox"
-                                                            value="BBPS" title="BBPS &amp; Recharge"
-                                                            id="ms-opt-5">BBPS &amp; Recharge</label></li>
-                                                <li class=""><label for="ms-opt-6"><input type="checkbox"
-                                                            value="Insurance" title="Insurance"
-                                                            id="ms-opt-6">Insurance</label></li>
-                                                <li class=""><label for="ms-opt-7"><input type="checkbox"
-                                                            value="EGOV Investments" title="Investments"
-                                                            id="ms-opt-7">Investments</label></li>
-                                                <li class=""><label for="ms-opt-8"><input type="checkbox"
-                                                            value="Train Ticket" title="Train Ticketing"
-                                                            id="ms-opt-8">Train Ticketing</label></li>
-                                                <li class=""><label for="ms-opt-9"><input type="checkbox"
-                                                            value="Air Ticket" title="Air Ticketing" id="ms-opt-9">Air
-                                                        Ticketing</label></li>
-                                                <li class=""><label for="ms-opt-10"><input type="checkbox"
-                                                            value="Bus Ticket" title="Bus Ticketing" id="ms-opt-10">Bus
-                                                        Ticketing</label></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <span class="error-in" id="product-error" style="display:none;">Please select a
-                                        Product From the list</span>
-                                </div>
-
-
-
-                                <div class="col-md-6 frmFld">
-                                    <input type="text" class="form-control" id="phone_mobile" name="phone_mobile"
-                                        placeholder="Mobile Number" onkeypress="checkMobileNoLength(event)"
-                                        onblur="getOtpCall()" autocomplete="off">
-                                    <span class="error-in" id="mobile-error" style="display: none;">Please enter valid
-                                        Mobile number</span>
-                                    <span id="mss" style="font-size: 12px; color: green;"></span>
-                                </div>
-
-                                <div class="col-md-6 frmFld">
-                                    <input type="text" class="form-control" id="otp" name="otp"
-                                        placeholder="OTP" onchange="resetError()" autocomplete="off">
-                                    <span class="error-in" id="otp-error" style="display:none">Please enter valid
-                                        OTP.</span>
-                                    <a class="resend" id="resendOtp" onclick="getOtpCall()">Resend OTP</a>
-                                </div>
-
-                                <input type="hidden" id="Referrerby" name="Referrerby" value="">
-                                <input type="hidden" id="campaign_id" name="campaign_id" value="a06TZ00000B15m1YAB">
-                                <input type="hidden" id="lead_source" name="lead_source" value="website">
-                                <input type="hidden" id="lead_utm_adgroup_c" name="lead_utm_adgroup_c" value="website">
-                                <input type="hidden" id="lead_locater_c" name="lead_locater_c" value="Portal">
-
-                                <input type="hidden" id="utmsource_c" name="utmsource_c" value="FD">
-
-                                <input type="hidden" id="utmcampaign_c" name="utmcampaign_c" value="Google">
-
-                                <input type="hidden" id="utmkeyword_c" name="utmkeyword_c" value="FD">
-
-                                <input type="hidden" id="lead_utm_term_c" name="lead_utm_term_c"
-                                    value="ReligareDigital">
-
-                                <input type="hidden" id="lead_utm_placement_c" name="lead_utm_placement_c"
-                                    value="fixed-deposit-fd">
-
-                                <input type="hidden" id="lead_utm_medium_c" name="lead_utm_medium_c" value="Organic">
-
-
-                                <div class="col-md-12  frmFld msg">
-                                    By signing up, you agree to receive updates on Whatsapp
-                                </div>
-
-                                <div class="col-md-12  frmFld">
-                                    <button type="submit" onclick="submit_form(event)">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bannerBottom"></div>
-    </div>
-    <section id="why-us" class="why-us advantage pb-0" style="background:none;">
-        <div class="container">
-            <div class="row gx-0 documents">
-                <div class="col-lg-12 d-flex flex-column justify-content-center">
-
-                    <div class="row gx-0 BenefitsBox">
-                        <div class="col-lg-12 col-sm-12 mb-3">
-
-
-                            <div class="section-title">
-                                <h2>Fixed Deposit (FD)</h2>
-                                <p>A fixed deposit is a financial instrument provided by banks or NBFCs which provides a
-                                    higher rate of interest as compared to a regular savings account. A Fixed Deposit is a
-                                    type of an account opened with a bank where an assured rate of interest is paid for
-                                    keeping the funds for a particular period. Fixed Deposits are an easy way to earn
-                                    returns from funds that are lying idle.</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12 col-sm-12 float-start section-title">
-                            <div class="row gap-52 mt-3">
-                                <div
-                                    class="col-lg-3 col-md-12 border-hover p-2 border d-flex align-items-center justify-content-start iconBox">
-                                    <div class="ms-2"><img src="/wp-content/themes/egov/campaigns/e-pan/images/old.png"
-                                            alt="Safe &amp; Secure" style="height: 50px;"></div>
-                                    <div class="ps-3">
-                                        <h6 class="text-start m-0">Senior Citizen FD</h6>
-                                    </div>
-                                </div>
-                                <div
-                                    class="col-lg-3 col-md-12 border-hover p-2 border d-flex align-items-center justify-content-start iconBox">
-                                    <div class="ms-2"><img
-                                            src="/wp-content/themes/egov/campaigns/e-pan/images/taxes.png"
-                                            alt="Earn-interest" style="height: 50px;"></div>
-                                    <div class="ps-3">
-                                        <h6 class="text-start m-0">Tax Saving FD</h6>
-                                    </div>
-                                </div>
-                                <div
-                                    class="col-lg-3 col-md-12 border-hover p-2 border d-flex align-items-center justify-content-start iconBox">
-                                    <div class="ms-2"><img
-                                            src="/wp-content/themes/egov/campaigns/e-pan/images/directions.png"
-                                            alt="Tax-benefits" style="height: 50px;"></div>
-                                    <div class="ps-3">
-                                        <h6 class="text-start m-0">Flexi FD</h6>
-                                    </div>
-                                </div>
-                                <div
-                                    class="col-lg-3 col-md-12 border-hover p-2 border  d-flex align-items-center justify-content-start iconBox">
-                                    <div class="ms-2"><img
-                                            src="/wp-content/themes/egov/campaigns/e-pan/images/deposit.png"
-                                            alt="Tax-benefits" style="height: 50px;"></div>
-                                    <div class="ps-3 ">
-                                        <h6 class="text-start m-0">Bank Deposit FD</h6>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="col-lg-3 col-md-12 border-hover p-2 border  d-flex align-items-center justify-content-start iconBox">
-                                    <div class="ms-2"><img
-                                            src="/wp-content/themes/egov/campaigns/e-pan/images/gross.png"
-                                            alt="Tax-benefits" style="height: 50px;"></div>
-                                    <div class="ps-3 ">
-                                        <h6 class="text-start m-0">Cumulative FD</h6>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="col-lg-3 col-md-12 border-hover p-2 border  d-flex align-items-center justify-content-start iconBox">
-                                    <div class="ms-2"><img
-                                            src="/wp-content/themes/egov/campaigns/e-pan/images/fixed.png"
-                                            alt="Tax-benefits" style="height: 50px;"></div>
-                                    <div class="ps-3 ">
-                                        <h6 class="text-start m-0">Non-cumulative FD</h6>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="col-lg-3 col-md-12 border-hover p-2 border  d-flex align-items-center justify-content-start iconBox">
-                                    <div class="ms-2"><img
-                                            src="/wp-content/themes/egov/campaigns/e-pan/images/travel.png"
-                                            alt="Tax-benefits" style="height: 50px;"></div>
-                                    <div class="ps-3 ">
-                                        <h6 class="text-start m-0">NRIs FD</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <section id="why-us" class="why-us advantage pb-0">
-        <div class="container-fluid desktopView aos-init aos-animate" data-aos="fade-up">
-            <div class="section-title">
-                <h2>ADVANTAGES OF RELIGARE PARTNERSHIP</h2>
-            </div>
-            <div class="content">
-
-                <div class="box"><span><img
-                            src="https://religaredigital.in/wp-content/themes/egov/assets/images/Vector.png"
-                            class="img-fluid aos-init aos-animate" alt="" data-aos="zoom-in"
-                            data-aos-delay="150"></span> Business opportunity <br>with low investment</div>
-
-                <div class="box"><span><img
-                            src="https://religaredigital.in/wp-content/themes/egov/assets/images/Vector1.png"
-                            class="img-fluid aos-init aos-animate" alt="" data-aos="zoom-in"
-                            data-aos-delay="150"></span> Easy onboarding on <br>our platform</div>
-
-                <div class="box"><span><img
-                            src="https://religaredigital.in/wp-content/themes/egov/assets/images/Vector2.png"
-                            class="img-fluid aos-init aos-animate" alt="" data-aos="zoom-in"
-                            data-aos-delay="150"></span> One stop shop for all<br> Digital &amp; Financial Services</div>
-
-                <div class="box"><span><img
-                            src="https://religaredigital.in/wp-content/themes/egov/assets/images/Vector3.png"
-                            class="img-fluid aos-init aos-animate" alt="" data-aos="zoom-in"
-                            data-aos-delay="150"></span> High earning <br>potential</div>
-
-                <div class="box last"><span><img
-                            src="https://religaredigital.in/wp-content/themes/egov/assets/images/Vector4.png"
-                            class="img-fluid aos-init aos-animate" alt="" data-aos="zoom-in"
-                            data-aos-delay="150"></span> Secure &amp; Reliable <br>technology platform</div>
-
-            </div>
-        </div>
-    </section>
-    <section class="section-header portfolio" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h1>Religare Digital Products &amp; Services</h1>
-            </div><br>
-            <ul id="portfolio-flters" class="aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-                <li data-filter=".filter-banking" class="fp filter-active">Banking &amp; Finance</li>
-                <li data-filter=".filter-egov" class="e-service">eGov Services</li>
-                <li data-filter=".filter-recharge" class="rbp">Recharge &amp; Bill Payments</li>
-                <li data-filter=".filter-tour" class="tt">Tours &amp; Travels</li>
-                <li data-filter=".filter-Investments" class="investments">Investments</li>
-                <li data-filter=".filter-payment" class="insurances">Insurances</li>
-                <!-- <li data-filter=".filter-ecommerce" class="e-commerce">e-Commerce</li> -->
+        <div class="container breadcrumb aos-init aos-animate" data-aos="fade-up">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a> :: </li>
+                <li> Products &amp; Services</li>
             </ul>
-
-
-
-            <div class="row portfolio-container gy-4" style="position: relative; height: 198.625px;">
-
-
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-banking"
-                    style="display: block; position: absolute; left: 0px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/aeps.png"
-                                        class="img-fluid" alt="AePS"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>AePS</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-banking"
-                    style="display: block; position: absolute; left: 330px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/dmt.png"
-                                        class="img-fluid" alt="DMT"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>DMT</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-banking"
-                    style="display: block; position: absolute; left: 660px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/micro-atm.png"
-                                        class="img-fluid" alt="Micro ATM"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Micro ATM</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-banking"
-                    style="display: block; position: absolute; left: 990px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/csp.png"
-                                        class="img-fluid" alt="CSP"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>CSP</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-egov"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/pan.png"
-                                        class="img-fluid" alt="PAN"><br></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>PAN</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-egov"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/tds.png"
-                                        class="img-fluid" alt="TDS/eTDS"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>TDS/eTDS</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-egov"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/dsc.png"
-                                        class="img-fluid" alt="DSC"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>DSC</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-recharge"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/bbps.png"
-                                        class="img-fluid" alt="BBPS/Home Utilities"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>BBPS/Home Utilities</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-recharge"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/recharges.png"
-                                        class="img-fluid" alt="Recharges"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Recharges</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-payment"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/healthcare.png"
-                                        class="img-fluid" alt="Health Insurance"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Health Insurance</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-payment"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/shield.png"
-                                        class="img-fluid" alt="Life Insurance"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Life Insurance</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-payment"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/general-insurance.png"
-                                        class="img-fluid" alt="General Insurance"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>General Insurance</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-payment"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/car-insurance.png"
-                                        class="img-fluid" alt="Motor Insurance"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Motor Insurance</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-tour"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/irctc.png"
-                                        class="img-fluid" alt="Train Tickets"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Train Tickets</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-tour"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/buslogo.png"
-                                        class="img-fluid" alt="Bus Tickets"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Bus Tickets</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-tour"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/uploads/2022/12/ticket.png"
-                                        class="img-fluid" alt="Air Tickets"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Air Tickets</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-Investments"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/nps.png"
-                                        class="img-fluid" alt="National Pension System"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>National Pension System</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-Investments"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/mf.png"
-                                        class="img-fluid" alt="Mutual Fund"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Mutual Fund</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-Investments"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/sgb.png"
-                                        class="img-fluid" alt="Sovereign Gold Bond (SGB)"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Sovereign Gold Bond (SGB)</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-Investments"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/fd.png"
-                                        class="img-fluid" alt="Fixed Deposit (FD)"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Fixed Deposit (FD)</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-Investments"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/cgb.png"
-                                        class="img-fluid" alt="Captital Gain Bonds"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>Captital Gain Bonds</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-Investments"
-                    style="display: none; position: absolute; left: 1320px; top: 0px;">
-                    <div class="innerBox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="portfolio-img"><img
-                                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/ipo.png"
-                                        class="img-fluid" alt="IPOs"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="portfolio-info">
-                                <h4>IPOs</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="col-lg-3 col-md-6 portfolio-item filter-ecommerce">
-              <div class="innerBox">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="portfolio-img"><img
-                        src="https://religaredigital.in/wp-content/themes/egov/assets/images/amazon.png" class="img-fluid"
-                        alt="Amazon"></div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="portfolio-info">
-                    <h4>Amazon</h4>
-
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            </div>
-
-            <div class="row aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                <ul id="portfolio-flters" class="d-flex justify-content-center aos-init aos-animate" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <li data-filter="*" class="filter-active viewAll"
-                        style="background:transparent;
-  color: #fff;
-  border:2px solid #00A536;
-  border-radius:10px;
-  color:#081D2C;
-  padding:10px 20px;
-  list-style:none;">
-                        View all</li>
-                </ul>
-            </div>
+            <p>We are a technology driven company, focusing on creating India’s largest network of last-mile retail outlets to potentially enable every Indian to seamless benefit from financial inclusion, social inclusion, Digital India, Skill Development, Employment, Government programmes and a wider access to basic goods and services.</p>
         </div>
-    </section>
-    <section class="section-header docSec grey-blue" id="documents">
-        <div class="container">
-
+        <section id="eGovService" class="">
             <div class="section-title">
-                <h2>Documents Required</h2><br>
-                <p style="margin-bottom:30px">If you are considering a career as a Sub Broker, you need to provide
-                    documents to enable smooth functioning
-                    of your
-                    business or contact our Regional
-                    Franchise Manager.</p>
+                <div class="container aos-init aos-animate" data-aos="fade-up">
+                    <h1>E-Governance Services</h1>
+                    <p class="pt-3">The use of information technology and communication for administrative purposes is known as e-governance. Its main objective is to deliver government services to citizens in a fast, secure, and transparent manner. Through e-governance, people can easily access various government schemes and services from their homes. This system helps reduce corruption, save time, and increase accountability in administration.Ultimately, the goal of e-governance is to establish a smart, digital, and citizen-centric governance system.</p>
+                </div>
             </div>
 
 
-            <div class="row gx-0 documents">
-                <div class="col-lg-12 d-flex flex-column justify-content-center">
+            <div class="container aos-init aos-animate" data-aos="fade-up">
 
+                <div class="row Box1">
+                    <div class="col-lg-5 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0">
+                        <img src="{{ asset('public/theme/web-new/') }}/images/products1.png"
+                            class="img-fluid aos-init aos-animate" alt="E-Governance Services" data-aos="zoom-in"
+                            data-aos-delay="150">
 
-                    <div class="row gx-0">
-                        <div class="col-lg-3 col-sm-12 box2 float-start">
-                            <img src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/icons-09.svg"
-                                alt="Passport Size Photograph">
-                            <div class="docs-discription">
-                                <h6>Photograph &amp; PAN Card</h6>
-                                <p>Passport Size Photograph &amp; Pan card copy</p>
-                            </div>
+                        <div class="d-flex justify-content-center callToActions">
+
+                            <button class="btn joinBtn"><a href="/Signup" class="btn-learn-more">Join Now</a></button>
+
+                            <button class="btn joinBtn calc"><a href="/income-calculator" class="btn-learn-more">Income
+                                    Calculator</a></button>
+
                         </div>
 
+                    </div>
+
+                    <div class="col-lg-7 Boxcontent order-2 order-lg-2">
+                        <div class="content">
 
 
-                        <div class="col-lg-3 col-sm-12 box2 float-start">
-                            <img src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/icons-12.svg"
-                                alt="Office Proof">
-                            <div class="docs-discription">
-                                <h6>Office Proof</h6>
-                                <p>Landline/Telephone Bill/Electricity Bill/Rent Agreement</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-sm-12 box2 float-start">
-                            <img src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/bank-proof.svg"
-                                alt="Bank Proof">
-                            <div class="docs-discription">
-                                <h6>Bank Proof</h6>
-                                <p>Copy of : cancelled cheque / statement / passbook</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-sm-12 box2 float-start">
-                            <img src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/icons-11.svg"
-                                alt="Residence Address Proof">
-                            <div class="docs-discription">
-                                <h6>Residence Address Proof</h6>
-                                <p>Driving Licence, Aadhar card/Voter id card/passport/passbook</p>
-                            </div>
-                        </div>
+                            <section class="nobg p-0" id="pan">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/pan-s.png"
+                                            class="img-fluid aos-init aos-animate" alt="PAN" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>PAN</h3>
+                                        <p>Become an Pan Card agent for providing basic services like making a new Pan Card to updating an old one for your customers across the country. Our strong Adarsh network ensures a seamless experience for you and your customers. With our prompt, hassle-free & technology-driven service, you will be able to track your application status online within 24 hrs.</p>
+                                        <button class="btn joinBtn"><a href="/pan-card-center/?utm_source=Organic-PAN"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
 
 
-                        <div class="col-lg-9 col-sm-12 box2 last float-start">
-                            <img src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/additional-docs.svg"
-                                alt="Additional Documents">
-                            <div class="docs-discription">
-                                <h6>Additional Documents</h6>
-                                <p><strong>For Partnership Firm: </strong>Copy of Partnership Deed/Letter of Authority of
-                                    the
-                                    Partners<br>
-                                    <strong>For Companies: </strong>Copy of Memorandum and Articles of Association/ Bye
-                                    Laws, Board
-                                    Resolution (Company /Society / Trust), Authorized Signatory List
-                                </p>
-                            </div>
+                            <section class="nobg p-0" id="tds">
+                                <div class="row Boxrow" id="tds">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/tds-s.png"
+                                            class="img-fluid aos-init" alt="TDS/eTDS" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>ITR Filing</h3>
+                                        <p>Income Tax Return (ITR) filing helps individuals and businesses report their annual income to the government. It ensures tax compliance, allows claiming refunds, and avoids penalties. Adarsh Digital Services provides easy and secure ITR filing with expert assistance and fast processing.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="dsc">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/dsc-s.png"
+                                            class="img-fluid aos-init" alt="DSC" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>DSC</h3>
+                                        <p>A Digital Signature Certificate (DSC) is an electronic form of a signature used to sign documents online securely. It ensures authenticity, integrity, and legal validity for e-filing, GST, ITR, and government tenders. Adarsh Digital provides fast and hassle-free DSC issuance for individuals and organizations.</p>
+
+                                        <button class="btn joinBtn"><a href="/dsc-token/?utm_source=Organic-DSC"
+                                                class="btn-learn-more">Explore More</a></button>
+                                        <button class="btn joinBtn" style="background:#246fad;"><a
+                                                href="https://religaredigital.in/buy-digital-signature-online/"
+                                                class="btn-learn-more" style="color:#fff;">Apply DSC</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+
+                            <section class="nobg p-0" id="udyam">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/swanidhi.png"
+                                            class="img-fluid aos-init" alt="Udyam Registration" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>Udyam Registration</h3>
+                                        <p>Udyam Registration is a government initiative for MSMEs (Micro, Small, and Medium Enterprises) to get official recognition and business benefits. It helps businesses access loans, subsidies, and various government schemes. Adarsh Digital offers quick and reliable Udyam registration with full documentation support.</p>
+                                        <button class="btn joinBtn"><a href="/pmsvanidhi/?utm_source=Organic-pmsvanidhi"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+
                         </div>
                     </div>
 
 
+
                 </div>
             </div>
-        </div>
-
-    </section>
-    <section id="clients" class="clients">
-        <div class="container-fluid p-0">
+        </section>
+        <section id="bankingFinance" class="">
             <div class="section-title">
-                <h2>Religare Digital Partners</h2>
-            </div>
-            <div class="row aos-init" data-aos="zoom-in">
+                <div class="container aos-init" data-aos="fade-up">
+                    <h2>Banking &amp; Finance</h2>
 
-
-
-                <div class="owl-carousel owl-carousel1 owl-theme owl-loaded owl-drag">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <!-- <div class="owl-item">
-                <div class="card row d-flex flex-row">
-                  <div class="profile"><img
-                      src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client12.png"
-                      class="img-fluid" alt="client logo"></div>
+                    <p>We aim to provide basic banking AEPS and finance services to the last rural citizen in order to bridge the gap between urban and rural India.</p>
                 </div>
-              </div> -->
+            </div>
 
-                    <div class="owl-stage-outer">
-                        <div class="owl-stage"
-                            style="transform: translate3d(-3185px, 0px, 0px); transition: 0.25s; width: 5145px;">
-                            <div class="owl-item cloned" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client4.png"
-                                                class="img-fluid" alt="client logo"></div>
+
+            <div class="container aos-init" data-aos="fade-up">
+
+                <div class="row Box1">
+                    <div class="col-lg-5 col-md-8 col-sm-12 order-1 order-lg-2 p-lg-0"><img
+                            src="{{ asset('public/theme/web-new/') }}/images/products1.png"
+                            class="img-fluid aos-init" alt="Banking &amp; Finance" data-aos="zoom-in" data-aos-delay="150">
+
+                        <div class="d-flex justify-content-center callToActions">
+
+                            <button class="btn joinBtn"><a href="/Signup" class="btn-learn-more">Join Now</a></button>
+
+                            <button class="btn joinBtn calc"><a href="/income-calculator" class="btn-learn-more">Income
+                                    Calculator</a></button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 Boxcontent order-2 order-lg-1">
+                        <div class="content">
+
+
+                            <section class="nobg p-0" id="aeps">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/aeps-s.png"
+                                            class="img-fluid aos-init" alt="AePS" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>AePS</h3>
+                                        <p>AEPS is a secure banking service that allows customers to perform basic financial transactions using their Aadhaar number and fingerprint authentication. It enables cash withdrawal, balance inquiry, and fund transfer without using debit cards. Adarsh Digital Services provides fast and reliable AEPS services to retailers and customers across India.</p>
+                                        <button class="btn joinBtn"><a
+                                                href="/aadhaar-enabled-payment-system/?utm_source=Organic-AePS"
+                                                class="btn-learn-more">Explore More</a></button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="owl-item cloned" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client5.png"
-                                                class="img-fluid" alt="client logo"></div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="dmt">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/dmt-s.png"
+                                            class="img-fluid aos-init" alt="DMT" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>DMT</h3>
+                                        <p>DMT is a fast and secure service that allows users to transfer money instantly to any bank account across India. It supports IMPS and NEFT transactions for quick fund transfers.</p>
+                                        <button class="btn joinBtn"><a href="/dmt/?utm_source=Organic-DMT"
+                                                class="btn-learn-more">Explore More</a></button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="owl-item cloned" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client6.png"
-                                                class="img-fluid" alt="client logo"></div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="matm">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/micro-atm-s.png"
+                                            class="img-fluid aos-init" alt="Micro ATM" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Micro ATM</h3>
+                                        <p>Micro ATM is a mini banking device that enables cash withdrawal, balance inquiry, and fund transfer using a debit card or Aadhaar. It brings essential banking services to rural and remote areas where traditional ATMs are unavailable. Adarsh Digital provides secure and easy-to-use Micro ATM solutions for retailers and businesses.</p>
+                                        <button class="btn joinBtn"><a href="/micro-atm/?utm_source=Organic-micro-atm"
+                                                class="btn-learn-more">Explore More</a></button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="owl-item cloned" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client7.png"
-                                                class="img-fluid" alt="client logo"></div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="csp">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/csp-s.png"
+                                            class="img-fluid aos-init" alt="CSP" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>CSP</h3>
+                                        <p>Customer Service Point (CSP) will enable people to open bank accounts, withdraw and deposit money from any part of India with the help of agents.</p>
+                                        <button class="btn joinBtn"><a href="/csp-agent/" class="btn-learn-more">Explore
+                                                More</a></button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="owl-item cloned" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client9.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client11.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client1.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client2.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client3.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client4.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client5.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client6.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client7.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item active" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client9.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item active" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client11.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned active" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client1.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned active" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client2.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned active" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client3.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned active" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client4.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client5.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned" style="width: 215px; margin-right: 30px;">
-                                <div class="owl-item">
-                                    <div class="card row d-flex flex-row">
-                                        <div class="profile"><img
-                                                src="{{ url('public/theme/web-new') }}/wp-content/themes/Campaigns/Become-an-Associate-updated-dummy/images/client6.png"
-                                                class="img-fluid" alt="client logo"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            </section>
                         </div>
                     </div>
-                    <div class="owl-nav disabled">
-                        <div class="owl-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-                        <div class="owl-next"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-                    </div>
-                    <div class="owl-dots disabled"></div>
+
+
+
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="testimonialSec" id="reviews">
-        <div class="container rounded">
+        </section>
+        <section id="RechargeBillPayments" class="">
             <div class="section-title">
-                <h2>Partner Reviews</h2>
-            </div>
-            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                <div class="container aos-init" data-aos="fade-up">
+                    <h2>Recharge &amp; Bill Payments</h2>
 
-                <!-- Indicators/dots -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"
-                        aria-current="true"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1" class=""></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2" class=""></button>
-                </div>
-
-                <!-- The slideshow/carousel -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="testi_img text-center">
-                            <img src="https://egovpartner.religareonline.com/web/wp-content/themes/egov/images/9918.png"
-                                alt="Sunil Kumar">
-                            <h3 class="name">Sunil Kumar </h3>
-                            <div class="mb-2"> <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                <span class="fas fa-star active-star" aria-hidden="true">
-                                </span> <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                <span class="fas fa-star-half-alt active-star" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <p class="">
-                            I am writing to you to express my gratitude towards the company. I have joined RELIGARE BROKING
-                            LIMITED
-                            7yrs ago.I am achieved 6 lakh pan card acknowledgement and 7 lakh Etds .I am happy to generate a
-                            revenue
-                            of 5 lakh per year .Unlike my previous experience with another company, I found this platform
-                            very
-                            impressive
-                            We want to thank you for being your true self while at work. Your optimistic attitude and good
-                            conduct,
-                            while at work, is motivating for your peers and senior colleagues alike.
-                            You are an inspiration for the team and you have a significant role to play in the future
-                            success of the
-                            organisation. Keep the good work going.
-                        </p>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="testi_img text-center">
-                            <img src="https://egovpartner.religareonline.com/web/wp-content/themes/egov/images/9343.png"
-                                alt="Sujeet Kumar">
-                            <h3 class="name">Sujeet Kumar </h3>
-                            <div class="mb-2"> <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                <span class="fas fa-star active-star" aria-hidden="true">
-                                </span> <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                <span class="fas fa-star-half-alt active-star" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <p class=""> I am very happy to say that ,with Religare Broking Limited Company we are
-                            dealing with PAN Card
-                            , TAN No , E-TDS Aadhaar DSC since 2014 which is resolved in a friendly manner with Religare
-                            Broking
-                            Limited Company and prompt action is taken. No difficulties have arisen in doing the work since
-                            2014. And
-                            in future also the company will continue to support us in our work. It was a good experience to
-                            work with
-                            them. I hope that the co-workers of Religare Broking Limited and their senior officers will
-                            continue to
-                            have a good working relationship in the coming times so that by joining them, they will continue
-                            to
-                            cooperate in more profit and service to the general public. </p>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="testi_img text-center">
-                            <img src="https://egovpartner.religareonline.com/web/wp-content/themes/egov/images/09101.png"
-                                alt="Sathya">
-                            <h3 class="name">Sathya </h3>
-                            <div class="mb-2"> <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                <span class="fas fa-star active-star" aria-hidden="true">
-                                </span> <span class="fas fa-star active-star" aria-hidden="true"></span>
-                                <span class="fas fa-star-half-alt active-star" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <p class="">
-                            I am writing to thank you for the quality of service provided by your team. We sincerely
-                            appreciate your
-                            efficient, gracious service, the level of detail and accountability you have demonstrated on
-                            each
-                            services, and the way you conduct business as a whole.
-                            I have associated with Religare from last 10 years and processed more than 3 lack pan
-                            application and got
-                            good support and proactive auctions regarding pan processing and other day to day work. I am
-                            able to earn
-                            nearly 7 Lac per year through your franchise.
-                            Your IT team, Accounts team and compliance team is really working hard and supported us a lot
-                            And given
-                            solution for all problems.
-                        </p>
-                    </div>
-
-
-
-                </div>
-
-                <!-- Left and right controls/icons -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </div>
-    </section>
-    <section class="section-header grey-blue" id="awards">
-        <div class="container awards">
-            <h2>Awards</h2>
-            <p>We have earned our recognition and it feels great every time when we are praised and recognised by
-                distinguished
-                organisations. Some of the awards we have received for our
-                services and initiatives</p>
-            <div class="row gx-0 mt-5 text-center">
-                <div class="col-lg-4 mb-3 awardBox">
-
-                    <img src="https://religaredigital.in/wp-content/themes/egov/assets/images/award3.jpg"
-                        alt="Religare Broking" class="img-fluid">
-                </div>
-                <div class="col-lg-4 mb-3 awardBox">
-                    <img src="https://religaredigital.in/wp-content/themes/egov/assets/images/award4.jpg"
-                        alt="Religare Broking" class="img-fluid">
-                </div>
-                <div class="col-lg-4 mb-3 awardBox">
-                    <img src="https://religaredigital.in/wp-content/themes/egov/assets/images/award2.jpg"
-                        alt="Religare Broking" class="img-fluid">
-                </div>
-                <div class="col-lg-4 mb-3 awardBox">
-                    <img src="https://religaredigital.in/wp-content/themes/egov/assets/images/award1.jpg"
-                        alt="Religare Broking" class="img-fluid">
-                </div>
-                <div class="col-lg-4 mb-3 awardBox">
-                    <img src="https://religaredigital.in/wp-content/themes/egov/assets/images/award5.jpg"
-                        alt="Religare Broking" class="img-fluid">
-                </div>
-                <div class="col-lg-4 mb-3 awardBox">
-                    <img src="https://religaredigital.in/wp-content/themes/egov/assets/images/award6.jpg"
-                        alt="Religare Broking" class="img-fluid">
+                    <p>Recharge and Bill Payment services allow users to instantly recharge mobile, DTH, and data cards, as well as pay electricity, water, gas, and other utility bills. It provides a fast, secure, and convenient way to handle all digital payments in one place. Adarsh Digital Services offers a seamless recharge and bill payment platform with high success rates and instant confirmations.</p>
                 </div>
             </div>
-        </div>
 
-    </section>
+
+            <div class="container aos-init" data-aos="fade-up">
+
+                <div class="row Box1">
+                    <div class="col-lg-5 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0"><img
+                            src="{{ asset('public/theme/web-new/') }}/images/products1.png"
+                            class="img-fluid aos-init" alt="Recharge &amp; Bill Payments" data-aos="zoom-in"
+                            data-aos-delay="150">
+
+                        <div class="d-flex justify-content-center callToActions p_button">
+
+                            <button class="btn joinBtn"><a href="/Signup" class="btn-learn-more">Join Now</a></button>
+
+                            <button class="btn joinBtn calc"><a href="/income-calculator" class="btn-learn-more">Income
+                                    Calculator</a></button>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-lg-7 Boxcontent order-2 order-lg-2">
+                        <div class="content">
+
+                            <section class="nobg p-0" id="bbps">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/bbps-s.png"
+                                            class="img-fluid aos-init" alt="BBPS" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>BBPS</h3>
+                                        <p>Payments for all utility bills such as water, electricity, Gas, and Broadband through the Bharat Bill Payment System (BBPS). The BBPS service also facilitates other payments for services like FasTag, Municipal Corporation Tax, LIC Premiums and much more.</p>
+                                        <button class="btn joinBtn"><a
+                                                href="/bharat-bill-payment-system-bbps/?utm_source=Organic-BBPS"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="recharges">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/recharge-s.png"
+                                            class="img-fluid aos-init" alt="Recharges" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>Recharges</h3>
+                                        <p>Recharge service allows users to instantly recharge prepaid mobile numbers, DTH, and data cards anytime, anywhere. It provides a quick, secure, and reliable way to stay connected without interruption. Adarsh Digital Services offers a fast and easy recharge platform with instant updates and high success rates.</p>
+                                        <button class="btn joinBtn"><a
+                                                href="/bharat-bill-payment-system-bbps/?utm_source=Organic-BBPS"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="nobg p-0" id="utilities">
+                                <div class="row Boxrow">
+                                    </div>
+                            </section>
+                        </div> <br><br><br><br><br>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Travels" class="">
+            <div class="section-title">
+                <div class="container aos-init" data-aos="fade-up">
+                    <h2>Travels</h2>
+
+                    <p>Travel service allows users to book flight, train, bus, and hotel tickets quickly and conveniently from a single platform. It helps save time, offers competitive prices, and ensures a smooth booking experience. Adarsh Digital Services provides trusted and hassle-free travel booking solutions for retailers and customers across India.</p>
+                </div>
+            </div>
+
+
+            <div class="container aos-init" data-aos="fade-up">
+
+                <div class="row Box1">
+                    <div class="col-lg-5 col-md-8 col-sm-12 order-1 order-lg-2 p-lg-0"><img
+                            src="{{ asset('public/theme/web-new/') }}/images/products1.png"
+                            class="img-fluid aos-init" alt="Travels" data-aos="zoom-in" data-aos-delay="150">
+
+                        <div class="d-flex justify-content-center callToActions">
+
+                            <button class="btn joinBtn"><a href="/become-a-ticketing-agent" class="btn-learn-more">Join
+                                    Now</a></button>
+
+                            <button class="btn joinBtn calc"><a href="/income-calculator" class="btn-learn-more">Income
+                                    Calculator</a></button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 Boxcontent order-2 order-lg-1">
+                        <div class="content">
+
+                            <section class="nobg p-0" id="traintickets">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/irctc-s.png"
+                                            class="img-fluid aos-init" alt="Train Tickets" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>Train Tickets</h3>
+                                        <p>You can get a chance to be an IRCTC agent and help customers with their train ticket bookings for any destination across India. Our user-friendly interface enables our agents to book tickets quickly & makes the whole process hassle-free for customers.</p>
+
+                                        <button class="btn joinBtn"><a
+                                                href="/rail-e-ticketing/?utm_source=Organic-Rail-Ticket"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="nobg p-0" id="bustickets">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/buslogo.png"
+                                            class="img-fluid aos-init" alt="Bus Tickets" data-aos="zoom-in"
+                                            data-aos-delay="150" style="width:55px"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>Bus Tickets</h3>
+                                        <p>Bus Booking service allows customers to book bus tickets easily and securely across all major routes in India. It provides real-time seat availability, multiple payment options, and instant booking confirmation. Adarsh Digital Services offers a reliable and fast bus booking platform for both retailers and travelers.</p>
+
+                                        <button class="btn joinBtn"><a
+                                                href="/bus-ticketing/?utm_source=Organic-Bus-Ticket"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="airickets">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="https://religaredigital.in/wp-content/uploads/2022/12/ticket.png"
+                                            class="img-fluid aos-init" alt="Air Tickets" data-aos="zoom-in"
+                                            data-aos-delay="150" style="width:55px"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>Air Tickets</h3>
+                                        <p>Air Ticket service enables users to book domestic and international flight tickets quickly and conveniently. It offers real-time flight schedules, competitive fares, and instant e-ticket confirmation. Adarsh Digital Services provides a trusted and easy-to-use air ticket booking platform for retailers and travelers across India.</p>
+
+                                        <button class="btn joinBtn"><a
+                                                href="/air-ticketing/?utm_source=Organic-Air-Ticket"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div><br><br><br><br><br>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+        <section id="Investments" class="">
+            <div class="section-title">
+                <div class="container aos-init" data-aos="fade-up">
+                    <h2>Investments</h2>
+
+                    <p>With a wide basket of investment options under one roof, we have got you covered! Our well-trained
+                        agents will help you invest in a basket of investment products in a transparent and hassle-free
+                        manner.</p>
+                </div>
+            </div>
+
+
+            <div class="container aos-init" data-aos="fade-up">
+
+                <div class="row Box1">
+                    <div class="col-lg-5 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0"><img
+                            src="{{ asset('public/theme/web-new/') }}/images/products1.png"
+                            class="img-fluid aos-init" alt="Investments" data-aos="zoom-in" data-aos-delay="150">
+
+                        <div class="d-flex justify-content-center callToActions">
+
+                            <button class="btn joinBtn"><a href="/Signup" class="btn-learn-more">Join Now</a></button>
+
+                            <button class="btn joinBtn calc"><a href="/income-calculator" class="btn-learn-more">Income
+                                    Calculator</a></button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 Boxcontent order-2 order-lg-2">
+                        <div class="content">
+
+                            <section class="nobg p-0" id="nps">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/nps-s.png"
+                                            class="img-fluid aos-init" alt="National Pension System (NPS)"
+                                            data-aos="zoom-in" data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>National Pension System (NPS)</h3>
+                                        <p>The National Pension System (NPS) is a government-backed savings scheme that helps individuals build a secure retirement fund. It allows users to invest regularly and earn market-linked returns with tax benefits. Adarsh Digital Services offers easy NPS registration and contribution services for individuals and business partners.</p>
+                                        <button class="btn joinBtn"><a
+                                                href="https://www.religaredigital.in/become-nps-agent/?utm_source=Organic-NPS"
+                                                class="btn-learn-more" target="_blank" rel="noopener noreferrer">Explore
+                                                More</a></button>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="nobg p-0" id="mf">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/mf-s.png"
+                                            class="img-fluid aos-init" alt="Mutual Fund" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>Mutual Fund</h3>
+                                        <p>Mutual Funds are investment schemes that pool money from multiple investors to invest in stocks, bonds, or other securities. They help individuals grow their wealth with professional fund management and flexible investment options. Adarsh Digital Services provides secure and easy mutual fund investment solutions with expert guidance and quick online processing.</p>
+                                        <button class="btn joinBtn"><a
+                                                href="https://www.religaredigital.in/become-mutual-fund-agent/?utm_source=Organic-Mutual-fund"
+                                                class="btn-learn-more" target="_blank" rel="noopener noreferrer">Explore
+                                                More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="nobg p-0" id="fd">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/fd-s.png"
+                                            class="img-fluid aos-init" alt="Fixed Deposit (FD)" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>Fixed Deposit (FD)</h3>
+                                        <p>A Fixed Deposit is a type of an account opened with a bank where an assured rate of interest is paid for keeping the funds for a particular period. Fixed Deposits are an easy way to earn returns from funds that are lying idle.</p>
+                                        <button class="btn joinBtn"><a href="/fixed-deposit-fd/?utm_source=Organic-FD"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="nobg p-0" id="dmat">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/ipo-s.png"
+                                            class="img-fluid aos-init" alt="Demat Account" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>Demat Account</h3>
+                                        <p>A Demat account is used to hold shares, bonds, mutual funds, and other securities in electronic form. It makes buying, selling, and managing investments easy and paperless. Adarsh Digital Services offers secure Demat account opening and support for individuals and distributors to start digital investment services with ease.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Insurances" class="">
+            <div class="section-title">
+                <div class="container aos-init" data-aos="fade-up">
+                    <h2>Insurance</h2>
+
+                    <p>We understand that even a minor accident can create a big hole in your savings. From motor insurance,
+                        health insurance, life insurance to general insurance – we have got you and your loved ones covered
+                        for everything! </p>
+                </div>
+            </div>
+
+
+            <div class="container aos-init" data-aos="fade-up">
+
+                <div class="row Box1">
+                    <div class="col-lg-5 col-md-8 col-sm-12 order-1 order-lg-2 p-lg-0"><img
+                            src="{{ asset('public/theme/web-new/') }}/images/products1.png"
+                            class="img-fluid aos-init" alt="Insurances" data-aos="zoom-in" data-aos-delay="150">
+
+                        <div class="d-flex justify-content-center callToActions">
+
+                            <button class="btn joinBtn"><a href="/become-an-insurance-agent" class="btn-learn-more">Join
+                                    Now</a></button>
+
+                            <button class="btn joinBtn calc"><a href="/income-calculator" class="btn-learn-more">Income
+                                    Calculator</a></button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 Boxcontent order-2 order-lg-1">
+                        <div class="content">
+
+                            <section class="nobg p-0" id="healthInsurance">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/two-wheeler-ins-s.png"
+                                            class="img-fluid aos-init" alt="Two Wheeler Insurance" data-aos="zoom-in"
+                                            data-aos-delay="150" width="56"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Two Wheeler Insurance</h3>
+                                        <p>A two-wheeler insurance policy is an insurance cover for protection of two wheelers, i.e. scooters &amp; bikes. The policy covers accidental repair costs and provides financial security against third party damages or losses incurred due to thefts, natural disasters, vandalism etc.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="nobg p-0" id="fourWheelerInsurance">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/four-wheeler-insurance-s.png"
+                                            class="img-fluid aos-init" alt="Four Wheeler Insurance" data-aos="zoom-in"
+                                            data-aos-delay="150" width="56"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Four Wheeler Insurance</h3>
+                                        <p>Four Wheeler Insurance provides financial protection against damages, theft, or third-party liabilities for your car. It ensures peace of mind by covering repair costs, accident losses, and legal liabilities. Adarsh Digital Services offers quick and reliable four-wheeler insurance policy issuance with instant quotes and paperless renewal support.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="healthInsurance">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/healthcare-s.png"
+                                            class="img-fluid aos-init" alt="Health Insurance" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Health Insurance</h3>
+                                        <p>Health Insurance provides financial coverage for medical expenses arising from illness, accidents, or hospitalization. It helps individuals and families manage healthcare costs and ensures access to quality medical treatment without financial stress. Adarsh Digital Services offers quick and reliable health insurance plans with easy policy issuance and renewal support.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="nobg p-0" id="lifeInsurance">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/shield-s.png"
+                                            class="img-fluid aos-init" alt="Life Insurance" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont ">
+                                        <h3>Life Insurance</h3>
+                                        <p>Life Insurance provides financial protection to your family in case of unforeseen events such as death or disability. It ensures long-term security by offering lump-sum or periodic payouts to the insured’s dependents. Adarsh Digital Services offers trusted and easy-to-purchase life insurance plans with complete support for policy issuance and renewal.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+        <section id="ECommerce" class="eCommerce d-none">
+            <div class="section-title">
+                <div class="container aos-init aos-animate" data-aos="fade-up">
+                    <h2>E-Commerce</h2>
+
+                    <p>Who doesn't love shopping? We intend to provide online shopping solutions to the people of rural and
+                        semi-urban India. Our well-trained agents will help customers place orders from Amazon in a
+                        hassle-free manner. The products will be directly delivered at the customer’s doorstep.</p>
+                </div>
+            </div>
+
+
+            <div class="container aos-init aos-animate" data-aos="fade-up">
+
+                <div class="row Box1">
+                    <div class="col-lg-5 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0"><img
+                            src="{{ asset('public/theme/web-new/') }}/images/products1.png"
+                            class="img-fluid aos-init aos-animate" alt="E-Commerce" data-aos="zoom-in"
+                            data-aos-delay="150">
+
+
+                        <div class="d-flex justify-content-center callToActions">
+
+                            <button class="btn joinBtn"><a href="/Signup" class="btn-learn-more">Join Now</a></button>
+
+                            <button class="btn joinBtn calc"><a href="/income-calculator" class="btn-learn-more">Income
+                                    Calculator</a></button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 Boxcontent order-2 order-lg-2">
+                        <div class="content">
+
+                            <section class="nobg p-0" id="amazon">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/amazon-s.png"
+                                            class="img-fluid aos-init aos-animate" alt="Amazon" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Amazon</h3>
+                                        <p>Our well-trained agents will help customers place orders from Amazon in a
+                                            hassle-free manner.</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+
+                    </div>
+
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <section id="Loan" class="eCommerce">
+            <div class="section-title">
+                <div class="container aos-init" data-aos="fade-up">
+                    <h2>Loan Services</h2>
+
+                    <p>Our loan services include both secured and unsecured loans at low interest rates. We have partnered
+                        with top banks and bring along safe and secure credit services for all ticket sizes. The service is
+                        aimed to offer hassle free credit access to customers at affordable EMIs.</p>
+                </div>
+            </div>
+
+
+            <div class="container aos-init" data-aos="fade-up">
+
+                <div class="row Box1">
+                    <div class="col-lg-5 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0"><img
+                            src="{{ asset('public/theme/web-new/') }}/images/products1.png"
+                            class="img-fluid aos-init" alt="E-Commerce" data-aos="zoom-in" data-aos-delay="150">
+
+
+                        <div class="d-flex justify-content-center callToActions">
+
+                            <button class="btn joinBtn"><a href="/Signup" class="btn-learn-more">Join Now</a></button>
+
+                            <button class="btn joinBtn calc"><a href="/income-calculator" class="btn-learn-more">Income
+                                    Calculator</a></button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 Boxcontent order-2 order-lg-2">
+                        <div class="content">
+
+                            <section class="nobg p-0" id="two-wheeler-loan">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/vespa-scooter.png"
+                                            width="70" class="img-fluid aos-init" alt="Two-Wheeler-Loan"
+                                            data-aos="zoom-in" data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Two Wheeler Loan</h3>
+                                        <p>A Two Wheeler Loan helps customers purchase a bike or scooter with easy EMIs and minimal documentation. It offers quick approval, low interest rates, and flexible repayment options. Adarsh Digital provides fast and hassle-free two-wheeler loan assistance for individuals and retailers through a trusted digital platform.</p>
+                                        <button class="btn joinBtn"><a
+                                                href="/two-wheeler-loan/?utm_source=Organic-two-wheeler-loan"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="Home-loan">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/real-estate.png"
+                                            width="70" class="img-fluid aos-init" alt="Home-Loan" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Home Loan</h3>
+                                        <p>A home loan can be applied to buy, construct or renovate a house. Any Indian
+                                            national who is 21 years of age and is salaried or have a consistent income
+                                            source can apply for home loan through our network of top banks. We assure you
+                                            affordable EMIs, low interest rates and tenure of up to 30 years.</p>
+                                        <button class="btn joinBtn"><a href="/home-loan/?utm_source=Organic-HomeLoan"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+
+                            <section class="nobg p-0" id="Personal-loan">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/personal.png"
+                                            width="70" class="img-fluid aos-init" alt="Personal-Loan"
+                                            data-aos="zoom-in" data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Personal Loan</h3>
+                                        <p>Personal loans are all-purpose unsecured loans which can be availed for various
+                                            needs such as education, home renovation, travel, medical expenses or business.
+                                            We offer hassle free, no guarantor and no security personal loans at affordable
+                                            EMIs.</p>
+                                        <button class="btn joinBtn"><a
+                                                href="/personal-loan/?utm_source=Organic-PersonalLoan"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="Tractor-loan">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/tractor.png"
+                                            width="70" class="img-fluid aos-init" alt="Tractor-Loan"
+                                            data-aos="zoom-in" data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Tractor Loan</h3>
+                                        <p>A tractor loan can be applied for purchase of a new tractor, used tractor,
+                                            harvester, rotavator, trolley, blower, loader and dozer/bailer etc to
+                                            individuals/ proprietor firm/ partnership firm/ pvt ltd co/ ltd co etc.</p>
+                                        <button class="btn joinBtn"><a
+                                                href="/tractor-loan/?utm_source=Organic-TractorLoan"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="Gold-loan">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/gold.png"
+                                            width="70" class="img-fluid aos-init" alt="Gold-Loan" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Gold Loan</h3>
+                                        <p>A Gold Loan allows customers to get instant cash by pledging their gold ornaments as security. It offers quick processing, low interest rates, and flexible repayment options without affecting gold ownership. Adarsh Digital Services provides safe and reliable gold loan assistance through trusted banking and NBFC partners.</p>
+                                        <button class="btn joinBtn"><a href="/gold-loan/?utm_source=Organic-GoldLoan"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="msme-loan">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/msme-icon.png"
+                                            width="70" class="img-fluid aos-init" alt="MSME Loan" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>MSME Loan</h3>
+                                        <p>An MSME Loan is a financial service designed to help Micro, Small, and Medium Enterprises (MSMEs) grow their business. It provides quick funding for working capital, machinery purchase, business expansion, or inventory management. Adarsh Digital offers easy MSME loan application support with minimal documentation and fast approval through trusted lending partners.</p>
+                                        <button class="btn joinBtn"><a href="/msme-loan/?utm_source=Organic-MSMELoan"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="Agri-Rural-loan">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/AGRI.png"
+                                            width="70" class="img-fluid aos-init" alt="Agri & Rural Loan" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Agri &amp; Rural Loan</h3>
+                                        <p>Agri &amp; rural loans are lending schemes for farmers and rural applicants. The
+                                            purpose of the loan is to support agriculture as well as non-agriculture
+                                            activities. The loan can be availed as gold loan, tractor loan, crop loan etc.
+                                        </p>
+                                        <button class="btn joinBtn"><a
+                                                href="/agri-and-rural/?utm_source=Organic-AgriRuralLoan"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="LAP">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/Loan-against-property-icon.png"
+                                            width="70" class="img-fluid aos-init" alt="Loan Against Property" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Loan Against Property</h3>
+                                        <p>Loan against property (LAP) is a secured loan that is offered against residential
+                                            or commercial property for purposes such as business expansion, higher
+                                            education, home renovation, medical emergencies etc.</p>
+                                        <button class="btn joinBtn"><a
+                                                href="/loan-against-property/?utm_source=Organic-LonaAgainstPropertyLoan"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="Auto-Loan">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/auto-loan-icon.png"
+                                            width="70" class="img-fluid aos-init" alt="Auto Loan" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Auto Loan</h3>
+                                        <p>Auto loan is a secured loan offered for purchasing a new car, pre-owned or used
+                                            car, two wheeler or commercial vehicle. The loan is offered as a term loan for 3
+                                            to 5 years at an affordable interest rate. Our agents act as one stop hubs to
+                                            apply for all types of auto loans.</p>
+                                        <button class="btn joinBtn"><a href="/auto-loan/?utm_source=Organic-AutoLoan"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                        </div>
+
+
+                    </div>
+
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+        <section id="devices" class="eCommerce">
+            <div class="section-title">
+                <div class="container aos-init" data-aos="fade-up">
+                    <h2>Devices</h2>
+
+                    <p>ADARSH Digital brings high quality biometric devices and printers for digital partners at
+                        affordable price. We are running special discounts and offers for egov partners and agents. </p>
+                </div>
+            </div>
+
+
+            <div class="container aos-init" data-aos="fade-up">
+
+                <div class="row Box1">
+                    <div class="col-lg-5 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0"><img
+                            src="{{ asset('public/theme/web-new/') }}/images/products1.png"
+                            class="img-fluid aos-init" alt="E-Commerce" data-aos="zoom-in" data-aos-delay="150">
+
+
+                        <div class="d-flex justify-content-center callToActions">
+
+                            <button class="btn joinBtn"><a href="/Signup" class="btn-learn-more">Join Now</a></button>
+
+                            <button class="btn joinBtn calc"><a href="/income-calculator" class="btn-learn-more">Income
+                                    Calculator</a></button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 Boxcontent order-2 order-lg-2">
+                        <div class="content">
+
+                            <section class="nobg p-0" id="biometric-devices">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/biometric-identification1.png"
+                                            width="70" class="img-fluid aos-init" alt="Biometric Devices"
+                                            data-aos="zoom-in" data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Biometric Devices</h3>
+                                        <p>Biometric Devices help agents to capture biometric details of the user
+                                            conveniently and verify the identity online as per Aadhaar. We offer best
+                                            biometric devices and ensure safe &amp; secure transactions, no/minimum false
+                                            positives and affordable pricing. </p>
+                                        <button class="btn joinBtn"><a
+                                                href="/biometric-device/?utm_source=Organic-BiometricDevice"
+                                                class="btn-learn-more">Explore More</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="nobg p-0" id="printers">
+                                <div class="row Boxrow">
+                                    <div class="col-lg-2 col-md-12 p-lg-0 text-center"><img
+                                            src="{{ asset('public/theme/web-new/') }}/images/printer.png"
+                                            width="70" class="img-fluid aos-init" alt="Printers" data-aos="zoom-in"
+                                            data-aos-delay="150"></div>
+                                    <div class="col-md-10 BoxCont">
+                                        <h3>Printers</h3>
+                                        <p>A printer is an essential device used to produce hard copies of digital documents and images quickly and efficiently. It is widely used in offices, shops, and digital centers for receipts, reports, and ID printing. Adarsh Digital provides high-quality printers and setup support for AEPS, recharge, and bill payment businesses.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+
+
+
+                        </div>
+
+
+                    </div>
+
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+
+            </div>
+        </section>
+        </main>
+
 @endsection
