@@ -26,7 +26,8 @@ class HomeController extends Controller
     }
 
     public function userloginform(){
-        return view('user_login_form');
+        $pages = Page::all();  // Retrieve all pages
+        return view('user_login_form',compact('pages'));
     }
 
     // Show the login form
@@ -170,21 +171,26 @@ class HomeController extends Controller
     }
 
     public function productServices(){
-        return view('page.product_services');
+        $pages = Page::all();  // Retrieve all pages
+        return view('page.product_services', compact('pages'));
     }
 
     public function aboutUs(){
-        return view('page.about-us');
+        $pages = Page::all();  // Retrieve all pages
+        return view('page.about-us', compact('pages'));
     }
 
     public function contact(){
-        return view('page.contact');
+        $pages = Page::all();  // Retrieve all pages
+        return view('page.contact', compact('pages'));
     }
 
     public function trainingVideos(){
-        return view('page.training-videos');
+        $pages = Page::all();  // Retrieve all pages
+        return view('page.training-videos', compact('pages'));
     }
     public function productServiceDetails($title){
-        return view('page.product_services_details');
+        $pages = Page::all();  // Retrieve all pages
+        return view('page.product_services_details',compact('pages'));
     }
 }
