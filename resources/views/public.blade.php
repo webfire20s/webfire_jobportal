@@ -1,6 +1,6 @@
 <!-- resources/views/public.blade.php -->
 
-@extends('web')
+@extends('web-layout')
 
 @section('title', $page->title)
 @section('meta_title', $page->meta_title)

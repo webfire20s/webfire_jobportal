@@ -40,7 +40,10 @@
             <p>User</p>
           </a> </li>
         <li class="nav-header">Settings</li>
-
+        <li class="nav-item"> <a href="{{ url('admin/feedbacks') }}" class="nav-link"> <i
+              class="nav-icon bi bi-gear"></i>
+            <p>Feedbacks</p>
+          </a> </li>
         <li class="nav-item"> <a href="{{ url('admin/settings') }}" class="nav-link"> <i
               class="nav-icon bi bi-gear"></i>
             <p>Setting</p>
