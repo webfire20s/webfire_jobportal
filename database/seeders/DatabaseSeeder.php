@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdminUserSeeder::class,
             PostersCategorySeeder::class,
+            ServiceSeeder::class,
             // Register other seeders if you have them
         ]);
         // \App\Models\User::factory(10)->create();

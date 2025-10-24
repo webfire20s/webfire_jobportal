@@ -16,9 +16,12 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\LatestNewController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\FormController;
-
-
-
+use App\Http\Controllers\Admin\ServiceController; // Confirmed Import
+use App\Http\Controllers\Admin\TeamController; // Added Import
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\BlogController as PublicBlogController;
+use App\Http\Controllers\EnquiryController;
+use App\Http\Controllers\Admin\EnquiryController as AdminEnquiryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,10 +58,22 @@ Route::middleware(['web'])->group(function () {
     Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
     Route::get('/training-videos', [HomeController::class, 'trainingVideos'])->name('training-videos');
     Route::get('/details/{title}', [HomeController::class, 'productServiceDetails'])->name('details');
+    Route::resource('blog', PublicBlogController::class);
+    Route::post('/service-enquiry', [EnquiryController::class, 'storeServiceEnquiry'])->name('enquiry.store');
+    Route::get('/service-enquiry', [EnquiryController::class, 'create'])->name('enquiry.create');
+});
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    // Add the resource route for team members
+    Route::resource('teams', TeamController::class);
+    Route::resource('blog', BlogController::class);
+    Route::resource('enquiries', AdminEnquiryController::class);
 });
 
 // Admin Routes - Restricted to authenticated users with the 'admin' role
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
+    Route::resource('services', ServiceController::class);
+
     Route::resource('feedbacks', \App\Http\Controllers\Admin\FeedbackController::class);
     // Admin Dashboard Route
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');

@@ -1,6 +1,103 @@
 @extends('web-layout')
 @section('title', 'Training')
 @section('content')
+
+    <?php
+    
+    $videos = [
+        [
+            'url_id' => 'f4s1JIcrhEQ?si=I6-aDFiQUfJPV1iM',
+            'title' => 'How to Resume Your Pan Application | Restart PAN Form on Portal',
+            'description' => 'Know how you can complete your ePAN application from where you left. You do not need to make payment again.',
+            'height' => '180',
+            'extra_class' => 'mt-4',
+            'extra_iframe_class' => '',
+        ],
+        [
+            'url_id' => 'sG7NUDpiOOQ?si=Ea4E204PjxiZ4-XO',
+            'title' => 'How to Do Domestic Money Transfer | DMT Demo Video',
+            'description' => 'Watch this step-by-step demo to see how Religare Digital simplifies Domestic Money Transfers for your transactions.',
+            'height' => '180',
+            'extra_class' => 'mt-4',
+            'extra_iframe_class' => '',
+        ],
+        [
+            'url_id' => '6Rgc-bxb8CE?si=gftVZPu55pPQoM6Z',
+            'title' => 'How to Add Money Instantly to Your DIGIPAY Wallet',
+            'description' => 'Watch the video to know in detail to add money to your Digipay Wallet full Process:',
+            'height' => '180',
+            'extra_class' => 'mt-4',
+            'extra_iframe_class' => '',
+        ],
+        [
+            'url_id' => 'iQhiQq3hc8k',
+            'title' => 'PAN Digitisation',
+            'description' => 'PAN digitisation through web application',
+            'paragraph' => 'Know the process of PAN digitisation through web application',
+            'height' => '300',
+            'extra_class' => '',
+            'extra_iframe_class' => 'fit-content',
+        ],
+        [
+            'url_id' => 'iQhiQq3hc8k', // Note: This uses the same URL as the one above, which may be an error in the source HTML
+            'title' => 'Wallet Recharge',
+            'description' => 'Process of Wallet recharge &amp; know the reports in back office',
+            'paragraph' => 'Know the process of wallet recharge &amp; how to check the available reports in the back office.',
+            'height' => '300',
+            'extra_class' => '',
+            'extra_iframe_class' => 'fit-content',
+        ],
+        [
+            'url_id' => '8MFXU45FIU0?si=ueswI9pMJ6kFmKwF',
+            'title' => 'Religare DigiPay Update 2024| Change in NPCI AePS Cash Withdrawal Guidelines for Agents',
+            'description' => 'Watch the video to know in detail the NPCI AePS Cash withdrawal process:',
+            'height' => '180',
+            'extra_class' => 'mt-4',
+            'extra_iframe_class' => '',
+        ],
+        [
+            'url_id' => '6CTHsaufb6M',
+            'title' => 'Complete DMT Wallet Recharge',
+            'description' => 'Learn how to do DMT, Recharges, Money Transfer, Bill Payment, Bus, e-PAN, e-collections, AEPS and MATM',
+            'height' => '300',
+            'extra_class' => 'd-none', // Hidden video
+            'extra_iframe_class' => 'fit-content',
+        ],
+        [
+            'url_id' => 'ChNPZY6m6yE?si=PDHTrIhcXVuhxcdE',
+            'title' => 'Apply for ePAN with Photo &amp; Signature',
+            'description' => 'Learn how to apply for ePAN with photo &amp; signature',
+            'height' => '180',
+            'extra_class' => 'mt-4',
+            'extra_iframe_class' => '',
+        ],
+        [
+            'url_id' => 'Y2f-s6BYVJQ',
+            'title' => 'How to do Recharge | Bill Payments and AEPS | Religare Digital | eGovernance',
+            'description' => 'How to do Recharge, Bill Payments and AEPS using Religare Digipay',
+            'height' => '180',
+            'extra_class' => 'mt-4',
+            'extra_iframe_class' => '',
+        ],
+        [
+            'url_id' => '4ReZrsNP88k',
+            'title' => 'Train Ticket Booking | DC Based | Religare Digital Solutions',
+            'description' => 'How to do train ticket booking via dc based login',
+            'height' => '180',
+            'extra_class' => 'mt-4',
+            'extra_iframe_class' => '',
+        ],
+        [
+            'url_id' => '4ReZrsNP88k', // Note: This uses the same URL as the one above
+            'title' => 'Train Ticket Booking | OTP Based | Religare Digital Solutions',
+            'description' => 'How to do train ticket booking via otp based login',
+            'height' => '180',
+            'extra_class' => 'mt-4',
+            'extra_iframe_class' => '',
+        ],
+    ];
+    ?>
+
     <main id="main" style="margin-top:50px;">
         <div class="container breadcrumb aos-init aos-animate" data-aos="fade-up" style="margin-bottom:1rem;">
             <ul class="breadcrumb">
@@ -20,218 +117,35 @@
             <div class="container aos-init aos-animate" data-aos="fade-up">
                 <div class="row Box1">
 
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0">
-                            <iframe width="100%" height="180"
-                                src="https://www.youtube.com/embed/f4s1JIcrhEQ?si=I6-aDFiQUfJPV1iM"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="col-lg-12 Boxcontent order-2 order-lg-2">
-                            <div class="section-title pt-4">
-                                <div class="container aos-init aos-animate p-0" data-aos="fade-up">
-                                    <h2>How to Resume Your Pan Application | Restart PAN Form on Portal</h2>
+                    @foreach ($videos as $video)
+                        {{-- Use $video['extra_class'] to include 'mt-4' or 'd-none' as needed --}}
+                        <div class="col-lg-4 {{ $video['extra_class'] }}">
+                            <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0">
+                                {{-- Conditionally include the 'br' tag if no mt-4 class is present, to match the original structure --}}
+                                @if ($video['extra_class'] == '')
+                                    <br>
+                                @endif
+                                <iframe width="100%" height="{{ $video['height'] }}"
+                                    src="https://www.youtube.com/embed/{{ $video['url_id'] }}" title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen=""
+                                    @if ($video['extra_iframe_class']) class="{{ $video['extra_iframe_class'] }}" @endif></iframe>
+                            </div>
+                            <div class="col-lg-12 Boxcontent order-2 order-lg-2">
+                                <div class="section-title pt-4">
+                                    <div class="container aos-init aos-animate p-0" data-aos="fade-up">
+                                        <h2>{{ $video['title'] }}</h2>
+                                    </div>
+                                    <h4>{{ $video['description'] }}</h4>
+                                    {{-- Include the optional <p> tag if 'paragraph' is set (used in the older format videos) --}}
+                                    @if (isset($video['paragraph']))
+                                        <p>{{ $video['paragraph'] }}</p>
+                                    @endif
                                 </div>
-                                <h4>Know how you can complete your ePAN application from where you left. You do not need to
-                                    make payment again.</h4>
                             </div>
                         </div>
-                    </div>
-
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0">
-                            <iframe width="100%" height="180"
-                                src="https://www.youtube.com/embed/sG7NUDpiOOQ?si=Ea4E204PjxiZ4-XO"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="col-lg-12 Boxcontent order-2 order-lg-2">
-                            <div class="section-title pt-4">
-                                <div class="container aos-init aos-animate p-0" data-aos="fade-up">
-                                    <h2>How to Do Domestic Money Transfer | DMT Demo Video</h2>
-                                </div>
-                                <h4>Watch this step-by-step demo to see how Religare Digital simplifies Domestic Money
-                                    Transfers for your transactions.</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0">
-                            <iframe width="100%" height="180"
-                                src="https://www.youtube.com/embed/6Rgc-bxb8CE?si=gftVZPu55pPQoM6Z"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="col-lg-12 Boxcontent order-2 order-lg-2">
-                            <div class="section-title pt-4">
-                                <div class="container aos-init aos-animate p-0" data-aos="fade-up">
-                                    <h2>How to Add Money Instantly to Your DIGIPAY Wallet</h2>
-                                </div>
-                                <h4>Watch the video to know in detail to add money to your Digipay Wallet full Process:
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0"><br>
-                            <iframe class="fit-content" width="100%" height="300"
-                                src="https://www.youtube.com/embed/iQhiQq3hc8k" title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="col-lg-12 Boxcontent order-2 order-lg-2">
-                            <div class="section-title pt-4">
-                                <div class="container aos-init aos-animate p-0" data-aos="fade-up">
-                                    <h2>PAN Digitisation</h2>
-                                </div>
-                                <h4>PAN digitisation through web application</h4>
-                                <p>Know the process of PAN digitisation through web application
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-4">
-                        <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0"><br>
-                            <iframe class="fit-content" width="100%" height="300"
-                                src="https://www.youtube.com/embed/iQhiQq3hc8k" title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="col-lg-12 Boxcontent order-2 order-lg-2">
-                            <div class="section-title pt-4">
-                                <div class="container aos-init aos-animate p-0" data-aos="fade-up">
-                                    <h2>Wallet Recharge</h2>
-                                </div>
-                                <h4>Process of Wallet recharge &amp; know the reports in back office</h4>
-                                <p>Know the process of wallet recharge &amp; how to check the available reports in the back
-                                    office.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0">
-                            <iframe width="100%" height="180"
-                                src="https://www.youtube.com/embed/8MFXU45FIU0?si=ueswI9pMJ6kFmKwF"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="col-lg-12 Boxcontent order-2 order-lg-2">
-                            <div class="section-title pt-4">
-                                <div class="container aos-init aos-animate p-0" data-aos="fade-up">
-                                    <h2>Religare DigiPay Update 2024| Change in NPCI AePS Cash Withdrawal Guidelines for
-                                        Agents</h2>
-                                </div>
-                                <h4>Watch the video to know in detail the NPCI AePS Cash withdrawal process:</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 d-none">
-                        <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0">
-                            <iframe class="fit-content" width="100%" height="300"
-                                src="https://www.youtube.com/embed/6CTHsaufb6M" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="col-lg-12 Boxcontent order-2 order-lg-2">
-                            <div class="section-title pt-4">
-                                <div class="container aos-init aos-animate p-0" data-aos="fade-up">
-                                    <h2>Complete DMT Wallet Recharge</h2>
-                                </div>
-                                <h4>Learn how to do DMT, Recharges, Money Transfer, Bill Payment, Bus, e-PAN, e-collections,
-                                    AEPS and MATM</h4>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0">
-                            <iframe width="100%" height="180"
-                                src="https://www.youtube.com/embed/ChNPZY6m6yE?si=PDHTrIhcXVuhxcdE"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="col-lg-12 Boxcontent order-2 order-lg-2">
-                            <div class="section-title pt-4">
-                                <div class="container aos-init aos-animate p-0" data-aos="fade-up">
-                                    <h2>Apply for ePAN with Photo &amp; Signature</h2>
-                                </div>
-                                <h4>Learn how to apply for ePAN with photo &amp; signature</h4>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0">
-                            <iframe width="100%" height="180" src="https://www.youtube.com/embed/Y2f-s6BYVJQ"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="col-lg-12 Boxcontent order-2 order-lg-2">
-                            <div class="section-title pt-4">
-                                <div class="container aos-init aos-animate p-0" data-aos="fade-up">
-                                    <h2>How to do Recharge | Bill Payments and AEPS | Religare Digital | eGovernance</h2>
-                                </div>
-                                <h4>How to do Recharge, Bill Payments and AEPS using Religare Digipay</h4>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0">
-                            <iframe width="100%" height="180" src="https://www.youtube.com/embed/4ReZrsNP88k"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="col-lg-12 Boxcontent order-2 order-lg-2">
-                            <div class="section-title pt-4">
-                                <div class="container aos-init aos-animate p-0" data-aos="fade-up">
-                                    <h2>Train Ticket Booking | DC Based | Religare Digital Solutions</h2>
-                                </div>
-                                <h4>How to do train ticket booking via dc based login</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="col-lg-12 col-md-8 col-sm-12 order-1 order-lg-1 p-lg-0">
-                            <iframe width="100%" height="180" src="https://www.youtube.com/embed/4ReZrsNP88k"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="col-lg-12 Boxcontent order-2 order-lg-2">
-                            <div class="section-title pt-4">
-                                <div class="container aos-init aos-animate p-0" data-aos="fade-up">
-                                    <h2>Train Ticket Booking | OTP Based | Religare Digital Solutions</h2>
-                                </div>
-                                <h4>How to do train ticket booking via otp based login</h4>
-                            </div>
-                        </div>
-                    </div>
-
-
-
+                    @endforeach
 
                 </div>
             </div>

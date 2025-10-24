@@ -41,8 +41,24 @@
           </a> </li>
         <li class="nav-header">Settings</li>
         <li class="nav-item"> <a href="{{ url('admin/feedbacks') }}" class="nav-link"> <i
-              class="nav-icon bi bi-gear"></i>
+              class="nav-icon bi bi-list"></i>
             <p>Feedbacks</p>
+          </a> </li>
+          <li class="nav-item"> <a href="{{ url('admin/services') }}" class="nav-link"> <i
+              class="nav-icon bi bi-list"></i>
+            <p>Services</p>
+          </a> </li>
+          <li class="nav-item"> <a href="{{ url('admin/teams') }}" class="nav-link"> <i
+              class="nav-icon bi bi-list"></i>
+            <p>Teams</p>
+          </a> </li>
+          <li class="nav-item"> <a href="{{ url('admin/blog') }}" class="nav-link"> <i
+              class="nav-icon bi bi-list"></i>
+            <p>Blogs</p>
+          </a> </li>
+          <li class="nav-item"> <a href="{{ url('admin/enquiries') }}" class="nav-link"> <i
+              class="nav-icon bi bi-list"></i>
+            <p>Enquiries</p>
           </a> </li>
         <li class="nav-item"> <a href="{{ url('admin/settings') }}" class="nav-link"> <i
               class="nav-icon bi bi-gear"></i>

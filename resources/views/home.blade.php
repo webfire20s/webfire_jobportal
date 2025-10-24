@@ -186,6 +186,10 @@
             </section>
             <!-- End BecomeAgent Section 3 -->
 
+            <!-- ======= Team Section (NEW INSERTION) ======= -->
+            @include('partials.team-section')
+            <!-- End Team Section (NEW INSERTION) -->
+
             <!-- ======= About us Section 4======= -->
             <section id="about" class="why-us aboutus">
                 <div class="container-fluid" data-aos="fade-up">

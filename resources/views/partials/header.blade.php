@@ -31,7 +31,9 @@
         <li class="nav-item">
             <a class="nav-link me-md-4" href="{{ url('#about-us') }}">About</a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link me-md-4" href="{{ url('blog') }}">Blogs</a>
+        </li>
         <li class="nav-item">
             <a class="nav-link me-md-4" href="{{ url('#help') }}">Contact</a>
         </li>

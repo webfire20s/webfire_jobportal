@@ -18,6 +18,9 @@
                     <a class="nav-link scrollto" href="{{ url('/#about') }}">About us</a>
                 </li>
                 <li>
+                    <a class="nav-link scrollto" href="{{ url('blog') }}">Blog</a>
+                </li>
+                <li>
                     <a class="nav-link scrollto" href="{{ url('contact') }}">Contact</a>
                 </li>
                 @foreach ($pages as $page)

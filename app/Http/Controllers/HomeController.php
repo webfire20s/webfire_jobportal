@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Page;
 use App\Models\Slider;
 use App\Models\Feedback;
+use App\Models\Service; // Import the Service Model
+use App\Models\TeamMember; // Import the TeamMember Model
+
 
 class HomeController extends Controller
 {
@@ -21,8 +24,10 @@ class HomeController extends Controller
         $sliders = Slider::all();
         $pages = Page::all();  // Retrieve all pages
         $feedbacks = Feedback::where('is_published',1)->get();
+        $services = Service::all();
+        $teamMembers = TeamMember::orderBy('name', 'asc')->get();
 
-        return view('home',compact('pages','sliders','feedbacks'));
+        return view('home',compact('pages','sliders','feedbacks','services','teamMembers'));
     }
 
     public function userloginform(){
