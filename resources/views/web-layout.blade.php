@@ -739,23 +739,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script>
-      $(document).ready(function () {
-        $(".portfolio-item").css("display", "none");
-        $(".filter-banking").css("display", "block");
-        $(".fp").addClass("filter-active");
-        $("#portfolio-flters li").click(function () {
-          $(".portfolio-container").on("click", "li", function () {
-            var filterValue = $(this).attr("data-filter");
-            // use filterFn if matches value
-            filterValue = filterFns[filterValue] || filterValue;
-            $grid.isotope({ filter: filterValue });
-          });
-        });
-        $(".viewAll").click(function () {
-          $(".portfolio-item").css("display", "block");
-        });
+  $(document).ready(function () {
+
+    // Wait until ALL images inside portfolio-container are loaded
+    $('.portfolio-container').imagesLoaded(function () {
+
+      var $grid = $(".portfolio-container").isotope({
+        itemSelector: ".portfolio-item",
+        layoutMode: "fitRows",
       });
-    </script>
+
+      // Default load: show banking only
+      $grid.isotope({ filter: ".filter-banking" });
+
+      // Force layout after initialization
+      $grid.isotope('layout');
+
+      $(".fp").addClass("filter-active");
+
+      // On clicking any filter tab
+      $("#portfolio-flters li").click(function () {
+        $("#portfolio-flters li").removeClass("filter-active");
+        $(this).addClass("filter-active");
+
+        var filterValue = $(this).attr("data-filter");
+        $grid.isotope({ filter: filterValue });
+        $grid.isotope('layout');
+      });
+
+      // View All button
+      $(".viewAll").click(function () {
+        $grid.isotope({ filter: "*" });
+        $grid.isotope('layout');
+      });
+
+    });
+
+  });
+</script>
+
 
     <style>
       .active_1 {
