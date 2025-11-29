@@ -44,8 +44,11 @@ class BlogController extends Controller
         // 1. Handle Image Upload
         $imagePath = null;
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('public/blog_images');
+            $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->storeAs('public/blog_images', $filename);
+            $imagePath = $filename; // <-- only file name saved
         }
+
 
         // 2. Generate Unique Slug
         $slug = Str::slug($request->title);
@@ -96,12 +99,16 @@ class BlogController extends Controller
         // 1. Handle Image Upload (and deletion of old one)
         $imagePath = $blog->image_path;
         if ($request->hasFile('image')) {
-            // Delete old image if it exists
+            // Delete old image if exists
             if ($blog->image_path) {
-                Storage::delete($blog->image_path);
+                Storage::delete('public/blog_images/' . $blog->image_path);
             }
-            $imagePath = $request->file('image')->store('public/blog_images');
+
+            $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->storeAs('public/blog_images', $filename);
+            $imagePath = $filename; // <-- only file name saved
         }
+
 
         // 2. Handle Slug Change (only if title changed)
         $slug = $blog->slug;
@@ -146,7 +153,7 @@ class BlogController extends Controller
     {
         // Delete the associated image file
         if ($blog->image_path) {
-            Storage::delete($blog->image_path);
+            Storage::delete('public/blog_images/' . $blog->image_path);
         }
 
         $blog->delete();

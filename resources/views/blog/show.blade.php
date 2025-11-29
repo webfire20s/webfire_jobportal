@@ -19,7 +19,7 @@
                     {{-- Featured Image --}}
                     @if ($blog->image_path)
                         <figure class="mb-4">
-                            <img src="{{ Storage::url($blog->image_path) }}" 
+                            <img src="{{ asset('public/storage/blog_images/' . $blog->image_path) }}" 
                                  class="img-fluid rounded shadow-sm w-100" 
                                  alt="{{ $blog->title }}"
                                  style="max-height: 450px; object-fit: cover;">

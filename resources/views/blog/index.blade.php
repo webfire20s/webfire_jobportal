@@ -23,7 +23,7 @@
                                 
                                 {{-- Featured Image --}}
                                 @if ($post->image_path)
-                                    <img src="{{ Storage::url($post->image_path) }}" 
+                                    <img src="{{ asset('public/storage/blog_images/' . $post->image_path) }}" 
                                          class="card-img-top" 
                                          alt="{{ $post->title }}" 
                                          style="height: 200px; object-fit: cover;">

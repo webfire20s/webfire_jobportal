@@ -35,7 +35,7 @@
 
     @if(isset($post) && $post->image_path)
         <p class="mt-2 text-muted small">Current Image:</p>
-        <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->title }}"
+        <img src="{{ asset('public/storage/blog_images/' . $post->image_path) }}" alt="{{ $post->title }}"
              class="img-fluid rounded border border-2 mt-1" style="max-width: 150px; height: auto;">
     @endif
 </div>
