@@ -20,7 +20,7 @@
                             {{-- Member Photo --}}
                             <div class="p-4">
                                 @if ($member->photo_path)
-                                    <img src="{{ Storage::url($member->photo_path) }}" 
+                                    <img src="{{ asset("public/storage/".$member->photo_path) }}" 
                                          class="card-img-top mx-auto rounded-circle border border-5 border-white shadow-sm" 
                                          alt="{{ $member->name }}" 
                                          style="width: 150px; height: 150px; object-fit: cover;">
