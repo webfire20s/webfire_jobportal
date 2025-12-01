@@ -11,9 +11,9 @@
                     <a class="nav-link scrollto" href="{{ url('products-services') }}">Products & Services</a>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a class="nav-link scrollto" href="{{ url('training-videos') }}"><span>Training Videos </span></a>
-                </li>
+                </li> --}}
                 <li>
                     <a class="nav-link scrollto" href="{{ url('/#about') }}">About us</a>
                 </li>
@@ -87,6 +87,10 @@
                                 <li><a class="dropdown-item" href="{{ url('logout') }}">Sign out</a></li>
                             </ul>
                         </div>
+                    @else
+                        <li>
+                            <a class="getstarted scrollto" href="{{ url('admin') }}">Dashboard</a>
+                        </li>
                     @endif
                 @endauth
             </ul>

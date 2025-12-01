@@ -11,7 +11,7 @@ class EnquiryController extends Controller
     /**
      * Show the dedicated service enquiry form page.
      */
-    public function create()
+    public function create($service_id)
     {
         $pages = Page::all();  // Retrieve all pages
         // This array could be pulled from a service repository or configuration if needed, 

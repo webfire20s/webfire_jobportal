@@ -21,8 +21,8 @@
                             <i class="fa-solid fa-location-dot fa-2x text-warning me-3 mt-1"></i>
                             <div>
                                 <p class="fw-bold mb-0">Our Office Address</p>
-                                <span>Prius Height, 2nd Floor, Plot No 10/11,
-                                    Sector 125, Noida - 201301, Uttar Pradesh
+                                <span>
+                                    WARD NO 1, H NO. 306, KACHARI SAWANGA, , KATOL, Kachari Savanga Nagpur, MH 441103 IN
                                 </span>
                             </div>
                         </div>

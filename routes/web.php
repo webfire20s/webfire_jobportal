@@ -60,7 +60,7 @@ Route::middleware(['web'])->group(function () {
     Route::get('/details/{title}', [HomeController::class, 'productServiceDetails'])->name('details');
     Route::resource('blog', PublicBlogController::class);
     Route::post('/service-enquiry', [EnquiryController::class, 'storeServiceEnquiry'])->name('enquiry.store');
-    Route::get('/service-enquiry', [EnquiryController::class, 'create'])->name('enquiry.create');
+    Route::get('/service-enquiry/{service_id}', [EnquiryController::class, 'create'])->name('enquiry.create');
 });
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {

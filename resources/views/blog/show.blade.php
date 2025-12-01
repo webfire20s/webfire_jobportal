@@ -3,46 +3,50 @@
 @section('title', $blog->title)
 
 @section('content')
-    <main id="main" class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <article class="col-lg-10">
+<main id="main" class="py-10 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4">
 
-                    {{-- Post Title --}}
-                    <header class="mb-4">
-                        <h1 class="display-5 fw-bold text-dark">{{ $blog->title }}</h1>
-                        <div class="text-muted small">
-                            Posted by <strong>{{ $blog->author_name }}</strong> on {{ $blog->published_at->format('F d, Y') }}
-                        </div>
-                    </header>
+        <article class="bg-white p-8 rounded-2xl shadow-sm">
 
-                    {{-- Featured Image --}}
-                    @if ($blog->image_path)
-                        <figure class="mb-4">
-                            <img src="{{ asset('public/storage/blog_images/' . $blog->image_path) }}" 
-                                 class="img-fluid rounded shadow-sm w-100" 
-                                 alt="{{ $blog->title }}"
-                                 style="max-height: 450px; object-fit: cover;">
-                        </figure>
-                    @endif
+            {{-- Post Title --}}
+            <header class="mb-6">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-2">
+                    {{ $blog->title }}
+                </h1>
 
-                    {{-- Post Content --}}
-                    <section class="lead fs-5 text-dark blog-content">
-                        {{-- Laravel does not render raw HTML by default, use {!! !!} if content includes formatting --}}
-                        {!! $blog->content !!} 
-                    </section>
+                <div class="text-gray-500 text-sm">
+                    Posted by 
+                    <span class="font-semibold text-gray-700">{{ $blog->author_name }}</span> 
+                    on {{ $blog->published_at->format('F d, Y') }}
+                </div>
+            </header>
 
-                    <hr class="my-5">
+            {{-- Featured Image --}}
+            @if ($blog->image_path)
+                <figure class="mb-8">
+                    <img src="{{ asset('public/storage/blog_images/' . $blog->image_path) }}" 
+                         alt="{{ $blog->title }}"
+                         class="w-full h-[420px] object-cover rounded-xl shadow-md">
+                </figure>
+            @endif
 
-                    {{-- Back Button --}}
-                    <div class="text-center">
-                        <a href="{{ route('blog.index') }}" class="btn btn-primary btn-lg">
-                            &larr; Back to all posts
-                        </a>
-                    </div>
+            {{-- Post Content --}}
+            <section class="prose max-w-none prose-lg text-gray-800 leading-relaxed">
+                {!! $blog->content !!}
+            </section>
 
-                </article>
+            <hr class="my-10 border-gray-200">
+
+            {{-- Back Button --}}
+            <div class="text-center">
+                <a href="{{ route('blog.index') }}" 
+                   class="inline-block px-6 py-3 text-lg font-semibold bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">
+                    ← Back to all posts
+                </a>
             </div>
-        </div>
-    </main>
+
+        </article>
+
+    </div>
+</main>
 @endsection

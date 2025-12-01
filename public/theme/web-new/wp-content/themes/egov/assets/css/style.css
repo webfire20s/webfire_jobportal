@@ -6,7 +6,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: #444444;
-  background:url(../images/body-bg1.webp) center top repeat;
+  /* background:url(../images/body-bg1.webp) center top repeat; */
 }
 
 .hide-mobile{display:none}

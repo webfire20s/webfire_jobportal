@@ -3,72 +3,69 @@
 @section('title', 'Our Blog')
 
 @section('content')
-    <main id="main" class="py-5">
-        <div class="container">
-            <div class="section-title text-center mb-5">
-                <h1 class="display-4 fw-bold text-primary">Latest Insights & News</h1>
-                <p class="text-muted">Stay up-to-date with our company news and industry knowledge.</p>
+<main id="main" class="py-10 bg-gray-50">
+    <div class="container mx-auto px-4">
+
+        {{-- Section Heading --}}
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-600">Latest Insights & News</h1>
+            <p class="text-gray-600 mt-2">Stay up-to-date with our company news and industry knowledge.</p>
+        </div>
+
+        {{-- Empty State --}}
+        @if ($posts->isEmpty())
+            <div class="text-center bg-white p-6 rounded-xl shadow-md">
+                <p class="text-gray-600">Check back soon! There are no published blog posts yet.</p>
             </div>
 
-            @if ($posts->isEmpty())
-                <div class="alert alert-info text-center">
-                    Check back soon! There are no published blog posts yet.
-                </div>
-            @else
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    {{-- Loop through blog posts --}}
-                    @foreach ($posts as $post)
-                        <div class="col d-flex align-items-stretch">
-                            <div class="card h-100 shadow-sm border-0 transition-3d-hover">
-                                
-                                {{-- Featured Image --}}
-                                @if ($post->image_path)
-                                    <img src="{{ asset('public/storage/blog_images/' . $post->image_path) }}" 
-                                         class="card-img-top" 
-                                         alt="{{ $post->title }}" 
-                                         style="height: 200px; object-fit: cover;">
-                                @else
-                                    {{-- Placeholder for posts without an image --}}
-                                    <div class="card-img-top bg-light d-flex align-items-center justify-content-center text-muted" style="height: 200px;">
-                                        
-                                    </div>
-                                @endif
+        @else
+        {{-- Blog Cards Grid --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @foreach ($posts as $post)
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
 
-                                <div class="card-body d-flex flex-column">
-                                    {{-- Post Title --}}
-                                    <h5 class="card-title fw-bold">
-                                        <a href="{{ route('blog.show', $post) }}" class="text-decoration-none text-dark hover-primary">{{ $post->title }}</a>
-                                    </h5>
-                                    
-                                    {{-- Post Summary (using excerpt or truncated content) --}}
-                                    <p class="card-text text-muted small flex-grow-1">
-                                        {{ Str::limit(strip_tags($post->content), 120) }}
-                                    </p>
+                {{-- Featured Image --}}
+                @if ($post->image_path)
+                    <img src="{{ asset('public/storage/blog_images/' . $post->image_path) }}"
+                         alt="{{ $post->title }}"
+                         class="w-full h-48 object-cover">
+                @else
+                    <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500">
+                        No Image
+                    </div>
+                @endif
 
-                                    {{-- Read More Link --}}
-                                    <div class="mt-3">
-                                        <a href="{{ route('blog.show', $post) }}" class="btn btn-sm btn-outline-primary">
-                                            Read More &rarr;
-                                        </a>
-                                    </div>
-                                </div>
-                                
-                                {{-- Card Footer for Metadata --}}
-                                <div class="card-footer bg-white border-0 pt-0 pb-3">
-                                    <small class="text-muted">
-                                        By <strong>{{ $post->author_name }}</strong> on {{ $post->published_at->format('F d, Y') }}
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+                {{-- Content --}}
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-indigo-600 transition">
+                        <a href="{{ route('blog.show', $post) }}">{{ $post->title }}</a>
+                    </h3>
+
+                    <p class="text-gray-600 text-sm flex-grow">
+                        {{ Str::limit(strip_tags($post->content), 120) }}
+                    </p>
+
+                    <a href="{{ route('blog.show', $post) }}"
+                       class="mt-4 inline-block text-indigo-600 font-semibold hover:text-indigo-800 text-sm">
+                        Read More →
+                    </a>
                 </div>
 
-                {{-- Pagination Links --}}
-                <div class="d-flex justify-content-center mt-5">
-                    {{ $posts->links('pagination::bootstrap-5') }}
+                {{-- Footer --}}
+                <div class="px-6 pb-6 text-xs text-gray-500">
+                    By <span class="font-semibold">{{ $post->author_name }}</span>
+                    • {{ $post->published_at->format('F d, Y') }}
                 </div>
-            @endif
+
+            </div>
+            @endforeach
         </div>
-    </main>
+
+        {{-- Pagination --}}
+        <div class="mt-10 flex justify-center">
+            {{ $posts->links('pagination::bootstrap-5') }}
+        </div>
+        @endif
+    </div>
+</main>
 @endsection

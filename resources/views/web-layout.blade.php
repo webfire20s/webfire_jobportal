@@ -8,6 +8,8 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
       rel="stylesheet"
     />
+        <script src="https://cdn.tailwindcss.com"></script>
+
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('public/theme/web-new') }}/wp-content/themes/egov/assets/css/aos.css" rel="stylesheet" />
@@ -700,10 +702,13 @@
     </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/scss/mixins/_utilities.scss" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   </head>
 
   <body
     class="home page-template page-template-home page-template-home-php page page-id-5 no-sidebar"
+    style="background-color:rgb(249 250 251 / white) !important;"
   >
     <!-- Google Tag Manager (noscript) -->
     <noscript
@@ -908,89 +913,89 @@
                 <ul class="col-6 list-unstyled footer-links">
                   <li>
                     <a
-                      href="{{ url('details') }}/biometric-device/?utm_source=Organic-BiometricDevice"
+                      href="#"
                       >Biometric Devices</a
                     >
                   </li>
                   <li>
-                    <a href="{{ url('details') }}/dsc-token/?utm_source=Organic-DSC">
+                    <a href="#">
                       Digital Signature Certificate</a
                     >
                   </li>
                   <li>
-                    <a href="{{ url('details') }}/pmsvanidhi/?utm_source=Organic-pmsvanidhi">
+                    <a href="#">
                       PM Svanidhi Scheme</a
                     >
                   </li>
                   <li>
-                    <a href="{{ url('details') }}/dmt/?utm_source=Organic-DMT">
+                    <a href="#">
                       DMT-Money Transfer</a
                     >
                   </li>
                   <li>
-                    <a href="{{ url('details') }}/micro-atm/?utm_source=Organic-micro-atm">
+                    <a href="#">
                       Micro ATM</a
                     >
                   </li>
                   <li>
-                    <a href="{{ url('details') }}/fixed-deposit-fd/?utm_source=Organic-FD">
+                    <a href="#">
                       Fixed Deposits</a
                     >
                   </li>
                   <li>
-                    <a href="{{ url('details') }}/sovereign-gold-bonds-sgb/?utm_source=Organic-SGB"
+                    <a href="#"
                       >Sovereign Gold Bonds</a
                     >
                   </li>
                 </ul>
                 <ul class="col-6 list-unstyled footer-links">
                   <li>
-                    <a href="{{ url('details') }}/bus-ticketing/?utm_source=Organic-Bus-Ticket"
+                    <a href="#"
                       >Book Bus Tickets</a
                     >
                   </li>
                   <li>
-                    <a href="{{ url('details') }}/air-ticketing/?utm_source=Organic-Air-Ticket"
+                    <a href="#"
                       >Book Air Tickets</a
                     >
                   </li>
                   <li>
-                    <a href="{{ url('details') }}/home-loan/?utm_source=Organic-HomeLoan">
+                    <a href="#">
                       Home Loan</a
                     >
                   </li>
                   <li>
-                    <a href="{{ url('details') }}/msme-loan/?utm_source=Organic-MSMELoan">
+                    <a href="#">
                       MSME Loan</a
                     >
                   </li>
-                  <li><a href="{{ url('details') }}/auto-loan/">Auto Loan</a></li>
+                  <li><a href="#">Auto Loan</a></li>
                   <li>
                     <a
-                      href="{{ url('details') }}/loan-against-property/?utm_source=Organic-LonaAgainstPropertyLoan"
+                      href="#"
                       >Loan Against Property</a
                     >
                   </li>
                   <li>
                     <a
-                      href="{{ url('details') }}/two-wheeler-loan/?utm_source=Organic-two-wheeler-loan"
+                      href="#"
                     >
                       Two Wheeler Loan</a
                     >
                   </li>
                   <li>
-                    <a href="{{ url('details') }}/agri-and-rural/?utm_source=Organic-AgriRuralLoan"
+                    <a href="#"
                       >Agri & Rural Loan</a
                     >
                   </li>
                   <li>
-                    <a href="{{ url('details') }}/rail-e-ticketing/?utm_source=Organic-Rail-Ticket"
+                    <a href="#"
                       >Book Train Tickets</a
                     >
                   </li>
                   <li>
                     <a
-                      href="{{ url('details') }}/aadhaar-enabled-payment-system/?utm_source=Organic-AePS"
+                      href="#"
                       >AePS</a
                     >
                   </li>
@@ -1005,7 +1010,6 @@
                     $quick_links = [
                         '/' => 'Home',
                         'products-services' => 'Products & Services',
-                        'training-videos' => 'Training Videos',
                         '/#about-us' => 'About Us',
                         'contact' => 'Contact',
                         'login' => 'Login',
@@ -1350,6 +1354,27 @@
         });
       </script></strong
     >
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            640: { slidesPerView: 1 },
+            1024: { slidesPerView: 2 },
+        }
+    });
+</script>
+
   </body>
   <!-- Footer Section -->
 </html>
