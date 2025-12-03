@@ -1179,13 +1179,15 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
       <!--<script src="https://aRregqpH93uL.in/wp-content/themes/egov/assets/js/custom-form-script.js"></script>-->
-<?/*
+
       <script>
         $(document).ready(function () {
           var silder = $(".owl-carousel1");
           silder.owlCarousel({
             autoplay: true,
             autoplayTimeout: 3000,
+            autoplaySpeed: 800,
+        autoplayHoverPause: true,
             items: 1,
             center: false,
             nav: false,
@@ -1210,7 +1212,6 @@
           });
         });
       </script>
-*/?>
       <script>
 $(document).ready(function () {
 
