@@ -108,7 +108,7 @@
 
             <!-- Image -->
             <div data-aos="fade-right">
-                <img src="{{ asset('public/theme/web-new/wp-content/themes/egov/assets/images/pic1.webp') }}"
+                <img src="{{ asset('public/theme/web-new/new_images/pic1.webp') }}"
                      alt="Become an Agent"
                      class="rounded-lg shadow-md w-full object-cover">
             </div>
@@ -569,10 +569,10 @@
 
         <!-- Section Heading -->
         <div class="text-center mb-10">
-            <h2 class="text-3xl font-bold text-gray-800 tracking-wide">Awards</h2>
+            <h2 class="text-3xl font-bold text-gray-800 tracking-wide">Awards & Certificates</h2>
             <p class="mt-4 text-gray-600 max-w-3xl mx-auto leading-relaxed text-base">
                 We have earned recognition from distinguished organisations for our services and initiatives. 
-                Here are some of the awards we proudly received.
+                Here are some of the awards & certificates we proudly received.
             </p>
         </div>
 
@@ -580,14 +580,17 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <!-- Award 1 -->
+            @foreach($awards as $item)
             <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-                <img src="{{ asset('public/theme/web-new/wp-content/themes/egov/assets/images/award3.jpg') }}"
-                    alt="Award Image 1"
+                <img src="{{ asset('public/uploads/awards/'.$item->image) }}"
+                    alt="{{ $item->title }}"
                     class="w-full h-64 object-cover">
             </div>
+            @endforeach
+
 
             <!-- Award 2 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+            {{-- <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
                 <img src="{{ asset('public/theme/web-new/wp-content/themes/egov/assets/images/award4.jpg') }}"
                     alt="Award Image 2"
                     class="w-full h-64 object-cover">
@@ -619,7 +622,7 @@
                 <img src="{{ asset('public/theme/web-new/wp-content/themes/egov/assets/images/award6.jpg') }}"
                     alt="Award Image 6"
                     class="w-full h-64 object-cover">
-            </div>
+            </div> --}}
 
         </div>
 

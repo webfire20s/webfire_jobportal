@@ -351,9 +351,9 @@ $services_bk = [
                     style="
                                         background: transparent;
                                         color: #fff;
-                                        border: 2px solid #000066;
+                                        border: 2px solid white;
                                         border-radius: 10px;
-                                        color: #081d2c;
+                                        color: white;
                                         padding: 10px 20px;
                                         list-style: none;
                                     ">

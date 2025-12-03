@@ -12,7 +12,7 @@ use App\Models\Slider;
 use App\Models\Feedback;
 use App\Models\Service; // Import the Service Model
 use App\Models\TeamMember; // Import the TeamMember Model
-
+use App\Models\Award; // Import the Award Model
 
 class HomeController extends Controller
 {
@@ -26,8 +26,9 @@ class HomeController extends Controller
         $feedbacks = Feedback::where('is_published',1)->get();
         $services = Service::all();
         $teamMembers = TeamMember::orderBy('name', 'asc')->get();
+        $awards = Award::orderBy('sort_order', 'ASC')->get();
 
-        return view('home',compact('pages','sliders','feedbacks','services','teamMembers'));
+        return view('home',compact('pages','sliders','feedbacks','services','teamMembers','awards'));
     }
 
     public function userloginform(){

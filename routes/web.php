@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\BlogController as PublicBlogController;
 use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\Admin\EnquiryController as AdminEnquiryController;
+use App\Http\Controllers\Admin\AwardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -152,6 +153,11 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 
 
     Route::resource('forms', FormController::class);
+
+    Route::get('/awards', [AwardController::class, 'index'])->name('awards.index');
+    Route::post('/awards/store', [AwardController::class, 'store'])->name('awards.store');
+    Route::post('/awards/update/{id}', [AwardController::class, 'update'])->name('awards.update');
+    Route::delete('/awards/delete/{id}', [AwardController::class, 'destroy'])->name('awards.delete');
 
 
 
