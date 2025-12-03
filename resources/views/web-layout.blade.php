@@ -1179,7 +1179,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
       <!--<script src="https://aRregqpH93uL.in/wp-content/themes/egov/assets/js/custom-form-script.js"></script>-->
-
+<?/*
       <script>
         $(document).ready(function () {
           var silder = $(".owl-carousel1");
@@ -1210,36 +1210,39 @@
           });
         });
       </script>
-
+*/?>
       <script>
-        $(document).ready(function () {
-          var silder = $(".owl-carousel");
-          silder.owlCarousel({
-            autoPlay: true,
-            goToFirst: true,
-            goToFirstSpeed: 1000,
-            items: 1,
-            center: false,
-            nav: true,
-            margin: 40,
-            dots: false,
-            loop: true,
-            navText: [
-              "<i class='fa fa-arrow-left' aria-hidden='true'></i>",
-              "<i class='fa fa-arrow-right' aria-hidden='true'></i>",
-            ],
-            responsive: {
-              0: {
-                items: 1,
-              },
-              575: { items: 1 },
-              768: { items: 1 },
-              991: { items: 3 },
-              1400: { items: 2 },
-            },
-          });
-        });
-      </script>
+$(document).ready(function () {
+
+    $(".owl-carousel").owlCarousel({
+        autoplay: true,              // ENABLE AUTOPLAY
+        autoplayTimeout: 3000,       // time between slides
+        autoplaySpeed: 800,
+        autoplayHoverPause: true,
+
+        items: 1,
+        center: false,
+        nav: true,
+        margin: 40,
+        dots: false,
+        loop: true,
+        navText: [
+          "<i class='fa fa-arrow-left' aria-hidden='true'></i>",
+          "<i class='fa fa-arrow-right' aria-hidden='true'></i>",
+        ],
+
+        responsive: {
+            0: { items: 1 },
+            575: { items: 1 },
+            768: { items: 1 },
+            991: { items: 3 },
+            1400: { items: 2 },
+        }
+    });
+
+});
+</script>
+
 
       <!-- Multi Select Files -->
 
