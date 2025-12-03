@@ -3,8 +3,8 @@
 
         <!-- Section Title -->
         <div class="text-center mb-12">
-            <h2 class="text-4xl font-extrabold text-gray-800">Meet Our Dedicated Team</h2>
-            <p class="text-gray-500 mt-2">Dedicated professionals driving our mission forward.</p>
+            <h2 class="text-4xl font-extrabold text-white">Meet Our Dedicated Team</h2>
+            <p class="text-gray-300 mt-2">Dedicated professionals driving our mission forward.</p>
         </div>
 
         {{-- Check if teamMembers variable exists --}}

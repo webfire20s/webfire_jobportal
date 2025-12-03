@@ -283,7 +283,7 @@ $services_bk = [
     </div>
     <div class="container" data-aos="fade-up">
         <ul id="portfolio-flters" class="" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter=".filter-banking" class="fp">
+            <li data-filter=".filter-banking" class="fp filter-active">
                 Banking & Finance
             </li>
             <li data-filter=".filter-egov" class="e-service">
@@ -346,7 +346,7 @@ $services_bk = [
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="200">
-            <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul class="d-flex justify-content-center viewall-wrapper" data-aos="fade-up" data-aos-delay="100">
                 <li data-filter="*" class="filter-active viewAll"
                     style="
                                         background: transparent;
